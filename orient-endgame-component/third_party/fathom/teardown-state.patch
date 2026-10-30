@@ -1,0 +1,53 @@
+--- a/src/tbprobe.c
++++ b/src/tbprobe.c
+@@ -1217,15 +1217,21 @@
+     LOCK_DESTROY(tbMutex);
+ 
+     pathString = NULL;
+-    numWdl = numDtm = numDtz = 0;
+-#if ORIENT_FATHOM_FIVE_PIECE_CATALOG || ORIENT_FATHOM_DIAGNOSTICS || ORIENT_FATHOM_DYNAMIC_CATALOG
+-    paths = NULL;
+-    numPaths = 0;
+-    tbNumPiece = tbNumPawn = 0;
+-#endif
+-  }
+-
++  }
++
++  // Empty-path initialization also disables the reader, and tb_free() uses
++  // that path before releasing catalogue storage. Clear every discovery index
++  // before its early return so subsequent probes cannot follow stale entries.
++  paths = NULL;
++  numPaths = 0;
++  numWdl = numDtm = numDtz = 0;
++  tbNumPiece = tbNumPawn = 0;
++  TB_MaxCardinality = TB_MaxCardinalityDTM = 0;
+   TB_LARGEST = 0;
++  for (int index = 0; index < (1 << TB_HASHBITS); ++index) {
++    tbHash[index].key = 0;
++    tbHash[index].ptr = NULL;
++  }
+ 
+   // if path is an empty string or equals "<empty>", we are done.
+   const char *p = path;
+@@ -1253,8 +1259,6 @@
+ 
+   LOCK_INIT(tbMutex);
+ 
+-  tbNumPiece = tbNumPawn = 0;
+-  TB_MaxCardinality = TB_MaxCardinalityDTM = 0;
+ #if ORIENT_FATHOM_FIVE_PIECE_CATALOG
+   orientTbCatalogueFailed = false;
+ #endif
+@@ -1298,11 +1302,6 @@
+   }
+ 
+ #endif // unchanged fixed-capacity allocation
+-
+-  for (int i = 0; i < (1 << TB_HASHBITS); i++) {
+-    tbHash[i].key = 0;
+-    tbHash[i].ptr = NULL;
+-  }
+ 
+   char str[16];
+   int i, j, k, l, m;

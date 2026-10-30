@@ -1,0 +1,34 @@
+# Build outputs and interpreter caches.
+**/build/
+**/target/
+**/__pycache__/
+*.py[cod]
+/dist/
+
+# Local solved-position data and optional external measurement dependencies.
+/orient-endgame-component/external/tablebases/
+/orient-endgame-component/external/cargo-cache/
+/orient-endgame-component/external/reader-comparison/
+*.rtbw
+*.rtbz
+*.rtbm
+*.part
+
+# Keep original research/checkpoints locally; publish source and reports.
+/orient-endgame-component/artifacts/
+/research/skylance-name-check-*/
+
+# Machine configuration, credentials and editor state.
+/.agents/
+/.aws/
+/.codex/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+.vscode/
+.idea/
+*~
+*.swp

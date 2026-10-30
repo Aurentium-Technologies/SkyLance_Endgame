@@ -1,0 +1,226 @@
+cmake_minimum_required(VERSION 3.20)
+project(Orient VERSION 0.1.0 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+option(ORIENT_NATIVE "Optimize for the local CPU (binary is not portable)" OFF)
+option(ORIENT_SANITIZERS "Enable address and undefined behavior sanitizers" OFF)
+option(ORIENT_TESTS "Build correctness tests" ON)
+option(ORIENT_COMPACT_TABLEBASE_CACHE "Experimental exact eight-byte WDL cache entries (not adopted)" OFF)
+option(ORIENT_REUSE_ROOT_LEGAL "Experimental root legal-list reuse (not adopted)" OFF)
+option(ORIENT_TABLEBASE_PROFILING "Instrument root tablebase phases (not for timing acceptance)" OFF)
+option(ORIENT_FATHOM_PREFIX_LENGTH "Use exact bounded Huffman prefix-length hints" ON)
+option(ORIENT_FATHOM_FIVE_PIECE_CATALOG "Experimental bounded five-piece catalogue (not adopted)" OFF)
+option(ORIENT_FATHOM_DIAGNOSTICS "Track reader allocations/discovery (diagnostics only, never timing acceptance)" OFF)
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic -Wshadow)
+  if(ORIENT_NATIVE)
+    add_compile_options(-march=native)
+  endif()
+  if(ORIENT_SANITIZERS)
+    add_compile_options(-fsanitize=address,undefined -fno-omit-frame-pointer)
+    add_link_options(-fsanitize=address,undefined)
+  endif()
+endif()
+find_package(Threads REQUIRED)
+set_source_files_properties(third_party/fathom/src/tbprobe.c PROPERTIES LANGUAGE CXX)
+add_library(orient_fathom STATIC third_party/fathom/src/tbprobe.c)
+target_include_directories(orient_fathom PUBLIC third_party/fathom/src)
+target_compile_definitions(orient_fathom PRIVATE TB_NO_HELPER_API
+  ORIENT_FATHOM_PREFIX_LENGTH=$<BOOL:${ORIENT_FATHOM_PREFIX_LENGTH}>
+  ORIENT_FATHOM_FIVE_PIECE_CATALOG=$<BOOL:${ORIENT_FATHOM_FIVE_PIECE_CATALOG}>
+  ORIENT_FATHOM_DIAGNOSTICS=$<BOOL:${ORIENT_FATHOM_DIAGNOSTICS}>)
+target_link_libraries(orient_fathom PRIVATE Threads::Threads)
+add_library(orient_core src/chess.cpp src/evaluation.cpp src/search.cpp src/nnue.cpp src/tablebases.cpp)
+target_include_directories(orient_core PUBLIC include)
+target_link_libraries(orient_core PUBLIC Threads::Threads PRIVATE orient_fathom)
+target_compile_definitions(orient_core PUBLIC
+  ORIENT_COMPACT_TABLEBASE_CACHE=$<BOOL:${ORIENT_COMPACT_TABLEBASE_CACHE}>
+  ORIENT_REUSE_ROOT_LEGAL=$<BOOL:${ORIENT_REUSE_ROOT_LEGAL}>
+  ORIENT_TABLEBASE_PROFILING=$<BOOL:${ORIENT_TABLEBASE_PROFILING}>)
+add_executable(orient src/main.cpp)
+target_link_libraries(orient PRIVATE orient_core)
+add_executable(orient-selfplay src/datagen.cpp)
+target_link_libraries(orient-selfplay PRIVATE orient_core)
+add_executable(orient-opening-sampler tools/opening_sampler.cpp)
+target_link_libraries(orient-opening-sampler PRIVATE orient_core)
+add_executable(orient-sprt-calibration tools/calibrate_sprt.cpp)
+add_executable(orient-tablebase-bench tools/benchmark_tablebases.cpp)
+target_link_libraries(orient-tablebase-bench PRIVATE orient_core)
+add_executable(orient-tablebase-probe tools/tablebase_probe.cpp)
+target_link_libraries(orient-tablebase-probe PRIVATE orient_core)
+add_executable(orient-tablebase-ordered-probe tools/tablebase_probe.cpp)
+target_compile_definitions(orient-tablebase-ordered-probe PRIVATE ORIENT_PRESERVE_TABLEBASE_ORDER)
+target_link_libraries(orient-tablebase-ordered-probe PRIVATE orient_core)
+add_executable(orient-reader-bench tools/benchmark_reader.cpp)
+target_link_libraries(orient-reader-bench PRIVATE orient_core)
+add_executable(orient-reader-compare tools/reader_compare.cpp tools/reader_compare_dtz.cpp)
+target_include_directories(orient-reader-compare PRIVATE third_party/fathom/src)
+target_compile_definitions(orient-reader-compare PRIVATE
+  ORIENT_FATHOM_PREFIX_LENGTH=$<BOOL:${ORIENT_FATHOM_PREFIX_LENGTH}>
+  ORIENT_FATHOM_FIVE_PIECE_CATALOG=$<BOOL:${ORIENT_FATHOM_FIVE_PIECE_CATALOG}>
+  ORIENT_FATHOM_DIAGNOSTICS=$<BOOL:${ORIENT_FATHOM_DIAGNOSTICS}>)
+target_link_libraries(orient-reader-compare PRIVATE orient_core)
+if(ORIENT_FATHOM_DIAGNOSTICS)
+  add_executable(orient-reader-memory tools/benchmark_reader_memory.cpp)
+  target_include_directories(orient-reader-memory PRIVATE third_party/fathom/src)
+  target_compile_definitions(orient-reader-memory PRIVATE ORIENT_FATHOM_DIAGNOSTICS=1
+    ORIENT_FATHOM_FIVE_PIECE_CATALOG=$<BOOL:${ORIENT_FATHOM_FIVE_PIECE_CATALOG}>
+    ORIENT_FATHOM_PREFIX_LENGTH=$<BOOL:${ORIENT_FATHOM_PREFIX_LENGTH}>)
+  target_link_libraries(orient-reader-memory PRIVATE orient_core)
+endif()
+add_executable(orient-endgame-referee tools/endgame_referee.cpp)
+target_link_libraries(orient-endgame-referee PRIVATE orient_core)
+# The optional measurement oracle is intentionally outside release sources.
+# Its reader comes from the separately pinned, untouched upstream checkout.
+if(EXISTS "${CMAKE_SOURCE_DIR}/external/fathom-upstream/src/tbprobe.c")
+  set_source_files_properties(external/fathom-upstream/src/tbprobe.c PROPERTIES LANGUAGE CXX)
+  add_executable(orient-tablebase-reference tools/tablebase_probe.cpp src/chess.cpp
+    external/fathom-upstream/src/tbprobe.c)
+  target_include_directories(orient-tablebase-reference PRIVATE include external/fathom-upstream/src)
+  target_compile_definitions(orient-tablebase-reference PRIVATE ORIENT_REFERENCE_READER TB_NO_HELPER_API)
+  target_link_libraries(orient-tablebase-reference PRIVATE Threads::Threads)
+  add_executable(orient-tablebase-reference-ordered tools/tablebase_probe.cpp src/chess.cpp
+    external/fathom-upstream/src/tbprobe.c)
+  target_include_directories(orient-tablebase-reference-ordered PRIVATE include external/fathom-upstream/src)
+  target_compile_definitions(orient-tablebase-reference-ordered PRIVATE ORIENT_REFERENCE_READER TB_NO_HELPER_API
+    ORIENT_PRESERVE_TABLEBASE_ORDER)
+  target_link_libraries(orient-tablebase-reference-ordered PRIVATE Threads::Threads)
+endif()
+target_compile_definitions(orient PRIVATE ORIENT_VERSION="${PROJECT_VERSION}")
+install(TARGETS orient orient-selfplay RUNTIME DESTINATION bin)
+
+if(ORIENT_TESTS)
+  enable_testing()
+  if(ORIENT_FATHOM_DIAGNOSTICS)
+    add_test(NAME reader_memory_parser COMMAND orient-reader-memory --selftest)
+    set_tests_properties(reader_memory_parser PROPERTIES TIMEOUT 30)
+  endif()
+  foreach(word_size IN ITEMS 64 32)
+    add_executable(test_fathom_prefix${word_size} tests/test_fathom_prefix.cpp)
+    target_include_directories(test_fathom_prefix${word_size} PRIVATE third_party/fathom/src)
+    target_compile_definitions(test_fathom_prefix${word_size} PRIVATE TB_NO_HELPER_API ORIENT_FATHOM_PREFIX_LENGTH=1)
+    target_compile_definitions(test_fathom_prefix${word_size} PRIVATE
+      ORIENT_FATHOM_FIVE_PIECE_CATALOG=$<BOOL:${ORIENT_FATHOM_FIVE_PIECE_CATALOG}>)
+    if(word_size EQUAL 32)
+      target_compile_definitions(test_fathom_prefix${word_size} PRIVATE ORIENT_FATHOM_FORCE_DECOMP32=1)
+    endif()
+    target_link_libraries(test_fathom_prefix${word_size} PRIVATE Threads::Threads)
+    add_test(NAME fathom_prefix${word_size} COMMAND test_fathom_prefix${word_size})
+    set_tests_properties(fathom_prefix${word_size} PROPERTIES TIMEOUT 60)
+  endforeach()
+  if(EXISTS "${CMAKE_SOURCE_DIR}/tests/test_fathom_catalog.cpp")
+    add_executable(test_fathom_catalog tests/test_fathom_catalog.cpp)
+    target_include_directories(test_fathom_catalog PRIVATE third_party/fathom/src)
+    target_compile_definitions(test_fathom_catalog PRIVATE TB_NO_HELPER_API
+      ORIENT_FATHOM_DIAGNOSTICS=1 ORIENT_FATHOM_FIVE_PIECE_CATALOG=1
+      ORIENT_FATHOM_PREFIX_LENGTH=$<BOOL:${ORIENT_FATHOM_PREFIX_LENGTH}>)
+    target_link_libraries(test_fathom_catalog PRIVATE Threads::Threads)
+    add_test(NAME fathom_catalog COMMAND test_fathom_catalog)
+    set_tests_properties(fathom_catalog PROPERTIES TIMEOUT 120)
+  endif()
+  add_executable(test_tablebase_cache tests/test_tablebase_cache.cpp)
+  target_link_libraries(test_tablebase_cache PRIVATE orient_core)
+  add_test(NAME tablebase_cache_identity COMMAND test_tablebase_cache)
+  set_tests_properties(tablebase_cache_identity PROPERTIES TIMEOUT 60)
+  add_executable(test_tablebases tests/test_tablebases.cpp)
+  target_link_libraries(test_tablebases PRIVATE orient_core)
+  add_test(NAME tablebase_adapter COMMAND test_tablebases)
+  set_tests_properties(tablebase_adapter PROPERTIES TIMEOUT 120)
+  if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    add_executable(test_fathom_map_failure tests/test_fathom_map_failure.cpp)
+    target_include_directories(test_fathom_map_failure PRIVATE third_party/fathom/src)
+    target_compile_definitions(test_fathom_map_failure PRIVATE TB_NO_HELPER_API
+      ORIENT_FATHOM_PREFIX_LENGTH=$<BOOL:${ORIENT_FATHOM_PREFIX_LENGTH}>
+      ORIENT_FATHOM_FIVE_PIECE_CATALOG=$<BOOL:${ORIENT_FATHOM_FIVE_PIECE_CATALOG}>)
+    target_link_libraries(test_fathom_map_failure PRIVATE Threads::Threads)
+    add_test(NAME tablebase_map_failure COMMAND test_fathom_map_failure)
+    set_tests_properties(tablebase_map_failure PROPERTIES SKIP_RETURN_CODE 77 TIMEOUT 30)
+  endif()
+  add_executable(test_endgame_search tests/test_endgame_search.cpp)
+  target_link_libraries(test_endgame_search PRIVATE orient_core)
+  add_test(NAME endgame_search COMMAND test_endgame_search)
+  set_tests_properties(endgame_search PROPERTIES SKIP_RETURN_CODE 77 TIMEOUT 120)
+  add_executable(test_chess tests/test_chess.cpp)
+  target_link_libraries(test_chess PRIVATE orient_core)
+  add_test(NAME chess_core COMMAND test_chess)
+  set_tests_properties(chess_core PROPERTIES TIMEOUT 180)
+  add_test(NAME perft_extended COMMAND test_chess --extended)
+  set_tests_properties(perft_extended PROPERTIES LABELS extended TIMEOUT 600)
+  add_test(NAME perft_direct_extended COMMAND test_chess --extended-direct)
+  set_tests_properties(perft_direct_extended PROPERTIES LABELS extended TIMEOUT 600)
+  add_executable(test_search tests/test_search.cpp)
+  target_link_libraries(test_search PRIVATE orient_core)
+  add_test(NAME search COMMAND test_search)
+  set_tests_properties(search PROPERTIES TIMEOUT 180)
+  add_executable(test_search_internal tests/test_search_internal.cpp)
+  target_link_libraries(test_search_internal PRIVATE orient_core)
+  add_test(NAME search_pruning_regression COMMAND test_search_internal)
+  set_tests_properties(search_pruning_regression PROPERTIES TIMEOUT 30)
+  add_executable(test_nnue tests/test_nnue.cpp)
+  target_link_libraries(test_nnue PRIVATE orient_core)
+  add_test(NAME nnue_incremental COMMAND test_nnue)
+  set_tests_properties(nnue_incremental PROPERTIES TIMEOUT 120)
+  find_package(Python3 COMPONENTS Interpreter)
+  if(Python3_Interpreter_FOUND)
+    add_test(NAME reader_memory_gates COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tests/test_reader_memory.py)
+    add_test(NAME reader_memory_verification COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tests/test_reader_memory_verification.py)
+    add_test(NAME reader_comparison_gates COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tests/test_reader_comparison.py)
+    add_test(NAME reader_comparison_semantics COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tests/test_reader_comparison_semantics.py)
+    set_tests_properties(reader_memory_gates reader_memory_verification
+      reader_comparison_gates reader_comparison_semantics PROPERTIES TIMEOUT 60)
+    add_test(NAME reader_optimization_gates COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tests/test_reader_optimization.py)
+    add_test(NAME endgame_playing_referee COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tests/test_endgame_referee.py $<TARGET_FILE:orient-endgame-referee>)
+    set_tests_properties(endgame_playing_referee PROPERTIES TIMEOUT 60)
+    add_test(NAME endgame_playing_fixtures COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tests/test_endgame_playing_fixtures.py)
+    add_test(NAME endgame_playing_audit COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tests/test_endgame_playing_audit.py)
+    set_tests_properties(endgame_playing_fixtures endgame_playing_audit PROPERTIES TIMEOUT 60)
+    add_test(NAME tablebase_download COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tests/test_tablebase_download.py)
+    set_tests_properties(tablebase_download PROPERTIES TIMEOUT 30)
+    add_test(NAME tablebase_optimization_gates COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tests/test_tablebase_optimization.py)
+    set_tests_properties(tablebase_optimization_gates PROPERTIES TIMEOUT 30)
+    add_test(NAME tablebase_uci COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tools/test_tablebase_uci.py $<TARGET_FILE:orient>)
+    set_tests_properties(tablebase_uci PROPERTIES SKIP_RETURN_CODE 77 TIMEOUT 60)
+    add_test(NAME uci_lifecycle COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tools/test_uci.py $<TARGET_FILE:orient>)
+    set_tests_properties(uci_lifecycle PROPERTIES TIMEOUT 60)
+    add_test(NAME experiment_tools COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tests/test_tools.py)
+    set_tests_properties(experiment_tools PROPERTIES TIMEOUT 60)
+    add_test(NAME lichess_bridge COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tools/test_lichess_bot.py)
+    set_tests_properties(lichess_bridge PROPERTIES TIMEOUT 30)
+    add_test(NAME paired_sprt_math COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tests/test_sprt.py)
+    add_test(NAME paired_controller COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tests/test_paired.py)
+    add_test(NAME development_recovery COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tests/test_recovery.py)
+    add_test(NAME selfplay_batch_controller COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tests/test_batch_generate.py)
+    add_test(NAME process_leases COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tests/test_process_leases.py $<TARGET_FILE:orient> $<TARGET_FILE:test_nnue>)
+    add_test(NAME opening_sampler COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tests/test_opening_sampler.py $<TARGET_FILE:orient-opening-sampler> $<TARGET_FILE:orient>)
+    set_tests_properties(paired_sprt_math paired_controller selfplay_batch_controller process_leases opening_sampler PROPERTIES TIMEOUT 60)
+    add_test(NAME nnue_integer_reference COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tests/test_nnue.py $<TARGET_FILE:orient> $<TARGET_FILE:test_nnue>)
+    set_tests_properties(nnue_integer_reference PROPERTIES TIMEOUT 60)
+    add_test(NAME selfplay_input COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_SOURCE_DIR}/tests/test_selfplay.py $<TARGET_FILE:orient-selfplay> $<TARGET_FILE:test_nnue>)
+    set_tests_properties(selfplay_input PROPERTIES TIMEOUT 60)
+  endif()
+endif()

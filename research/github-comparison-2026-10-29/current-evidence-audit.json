@@ -1,0 +1,87 @@
+{
+  "status": "passed",
+  "checked_date_nz": "2026-10-29",
+  "scope": "Reaudit of saved 2026-10-28 benchmark/correctness outputs; no new timed probes or builds",
+  "shared_positions": 21963,
+  "typed_rows": 65889,
+  "move_records": 916500,
+  "mmap_pairs_favouring_orient": 30,
+  "timings": [
+    {
+      "corpus": "continuity",
+      "operation": "wdl",
+      "orient_us": 1.1063448002213454,
+      "shakmaty_mmap_us": 1.7190404586302859,
+      "orient_throughput_ratio": 1.553801724639876,
+      "pair_ratio_min": 1.273471335575246,
+      "pair_ratio_max": 1.9131469300067108
+    },
+    {
+      "corpus": "continuity",
+      "operation": "dtz",
+      "orient_us": 6.385496055541501,
+      "shakmaty_mmap_us": 12.90506223690133,
+      "orient_throughput_ratio": 2.0209960392508544,
+      "pair_ratio_min": 1.3628618458665749,
+      "pair_ratio_max": 2.600362741124405
+    },
+    {
+      "corpus": "continuity",
+      "operation": "all_moves",
+      "orient_us": 86.4386764991313,
+      "shakmaty_mmap_us": 172.75433574803523,
+      "orient_throughput_ratio": 1.9985768263095893,
+      "pair_ratio_min": 1.4883055555480014,
+      "pair_ratio_max": 2.9978058340878295
+    },
+    {
+      "corpus": "holdout",
+      "operation": "wdl",
+      "orient_us": 1.017152463526673,
+      "shakmaty_mmap_us": 1.6994137170423689,
+      "orient_throughput_ratio": 1.6707561334022218,
+      "pair_ratio_min": 1.1121187328384323,
+      "pair_ratio_max": 2.6658847825242087
+    },
+    {
+      "corpus": "holdout",
+      "operation": "dtz",
+      "orient_us": 6.60600417839363,
+      "shakmaty_mmap_us": 11.02610322486286,
+      "orient_throughput_ratio": 1.6691032774284522,
+      "pair_ratio_min": 1.2996276785884626,
+      "pair_ratio_max": 2.1595094590015878
+    },
+    {
+      "corpus": "holdout",
+      "operation": "all_moves",
+      "orient_us": 96.92712655294957,
+      "shakmaty_mmap_us": 152.71055912527515,
+      "orient_throughput_ratio": 1.5755193056491985,
+      "pair_ratio_min": 1.0557333858799647,
+      "pair_ratio_max": 1.9196627669390902
+    }
+  ],
+  "current_files_equal_to_frozen_004": [
+    "src/tablebases.cpp",
+    "include/orient/tablebases.hpp",
+    "src/chess.cpp",
+    "include/orient/chess.hpp",
+    "tools/reader_compare.cpp",
+    "tools/reader_compare_dtz.cpp"
+  ],
+  "reader_source_sha256": "46358784b9f219ecfc08d15a2931c6d581508981d5db331384c193bb917b9a07",
+  "reader_source_note": "Current source additionally includes default-OFF experiment 005; retained 016 behavior, not identical entire source.",
+  "inputs_sha256": {
+    "orient-endgame-component/artifacts/investigations/tablebases-004/correctness-shared/continuity-orient016.jsonl": "4b73b7731d73f59f09fedc994be09e4634c2e7bea521ffcfb2b962efee6da46c",
+    "orient-endgame-component/artifacts/investigations/tablebases-004/correctness-shared/continuity-shakmaty_mmap.jsonl": "6dbfdc198059d097116915819e14e30182ad72f6c4f05d2805bf8a7c2945cbfc",
+    "orient-endgame-component/artifacts/investigations/tablebases-004/correctness-shared/continuity-shakmaty_pread.jsonl": "6dbfdc198059d097116915819e14e30182ad72f6c4f05d2805bf8a7c2945cbfc",
+    "orient-endgame-component/artifacts/investigations/tablebases-004/correctness-shared/holdout-orient016.jsonl": "3b9f455c4ee71263b3e1f73751ee5f5f5f00d6b0cb8b326f52f38b3a1101f347",
+    "orient-endgame-component/artifacts/investigations/tablebases-004/correctness-shared/holdout-shakmaty_mmap.jsonl": "47059f56e6de1b63e1a31d7abb0528ec558adb299d3f1bc60f21a587f4b3b7e1",
+    "orient-endgame-component/artifacts/investigations/tablebases-004/correctness-shared/holdout-shakmaty_pread.jsonl": "47059f56e6de1b63e1a31d7abb0528ec558adb299d3f1bc60f21a587f4b3b7e1",
+    "orient-endgame-component/artifacts/investigations/tablebases-004/correctness-shared/special-orient016.jsonl": "21207b72c12fc75ab426483fb7b7928a5fa4f5c5270e5037b4e1829e58247d0c",
+    "orient-endgame-component/artifacts/investigations/tablebases-004/correctness-shared/special-shakmaty_mmap.jsonl": "dd871bbc2887d12d229eb6a52e16997d1112f7db10dc2caf707fd577b1731092",
+    "orient-endgame-component/artifacts/investigations/tablebases-004/correctness-shared/special-shakmaty_pread.jsonl": "dd871bbc2887d12d229eb6a52e16997d1112f7db10dc2caf707fd577b1731092"
+  },
+  "performance_result_sha256": "900b3454a10af283a089d08a26f9b516697a668ae9cf2c3eac12d567ce5f637b"
+}

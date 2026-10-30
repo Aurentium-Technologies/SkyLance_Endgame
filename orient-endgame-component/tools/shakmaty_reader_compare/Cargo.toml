@@ -1,0 +1,19 @@
+[package]
+name = "orient-shakmaty-reader-compare"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.97"
+publish = false
+license = "GPL-3.0-or-later"
+
+[dependencies]
+shakmaty = { path = "../../external/reader-comparison/shakmaty/shakmaty" }
+shakmaty-syzygy = { path = "../../external/reader-comparison/shakmaty/shakmaty-syzygy", features = ["mmap"] }
+libc = "0.2.143"
+
+[profile.release]
+opt-level = 3
+debug = false
+lto = false
+codegen-units = 1
+

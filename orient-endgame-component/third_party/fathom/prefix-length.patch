@@ -1,0 +1,97 @@
+--- a/src/tbprobe.c
++++ b/src/tbprobe.c
+@@ -73,7 +73,14 @@
+ using namespace std;
+ #endif
+ 
++#ifndef ORIENT_FATHOM_FORCE_DECOMP32
+ #define DECOMP64
++#endif
++
++// Experiment003: exact optional prefix length hints; file format unchanged.
++#ifndef ORIENT_FATHOM_PREFIX_LENGTH
++#define ORIENT_FATHOM_PREFIX_LENGTH 0
++#endif
+ 
+ // Threading support
+ #ifndef TB_NO_THREADS
+@@ -443,6 +450,9 @@
+   uint8_t idxBits;
+   uint8_t minLen;
+   uint8_t constValue[2];
++#if ORIENT_FATHOM_PREFIX_LENGTH
++  uint8_t prefixLen[256];
++#endif
+   uint64_t base[1];
+ };
+ 
+@@ -1475,6 +1485,27 @@
+   tmp[s] = 1;
+ }
+ 
++#if ORIENT_FATHOM_PREFIX_LENGTH
++// The scalar first-accepted length is monotone in code. Equal lengths at
++// both endpoints therefore prove a length for every code in that interval.
++static void init_prefix_lengths(struct PairsData *d)
++{
++  for (unsigned prefix = 0; prefix < 256; ++prefix) {
++#ifdef DECOMP64
++    uint64_t low = (uint64_t)prefix << 56;
++    uint64_t high = low | UINT64_C(0x00ffffffffffffff);
++#else
++    uint32_t low = (uint32_t)prefix << 24;
++    uint32_t high = low | UINT32_C(0x00ffffff);
++#endif
++    int lower = 0, upper = 0;
++    while (low < d->base[lower]) ++lower;
++    while (high < d->base[upper]) ++upper;
++    d->prefixLen[prefix] = lower == upper ? (uint8_t)(d->minLen + lower) : 0;
++  }
++}
++#endif
++
+ static struct PairsData *setup_pairs(uint8_t **ptr, size_t tb_size,
+     size_t *size, uint8_t *flags, int type)
+ {
+@@ -1530,6 +1561,9 @@
+ #else
+   for (int i = 0; i < h; i++)
+     d->base[i] <<= 32 - (minLen + i);
++#endif
++#if ORIENT_FATHOM_PREFIX_LENGTH
++  init_prefix_lengths(d);
+ #endif
+   d->offset -= d->minLen;
+ 
+@@ -1701,7 +1735,15 @@
+   bitCnt = 0; // number of "empty bits" in code
+   for (;;) {
+     int l = m;
++#if ORIENT_FATHOM_PREFIX_LENGTH
++    l = d->prefixLen[code >> 56];
++    if (!l) {
++      l = m;
++      while (code < base[l]) l++;
++    }
++#else
+     while (code < base[l]) l++;
++#endif
+     sym = from_le_u16(offset[l]);
+     sym += (uint32_t)((code - base[l]) >> (64 - l));
+     if (litIdx < (int)symLen[sym] + 1) break;
+@@ -1721,7 +1763,15 @@
+   bitCnt = 0; // number of bits in next
+   for (;;) {
+     int l = m;
++#if ORIENT_FATHOM_PREFIX_LENGTH
++    l = d->prefixLen[code >> 24];
++    if (!l) {
++      l = m;
++      while (code < base[l]) l++;
++    }
++#else
+     while (code < base[l]) l++;
++#endif
+     sym = offset[l] + ((code - base[l]) >> (32 - l));
+     if (litIdx < (int)symLen[sym] + 1) break;
+     litIdx -= (int)symLen[sym] + 1;

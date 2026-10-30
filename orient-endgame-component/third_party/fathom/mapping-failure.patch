@@ -1,0 +1,34 @@
+--- upstream/src/tbprobe.c
++++ orient/src/tbprobe.c
+@@ -362,7 +362,6 @@
+   struct stat statbuf;
+   if (fstat(fd, &statbuf)) {
+     perror("fstat");
+-    close_tb(fd);
+     return NULL;
+   }
+   *mapping = statbuf.st_size;
+@@ -391,6 +390,7 @@
+   void *data = (void *)MapViewOfFile(map, FILE_MAP_READ, 0, 0, 0);
+   if (data == NULL) {
+     fprintf(stderr,"MapViewOfFile() failed, error = %lu.\n", GetLastError());
++    CloseHandle(map);
+   }
+ #endif
+   return data;
+@@ -721,12 +721,11 @@
+     return NULL;
+ 
+   void *data = map_file(fd, mapping);
++  close_tb(fd);
+   if (data == NULL) {
+     fprintf(stderr, "Could not map %s%s into memory.\n", name, suffix);
+-    exit(EXIT_FAILURE);
+-  }
+-
+-  close_tb(fd);
++    return NULL;
++  }
+ 
+   return data;
+ }

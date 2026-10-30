@@ -1,0 +1,121 @@
+{
+  "component": "Orient endgame/tablebase reader and local integration",
+  "created_date_nz": "2026-10-29",
+  "current_source_copies": {
+    "include/orient/chess.hpp": {
+      "size": 4444,
+      "source": "include/orient/chess.hpp"
+    },
+    "include/orient/detail/tablebase_cache.hpp": {
+      "size": 3627,
+      "source": "include/orient/detail/tablebase_cache.hpp"
+    },
+    "include/orient/nnue.hpp": {
+      "size": 1593,
+      "source": "include/orient/nnue.hpp"
+    },
+    "include/orient/search.hpp": {
+      "size": 2394,
+      "source": "include/orient/search.hpp"
+    },
+    "include/orient/tablebases.hpp": {
+      "size": 2378,
+      "source": "include/orient/tablebases.hpp"
+    },
+    "src/chess.cpp": {
+      "size": 24239,
+      "source": "src/chess.cpp"
+    },
+    "src/evaluation.cpp": {
+      "size": 8751,
+      "source": "src/evaluation.cpp"
+    },
+    "src/main.cpp": {
+      "size": 20512,
+      "source": "src/main.cpp"
+    },
+    "src/nnue.cpp": {
+      "size": 6704,
+      "source": "src/nnue.cpp"
+    },
+    "src/search.cpp": {
+      "size": 28183,
+      "source": "src/search.cpp"
+    },
+    "src/tablebases.cpp": {
+      "size": 11903,
+      "source": "src/tablebases.cpp"
+    },
+    "third_party/fathom/FORK.json": {
+      "size": 2040,
+      "source": "third_party/fathom/FORK.json"
+    },
+    "third_party/fathom/LICENSE": {
+      "size": 1149,
+      "source": "third_party/fathom/LICENSE"
+    },
+    "third_party/fathom/ORIENT.md": {
+      "size": 4777,
+      "source": "third_party/fathom/ORIENT.md"
+    },
+    "third_party/fathom/README.md": {
+      "size": 5924,
+      "source": "third_party/fathom/README.md"
+    },
+    "third_party/fathom/UPSTREAM.json": {
+      "size": 976,
+      "source": "third_party/fathom/UPSTREAM.json"
+    },
+    "third_party/fathom/five-piece-catalogue.patch": {
+      "size": 14022,
+      "source": "third_party/fathom/five-piece-catalogue.patch"
+    },
+    "third_party/fathom/mapping-failure.patch": {
+      "size": 750,
+      "source": "third_party/fathom/mapping-failure.patch"
+    },
+    "third_party/fathom/prefix-length.patch": {
+      "size": 2493,
+      "source": "third_party/fathom/prefix-length.patch"
+    },
+    "third_party/fathom/src/orient_tb_diagnostics.h": {
+      "size": 1078,
+      "source": "third_party/fathom/src/orient_tb_diagnostics.h"
+    },
+    "third_party/fathom/src/stdendian.h": {
+      "size": 8925,
+      "source": "third_party/fathom/src/stdendian.h"
+    },
+    "third_party/fathom/src/tbchess.c": {
+      "size": 31292,
+      "source": "third_party/fathom/src/tbchess.c"
+    },
+    "third_party/fathom/src/tbconfig.h": {
+      "size": 5648,
+      "source": "third_party/fathom/src/tbconfig.h"
+    },
+    "third_party/fathom/src/tbprobe.c": {
+      "size": 82200,
+      "source": "third_party/fathom/src/tbprobe.c"
+    },
+    "third_party/fathom/src/tbprobe.h": {
+      "size": 12815,
+      "source": "third_party/fathom/src/tbprobe.h"
+    }
+  },
+  "dataset": {
+    "bytes": 983957920,
+    "files": 290,
+    "manifest": "external/tablebases/syzygy/3-4-5/manifest.json"
+  },
+  "exclusions": [
+    "Private configuration/token/SSH files",
+    "Training data and network weights",
+    "Compiler build trees/object caches",
+    "Bundled Rust toolchain (optional comparator needs Rust1.97+)"
+  ],
+  "portability": "Focused CMake and verification use only extracted paths; historical manifests remain unchanged provenance.",
+  "retained_reader": "orient-016-reader-prefix",
+  "schema_version": 1,
+  "unadopted_experiment": "005 five-piece catalogue"
+}

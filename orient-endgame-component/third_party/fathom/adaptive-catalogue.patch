@@ -1,0 +1,372 @@
+--- a/src/tbprobe.c
++++ b/src/tbprobe.c
+@@ -25,6 +25,7 @@
+ #include <assert.h>
+ #ifdef __cplusplus
+ #include <atomic>
++#include <new>
+ #else
+ #include <stdatomic.h>
+ #endif
+@@ -39,6 +40,13 @@
+ #endif
+ #include "tbprobe.h"
+ 
++#ifndef ORIENT_FATHOM_DYNAMIC_CATALOG
++#define ORIENT_FATHOM_DYNAMIC_CATALOG 0
++#endif
++#if ORIENT_FATHOM_DYNAMIC_CATALOG && defined(__cplusplus) && __cplusplus >= 201703L
++#include <filesystem>
++#endif
++
+ #define TB_PIECES 7
+ #define TB_HASHBITS  (TB_PIECES < 7 ?  11 : 12)
+ #define TB_MAX_PIECE (TB_PIECES < 7 ? 254 : 650)
+@@ -48,6 +56,12 @@
+ // Experiment005: catalogue/discovery specialization; encoding dimensions stay seven.
+ #ifndef ORIENT_FATHOM_FIVE_PIECE_CATALOG
+ #define ORIENT_FATHOM_FIVE_PIECE_CATALOG 0
++#endif
++#ifndef ORIENT_FATHOM_DYNAMIC_CATALOG
++#define ORIENT_FATHOM_DYNAMIC_CATALOG 0
++#endif
++#if ORIENT_FATHOM_DYNAMIC_CATALOG && ORIENT_FATHOM_FIVE_PIECE_CATALOG
++#error "Adaptive and fixed five-piece catalogues are separate experiments"
+ #endif
+ #ifndef ORIENT_FATHOM_DIAGNOSTICS
+ #define ORIENT_FATHOM_DIAGNOSTICS 0
+@@ -642,17 +656,55 @@
+ static struct PieceEntry *pieceEntry;
+ static struct PawnEntry *pawnEntry;
+ static struct TbHashEntry tbHash[1 << TB_HASHBITS];
++#if ORIENT_FATHOM_DYNAMIC_CATALOG
++// Setup-only staging is on tb_init's stack. Probe entries keep the unchanged
++// native layout; the complete original discovery loops still support 3-7 men.
++static unsigned orientTbPieceCapacity, orientTbPawnCapacity;
++static char (*orientTbStagedNames)[16];
++static unsigned orientTbStagedCount, orientTbNeededPiece, orientTbNeededPawn;
++static bool orientTbCollecting, orientTbDynamicFailed;
++#ifdef ORIENT_FATHOM_DYNAMIC_CATALOG_TEST
++static unsigned orientTbStageLimit = TB_MAX_PIECE + TB_MAX_PAWN;
++static bool orientTbForceAllocationFailure;
++static bool orientTbForceListingFailure;
++static unsigned orientTbAllocationFailureAt, orientTbAllocationAttempts;
++static bool orient_tb_fail_catalogue_allocation(void)
++{
++  ++orientTbAllocationAttempts;
++  return orientTbAllocationFailureAt != 0
++      && orientTbAllocationAttempts == orientTbAllocationFailureAt;
++}
++#define ORIENT_TB_FAIL_CATALOGUE_ALLOCATION() orient_tb_fail_catalogue_allocation()
++#else
++#define orientTbStageLimit (TB_MAX_PIECE + TB_MAX_PAWN)
++#define ORIENT_TB_FAIL_CATALOGUE_ALLOCATION() false
++#endif
++#endif
++
+ 
+ #if ORIENT_FATHOM_DIAGNOSTICS
+ void orient_tb_diagnostics_snapshot(struct OrientTbDiagnostics *out)
+ {
+   *out = orientTbDiagnostics;
+   out->piece_count = tbNumPiece; out->pawn_count = tbNumPawn;
++#if ORIENT_FATHOM_DYNAMIC_CATALOG
++  out->piece_capacity = orientTbPieceCapacity;
++  out->pawn_capacity = orientTbPawnCapacity;
++#else
+   out->piece_capacity = ORIENT_TB_MAX_PIECE;
+   out->pawn_capacity = ORIENT_TB_MAX_PAWN;
++#endif
+   // Known mutable reader control/hash storage, not all ELF static/rodata.
+   // Fixed diagnostic ledgers and diagnostic counters are excluded.
+-  out->static_bytes = sizeof(tbHash) + sizeof(pieceEntry) + sizeof(pawnEntry)
++  out->static_bytes =
++#if ORIENT_FATHOM_DYNAMIC_CATALOG
++      sizeof(orientTbPieceCapacity) + sizeof(orientTbPawnCapacity)
++      + sizeof(orientTbStagedNames) + sizeof(orientTbStagedCount)
++      + sizeof(orientTbNeededPiece) + sizeof(orientTbNeededPawn)
++      + sizeof(orientTbCollecting) + sizeof(orientTbDynamicFailed)
++      +
++#endif
++      sizeof(tbHash) + sizeof(pieceEntry) + sizeof(pawnEntry)
+       + sizeof(tbNumPiece) + sizeof(tbNumPawn) + sizeof(numWdl) + sizeof(numDtm)
+       + sizeof(numDtz) + sizeof(initialized) + sizeof(numPaths)
+       + sizeof(pathString) + sizeof(paths) + sizeof(TB_LARGEST)
+@@ -910,8 +962,22 @@
+ #endif
+ static void init_tb(char *str)
+ {
++#if ORIENT_FATHOM_DYNAMIC_CATALOG
++  if (orientTbCollecting) {
++    if (orientTbDynamicFailed || !test_tb(str, tbSuffix[WDL])) return;
++    if (orientTbStagedCount >= orientTbStageLimit) {
++      orientTbDynamicFailed = true;
++      return;
++    }
++    strcpy(orientTbStagedNames[orientTbStagedCount++], str);
++    if (strchr(str, 'P')) ++orientTbNeededPawn;
++    else ++orientTbNeededPiece;
++    return;
++  }
++#else
+   if (!test_tb(str, tbSuffix[WDL]))
+     return;
++#endif
+ 
+   int pcs[16];
+   for (int i = 0; i < 16; i++)
+@@ -932,6 +998,13 @@
+   uint64_t key2 = calc_key_from_pcs(pcs, true);
+ 
+   bool hasPawns = pcs[W_PAWN] || pcs[B_PAWN];
++#if ORIENT_FATHOM_DYNAMIC_CATALOG
++  if (orientTbDynamicFailed || (hasPawns ? (unsigned)tbNumPawn >= orientTbPawnCapacity
++                                        : (unsigned)tbNumPiece >= orientTbPieceCapacity)) {
++    orientTbDynamicFailed = true;
++    return;
++  }
++#endif
+ #if ORIENT_FATHOM_FIVE_PIECE_CATALOG
+   if (orientTbCatalogueFailed || (hasPawns ? (unsigned)tbNumPawn >= ORIENT_TB_PAWN_LIMIT
+                                          : (unsigned)tbNumPiece >= ORIENT_TB_PIECE_LIMIT)) {
+@@ -1015,8 +1088,112 @@
+   }
+ }
+ 
++#if ORIENT_FATHOM_DYNAMIC_CATALOG
++// A complete successful directory listing bounds discovery, without imposing a
++// five-piece limit. If listing is unavailable, retain the original full scan.
++static unsigned orient_tb_discovery_bound(void)
++{
++#ifdef ORIENT_FATHOM_DYNAMIC_CATALOG_TEST
++  if (orientTbForceListingFailure) return TB_PIECES;
++#endif
++#if defined(__cplusplus) && __cplusplus >= 201703L
++  try {
++    unsigned largest = 0;
++    for (int pathIndex = 0; pathIndex < numPaths; ++pathIndex) {
++      std::error_code error;
++      std::filesystem::directory_iterator next(paths[pathIndex], error), end;
++      if (error) return TB_PIECES;
++      while (next != end) {
++        const std::string name = next->path().filename().string();
++        if (name.size() >= 5) {
++          std::string suffix = name.substr(name.size() - 5);
++          // POSIX filesystems can also be case-insensitive. Folding ASCII
++          // names may conservatively overestimate on a case-sensitive mount,
++          // but must never skip a file the unchanged canonical open can find.
++          for (char& c : suffix) if (c >= 'A' && c <= 'Z') c = char(c - 'A' + 'a');
++          if (suffix == ".rtbw") {
++            const std::string material = name.substr(0, name.size() - 5);
++            unsigned kings = 0, separators = 0, pieces = 0;
++            bool valid = true;
++            for (char c : material) {
++              if (c == 'V') c = 'v';
++              else if (c >= 'a' && c <= 'z' && c != 'v') c = char(c - 'a' + 'A');
++              if (c == 'v') { ++separators; continue; }
++              if (!strchr("KQRBNP", c)) { valid = false; break; }
++              ++pieces; if (c == 'K') ++kings;
++            }
++            if (valid && kings == 2 && separators == 1 && pieces >= 3 && pieces <= TB_PIECES
++                && pieces > largest) largest = pieces;
++          }
++        }
++        next.increment(error);
++        if (error) return TB_PIECES;
++      }
++    }
++    return largest;
++  } catch (...) {
++    return TB_PIECES;
++  }
++#else
++  return TB_PIECES;
++#endif
++}
++
++static void orient_tb_release_catalogues(void)
++{
++#if defined(__cplusplus) && (__cplusplus >= 202002L)
++#if ORIENT_FATHOM_DIAGNOSTICS
++  orient_tb_forget_allocation(pieceEntry);
++  orient_tb_forget_allocation(pawnEntry);
++#endif
++  delete[] pieceEntry;
++  delete[] pawnEntry;
++#else
++  ORIENT_TB_FREE(pieceEntry);
++  ORIENT_TB_FREE(pawnEntry);
++#endif
++  pieceEntry = NULL; pawnEntry = NULL;
++  orientTbPieceCapacity = orientTbPawnCapacity = 0;
++}
++
++static bool orient_tb_allocate_catalogues(unsigned pieces, unsigned pawns)
++{
++#ifdef ORIENT_FATHOM_DYNAMIC_CATALOG_TEST
++  orientTbAllocationAttempts = 0;
++  if (orientTbForceAllocationFailure) return false;
++#endif
++  if (pieces == orientTbPieceCapacity && pawns == orientTbPawnCapacity) return true;
++  orient_tb_release_catalogues();
++#if defined(__cplusplus) && (__cplusplus >= 202002L)
++  pieceEntry = pieces && !ORIENT_TB_FAIL_CATALOGUE_ALLOCATION()
++      ? new (std::nothrow) PieceEntry[pieces]() : NULL;
++  pawnEntry = pawns && !ORIENT_TB_FAIL_CATALOGUE_ALLOCATION()
++      ? new (std::nothrow) PawnEntry[pawns]() : NULL;
++#if ORIENT_FATHOM_DIAGNOSTICS
++  if (pieceEntry) orient_tb_record_allocation(pieceEntry, pieces * sizeof(*pieceEntry), ORIENT_TB_CATALOG);
++  if (pawnEntry) orient_tb_record_allocation(pawnEntry, pawns * sizeof(*pawnEntry), ORIENT_TB_CATALOG);
++#endif
++#else
++  pieceEntry = pieces && !ORIENT_TB_FAIL_CATALOGUE_ALLOCATION()
++      ? (struct PieceEntry*)ORIENT_TB_MALLOC(pieces * sizeof(*pieceEntry), ORIENT_TB_CATALOG) : NULL;
++  pawnEntry = pawns && !ORIENT_TB_FAIL_CATALOGUE_ALLOCATION()
++      ? (struct PawnEntry*)ORIENT_TB_MALLOC(pawns * sizeof(*pawnEntry), ORIENT_TB_CATALOG) : NULL;
++#endif
++  if ((pieces && !pieceEntry) || (pawns && !pawnEntry)) {
++    orient_tb_release_catalogues();
++    return false;
++  }
++  orientTbPieceCapacity = pieces; orientTbPawnCapacity = pawns;
++  return true;
++}
++#endif
++
+ bool tb_init(const char *path)
+ {
++#if ORIENT_FATHOM_DYNAMIC_CATALOG
++  char orientTbNames[TB_MAX_PIECE + TB_MAX_PAWN][16];
++  unsigned orientTbDiscoveryBound = TB_PIECES;
++#endif
+   if (!initialized) {
+     init_indices();
+     king_attacks_init();
+@@ -1041,7 +1218,7 @@
+ 
+     pathString = NULL;
+     numWdl = numDtm = numDtz = 0;
+-#if ORIENT_FATHOM_FIVE_PIECE_CATALOG || ORIENT_FATHOM_DIAGNOSTICS
++#if ORIENT_FATHOM_FIVE_PIECE_CATALOG || ORIENT_FATHOM_DIAGNOSTICS || ORIENT_FATHOM_DYNAMIC_CATALOG
+     paths = NULL;
+     numPaths = 0;
+     tbNumPiece = tbNumPawn = 0;
+@@ -1082,6 +1259,12 @@
+   orientTbCatalogueFailed = false;
+ #endif
+ 
++#if ORIENT_FATHOM_DYNAMIC_CATALOG
++  orientTbStagedNames = orientTbNames;
++  orientTbStagedCount = orientTbNeededPiece = orientTbNeededPawn = 0;
++  orientTbDynamicFailed = false;
++  orientTbCollecting = true;
++#else
+   if (!pieceEntry) {
+ #if defined(__cplusplus) && (__cplusplus >= 202002L)
+     /* Fix crash with -std=c++20 by being consistent with BaseEntry initialization:
+@@ -1114,6 +1297,8 @@
+     }
+   }
+ 
++#endif // unchanged fixed-capacity allocation
++
+   for (int i = 0; i < (1 << TB_HASHBITS); i++) {
+     tbHash[i].key = 0;
+     tbHash[i].ptr = NULL;
+@@ -1121,11 +1306,18 @@
+ 
+   char str[16];
+   int i, j, k, l, m;
++#if ORIENT_FATHOM_DYNAMIC_CATALOG
++  orientTbDiscoveryBound = orient_tb_discovery_bound();
++  if (orientTbDiscoveryBound < 3) goto finished;
++#endif
+ 
+   for (i = 0; i < 5; i++) {
+     snprintf(str, 16, "K%cvK", pchr(i));
+     init_tb(str);
+   }
++#if ORIENT_FATHOM_DYNAMIC_CATALOG
++  if (orientTbDiscoveryBound < 4) goto finished;
++#endif
+ 
+   for (i = 0; i < 5; i++)
+     for (j = i; j < 5; j++) {
+@@ -1138,6 +1330,9 @@
+       snprintf(str, 16, "K%c%cvK", pchr(i), pchr(j));
+       init_tb(str);
+     }
++#if ORIENT_FATHOM_DYNAMIC_CATALOG
++  if (orientTbDiscoveryBound < 5) goto finished;
++#endif
+ 
+   for (i = 0; i < 5; i++)
+     for (j = i; j < 5; j++)
+@@ -1166,7 +1361,11 @@
+   goto finished;
+ #endif
+   // 6- and 7-piece TBs make sense only with a 64-bit address space
+-  if (sizeof(size_t) < 8 || TB_PIECES < 6)
++  if (sizeof(size_t) < 8 || TB_PIECES < 6
++#if ORIENT_FATHOM_DYNAMIC_CATALOG
++      || orientTbDiscoveryBound < 6
++#endif
++      )
+     goto finished;
+ 
+   for (i = 0; i < 5; i++)
+@@ -1193,7 +1392,11 @@
+           init_tb(str);
+         }
+ 
+-  if (TB_PIECES < 7)
++  if (TB_PIECES < 7
++#if ORIENT_FATHOM_DYNAMIC_CATALOG
++      || orientTbDiscoveryBound < 7
++#endif
++      )
+     goto finished;
+ 
+   for (i = 0; i < 5; i++)
+@@ -1224,6 +1427,23 @@
+           }
+ 
+ finished:
++#if ORIENT_FATHOM_DYNAMIC_CATALOG
++  orientTbCollecting = false;
++  orientTbStagedNames = NULL;
++  if (!orientTbDynamicFailed &&
++      !orient_tb_allocate_catalogues(orientTbNeededPiece, orientTbNeededPawn))
++    orientTbDynamicFailed = true;
++  if (!orientTbDynamicFailed)
++    for (unsigned n = 0; n < orientTbStagedCount; ++n) init_tb(orientTbNames[n]);
++  if (orientTbDynamicFailed) {
++    tb_free();
++    TB_MaxCardinality = TB_MaxCardinalityDTM = 0;
++    for (unsigned n = 0; n < (1 << TB_HASHBITS); ++n) {
++      tbHash[n].key = 0; tbHash[n].ptr = NULL;
++    }
++    return false;
++  }
++#endif
+   /* TBD - assumes UCI
+   printf("info string Found %d WDL, %d DTM and %d DTZ tablebase files.\n",
+       numWdl, numDtm, numDtz);
+@@ -1240,6 +1460,9 @@
+ void tb_free(void)
+ {
+   tb_init("");
++#if ORIENT_FATHOM_DYNAMIC_CATALOG
++  orient_tb_release_catalogues();
++#else
+ #if defined __cplusplus && __cplusplus >= 202002L
+ #if ORIENT_FATHOM_DIAGNOSTICS
+   orient_tb_forget_allocation(pieceEntry);
+@@ -1253,6 +1476,7 @@
+ #endif
+   pieceEntry = NULL;
+   pawnEntry = NULL;
++#endif
+ }
+ 
+ static const int8_t OffDiag[] = {

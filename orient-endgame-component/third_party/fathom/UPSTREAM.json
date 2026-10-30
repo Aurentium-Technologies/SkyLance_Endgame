@@ -1,0 +1,16 @@
+{
+  "archive_sha256": "8bda9e26518a94badafca9cdb33ba87adeb4ca4ec90713181b4e9dd28a0a0597",
+  "archive_url": "https://api.github.com/repos/jdart1/Fathom/tarball/c9c6fef0dddc05d2e242c183acf5833149ab676d",
+  "commit": "c9c6fef0dddc05d2e242c183acf5833149ab676d",
+  "repository": "https://github.com/jdart1/Fathom",
+  "schema_version": 1,
+  "upstream_files": {
+    "LICENSE": "c8038055839bd02f995cd7d1bba19657720097f5604411a7977ebcb5b4a37759",
+    "README.md": "8a44c2a068f97fb237cea30f8039f4942950668c97b8f37092d1065b26cd074b",
+    "src/stdendian.h": "e5b8187eec89ef83e731ea92be8ca0df4b533d8d21075fc4e2c86b4b00d7b7c3",
+    "src/tbchess.c": "119f19fa8714686798ca7be011e5b234f99c93aec751e9492f2664757d6c029d",
+    "src/tbconfig.h": "69fe1821b471164bd759cf46c486d55b7fa727e348a5ee306b18d19537ac3a03",
+    "src/tbprobe.c": "7ed0cc80626271342bfe413d6c421756b6851f977a064461f5f555e1b598df35",
+    "src/tbprobe.h": "dc7808dc58c2a1af921a612f94041b917dfac94d3215a76a2b2b0c53c94ea561"
+  }
+}

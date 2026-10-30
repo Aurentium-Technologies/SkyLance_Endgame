@@ -1,0 +1,28 @@
+{
+  "brand": "SkyLance",
+  "date": "2026-10-30",
+  "tool": "built-in image_gen",
+  "use_case": "logo-brand",
+  "prompts": [
+    {
+      "asset": "skylance-logo-transparent.png",
+      "mode": "generate",
+      "transparent_background": true,
+      "prompt": "Use case: logo-brand\nAsset type: primary transparent PNG logo for the SkyLance chess engine, for its GitHub README and release branding.\nPrimary request: create one polished original identity lockup for \"SkyLance\". Combine a recognizable, elegant chess knight silhouette with a single ascending lance integrated into its geometry, conveying precision and upward motion. The knight and lance must form one cohesive distinctive symbol, with a simple broad silhouette and deliberate negative space. Strong enough for a small engine avatar.\nStyle/medium: crisp flat graphic logo, vector-like edges in a raster PNG, restrained contemporary typography, professional software-engine branding.\nComposition/framing: wide horizontal lockup, one emblem alongside the wordmark, generous clear space, full composition centered and entirely inside the image. No presentation sheet or repeated variants.\nColor palette: sky-inspired blue emblem with deep ink-blue wordmark, high contrast and clean flat fills.\nText (verbatim): \"SkyLance\" with capital S and L, spelled S-k-y-L-a-n-c-e, exact casing, beautifully kerned custom-feeling sans serif. No other text.\nScene/backdrop: genuinely transparent background with preserved alpha, no background panel.\nConstraints: original mark, clearly readable SkyLance, simple scalable shapes; do not resemble an existing chess engine logo; no watermark, no mockup, no gradients, no shadows, no glow, no 3D, no texture, no board scene, no extra symbols. Output the finished logo only."
+    },
+    {
+      "asset": "skylance-banner.png",
+      "mode": "edit",
+      "reference": "skylance-logo-transparent.png",
+      "transparent_background": false,
+      "prompt": "Use case: logo-brand\nAsset type: SkyLance GitHub repository banner, wide 2:1 composition.\nPrimary request: create a refined repository header for the SkyLance chess engine, using the supplied primary logo as the identity reference.\nInput images: Image 1 is the identity reference. Preserve its recognizable left-facing knight, rising diagonal lance, silhouette, and SkyLance wordmark spelling.\nScene/backdrop: opaque, uniform deep ink-navy background.\nSubject: the same sky-blue chess knight and upward lance emblem paired with a large bright near-white SkyLance wordmark; beneath the wordmark add the small widely spaced descriptor \"CHESS ENGINE\".\nStyle/medium: sophisticated flat graphic software identity, sharp vector-like edges, disciplined spacing, confident minimalism.\nComposition/framing: wide 2:1 banner; one centered horizontal emblem-and-type lockup with generous safe margins on every side. Use a coherent layout, strong readable type and no decorative distractions.\nText (verbatim): \"SkyLance\" and \"CHESS ENGINE\" only. SkyLance is S-k-y-L-a-n-c-e with capital S and L. Retain exact spelling and casing.\nConstraints: repeat the identity faithfully, maximum clarity at README size; opaque background, flat color, no gradients, no glowing edges, no drop shadows, no 3D, no textures, no watermark, no rating or performance claims. Deliver the finished banner only, no mockup, no multiple variants."
+    },
+    {
+      "asset": "skylance-emblem-transparent.png",
+      "mode": "edit",
+      "reference": "skylance-logo-transparent.png",
+      "transparent_background": true,
+      "prompt": "Use case: logo-brand\nAsset type: square transparent emblem PNG for SkyLance chess-engine avatars and icons.\nPrimary request: isolate the exact blue knight-and-rising-lance emblem from the supplied SkyLance logo into a clean square image, removing all typography.\nInput images: Image 1 is the edit target and identity reference. Preserve the same left-facing chess knight silhouette, head, curved neck, cutout details, base, and ascending diagonal lance. Keep the recognizable emblem design rather than redesigning it.\nComposition/framing: single large emblem centered on a square canvas with comfortable clear margins on every side; entire lance tip and knight base visible; equal optical balance; suitable for a small avatar.\nStyle/medium: crisp flat blue graphic, sharp vector-like contours in PNG; clean solid visible foreground.\nScene/backdrop: genuinely transparent with an actual alpha channel, clean antialiased edge, fully solid visible mark.\nConstraints: emblem only, no letters, no words, no border, no frame, no background panel, no glow, no shadow, no gradients, no 3D, no mockup, no watermark. Preserve the blue hue and identity."
+    }
+  ]
+}

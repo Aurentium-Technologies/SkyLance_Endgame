@@ -1,0 +1,48 @@
+{
+  "changes": [
+    {
+      "fork_sha256": "a4f3e7a23b295ca01edd15b30652310f79c286b9d9dcef0bba2363d89c82c7eb",
+      "modifications": [
+        "Propagate memory-mapping failures and release resources exactly once.",
+        "Optional exact eight-bit Huffman length hints, 256 bytes per PairsData; ambiguous intervals retain scalar decoding.",
+        "Test-only existing 32-bit decoder selection for portability checks.",
+        "Optional five-piece material catalogue/discovery specialization with 84 pawnless and 61 pawn entries; capacity failure rolls back initialization. Experiment 005 remains disabled because its performance regression gate failed.",
+        "Compile-time diagnostic allocation/discovery/mapping counters, absent from normal builds; explicit reader teardown accounting without changing adapter lifetime.",
+        "Adaptive catalogue allocation using actual discovered material counts and conservative directory bounds; full native 3-7 discovery retained on listing failure or larger files. Experiment007 passed unchanged memory/startup/query/search gates and is retained in CMake defaults.",
+        "Clear material hash pointers, discovery counts and all cardinalities before empty-path initialization returns; direct probes after disabling/freeing the reader cannot access released catalogues. See teardown-state.patch, applied after adaptive-catalogue.patch.",
+        "Skip the terminal NUL when counting path-list directories, preventing out-of-bounds reads for trailing separators or separator-only lists. See path-list.patch, applied after teardown-state.patch."
+      ],
+      "path": "src/tbprobe.c",
+      "upstream_sha256": "7ed0cc80626271342bfe413d6c421756b6851f977a064461f5f555e1b598df35"
+    },
+    {
+      "fork_sha256": "acc6353a6cba690a1450a0a370fb1c290df57237ef342df665a9a413fe2bee80",
+      "modifications": [
+        "Diagnostic-only snapshot declarations for requested payload allocations, discovery, mappings and known control/hash static storage; no UCI or production adapter API change."
+      ],
+      "path": "src/orient_tb_diagnostics.h",
+      "upstream_sha256": null
+    }
+  ],
+  "default_build_options": {
+    "ORIENT_FATHOM_DIAGNOSTICS": false,
+    "ORIENT_FATHOM_DYNAMIC_CATALOG": true,
+    "ORIENT_FATHOM_FIVE_PIECE_CATALOG": false,
+    "ORIENT_FATHOM_PREFIX_LENGTH": true
+  },
+  "experiments": {
+    "005": {
+      "reason": "Memory/startup targets pass, but measured query/search regressions exceed the five-percent gate.",
+      "report": "../../docs/endgame-reader-memory-005.md",
+      "status": "not_adopted"
+    },
+    "007": {
+      "reason": "Exact outcomes/order preserved; memory/startup targets and all five-percent query/search regression gates passed in fixed acceptance002.",
+      "report": "../../docs/endgame-improvements-007.md",
+      "status": "adopted"
+    }
+  },
+  "purpose": "Maintain exact native tablebase queries with mapping recovery, prefix-length acceleration and accepted adaptive material metadata; preserve rejected experiments disabled.",
+  "schema_version": 1,
+  "upstream_commit": "c9c6fef0dddc05d2e242c183acf5833149ab676d"
+}

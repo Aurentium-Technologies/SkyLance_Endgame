@@ -1,0 +1,401 @@
+--- a/src/tbprobe.c
++++ b/src/tbprobe.c
+@@ -44,6 +44,108 @@
+ #define TB_MAX_PIECE (TB_PIECES < 7 ? 254 : 650)
+ #define TB_MAX_PAWN  (TB_PIECES < 7 ? 256 : 861)
+ #define TB_MAX_SYMS  4096
++
++// Experiment005: catalogue/discovery specialization; encoding dimensions stay seven.
++#ifndef ORIENT_FATHOM_FIVE_PIECE_CATALOG
++#define ORIENT_FATHOM_FIVE_PIECE_CATALOG 0
++#endif
++#ifndef ORIENT_FATHOM_DIAGNOSTICS
++#define ORIENT_FATHOM_DIAGNOSTICS 0
++#endif
++#if ORIENT_FATHOM_FIVE_PIECE_CATALOG
++#define ORIENT_TB_MAX_PIECE 84
++#define ORIENT_TB_MAX_PAWN 61
++#else
++#define ORIENT_TB_MAX_PIECE TB_MAX_PIECE
++#define ORIENT_TB_MAX_PAWN TB_MAX_PAWN
++#endif
++#if ORIENT_FATHOM_DIAGNOSTICS
++#include "orient_tb_diagnostics.h"
++// Fixed diagnostic bookkeeping is deliberately excluded from requested reader
++// payload. Diagnostic calls are serialized by the harness/Orient adapter.
++struct OrientTbAllocationRecord { void *pointer; size_t size; unsigned category; };
++struct OrientTbMappingRecord { void *pointer; size_t size; };
++static struct OrientTbAllocationRecord orientTbAllocations[32768];
++static struct OrientTbMappingRecord orientTbMappings[8192];
++static struct OrientTbDiagnostics orientTbDiagnostics;
++static void orient_tb_record_allocation(void *pointer, size_t size, unsigned category)
++{
++  if (!pointer) return;
++  for (size_t i = 0; i < sizeof(orientTbAllocations) / sizeof(*orientTbAllocations); ++i)
++    if (!orientTbAllocations[i].pointer) {
++      orientTbAllocations[i].pointer = pointer;
++      orientTbAllocations[i].size = size;
++      orientTbAllocations[i].category = category;
++      struct OrientTbAllocationStats *s = &orientTbDiagnostics.allocations[category];
++      s->live_bytes += size;
++      if (s->live_bytes > s->peak_bytes) s->peak_bytes = s->live_bytes;
++      ++s->allocations;
++      return;
++    }
++  fprintf(stderr, "Fathom diagnostic allocation ledger exhausted\n");
++  abort();
++}
++static void orient_tb_forget_allocation(void *pointer)
++{
++  if (!pointer) return;
++  for (size_t i = 0; i < sizeof(orientTbAllocations) / sizeof(*orientTbAllocations); ++i)
++    if (orientTbAllocations[i].pointer == pointer) {
++      struct OrientTbAllocationStats *s = &orientTbDiagnostics.allocations[orientTbAllocations[i].category];
++      assert(s->live_bytes >= orientTbAllocations[i].size);
++      s->live_bytes -= orientTbAllocations[i].size;
++      ++s->frees;
++      orientTbAllocations[i].pointer = NULL;
++      return;
++    }
++  fprintf(stderr, "Fathom diagnostic free of untracked allocation\n");
++  abort();
++}
++static void *orient_tb_malloc(size_t size, unsigned category)
++{
++  void *pointer = malloc(size);
++  orient_tb_record_allocation(pointer, size, category);
++  return pointer;
++}
++static void orient_tb_free(void *pointer)
++{
++  orient_tb_forget_allocation(pointer);
++  free(pointer);
++}
++static void orient_tb_record_mapping(void *pointer, size_t size)
++{
++  if (!pointer) return;
++  for (size_t i = 0; i < sizeof(orientTbMappings) / sizeof(*orientTbMappings); ++i)
++    if (!orientTbMappings[i].pointer) {
++      orientTbMappings[i].pointer = pointer; orientTbMappings[i].size = size;
++      ++orientTbDiagnostics.map_calls;
++      orientTbDiagnostics.mapped_bytes += size;
++      if (orientTbDiagnostics.mapped_bytes > orientTbDiagnostics.peak_mapped_bytes)
++        orientTbDiagnostics.peak_mapped_bytes = orientTbDiagnostics.mapped_bytes;
++      return;
++    }
++  fprintf(stderr, "Fathom diagnostic mapping ledger exhausted\n");
++  abort();
++}
++static void orient_tb_forget_mapping(void *pointer)
++{
++  if (!pointer) return;
++  for (size_t i = 0; i < sizeof(orientTbMappings) / sizeof(*orientTbMappings); ++i)
++    if (orientTbMappings[i].pointer == pointer) {
++      assert(orientTbDiagnostics.mapped_bytes >= orientTbMappings[i].size);
++      orientTbDiagnostics.mapped_bytes -= orientTbMappings[i].size;
++      ++orientTbDiagnostics.unmap_calls;
++      orientTbMappings[i].pointer = NULL;
++      return;
++    }
++  fprintf(stderr, "Fathom diagnostic unmap of untracked mapping\n");
++  abort();
++}
++#define ORIENT_TB_MALLOC(size, category) orient_tb_malloc((size), (category))
++#define ORIENT_TB_FREE(pointer) orient_tb_free(pointer)
++#else
++#define ORIENT_TB_MALLOC(size, category) malloc(size)
++#define ORIENT_TB_FREE(pointer) free(pointer)
++#endif
+ 
+ #ifndef _WIN32
+ #include <fcntl.h>
+@@ -319,8 +421,8 @@
+   char *file;
+ 
+   for (i = 0; i < numPaths; i++) {
+-    file = (char*)malloc(strlen(paths[i]) + strlen(str) +
+-                         strlen(suffix) + 2);
++    file = (char*)ORIENT_TB_MALLOC(strlen(paths[i]) + strlen(str) +
++                         strlen(suffix) + 2, ORIENT_TB_PATHS);
+     strcpy(file, paths[i]);
+ #ifdef _WIN32
+     strcat(file,"\\");
+@@ -346,7 +448,12 @@
+ 			  OPEN_EXISTING, FILE_FLAG_RANDOM_ACCESS, NULL);
+ #endif
+ #endif
+-    free(file);
++#if ORIENT_FATHOM_DIAGNOSTICS
++    ++orientTbDiagnostics.open_attempts;
++    if (fd != FD_ERR) ++orientTbDiagnostics.open_successes;
++    else ++orientTbDiagnostics.open_failures;
++#endif
++    ORIENT_TB_FREE(file);
+     if (fd != FD_ERR) {
+       return fd;
+     }
+@@ -400,6 +507,13 @@
+     CloseHandle(map);
+   }
+ #endif
++#if ORIENT_FATHOM_DIAGNOSTICS
++#ifndef _WIN32
++  orient_tb_record_mapping(data, (size_t)statbuf.st_size);
++#else
++  orient_tb_record_mapping(data, ((uint64_t)size_high << 32) | size_low);
++#endif
++#endif
+   return data;
+ }
+ 
+@@ -410,6 +524,9 @@
+   if (munmap(data, size) != 0) {
+       perror("munmap");
+   }
++#if ORIENT_FATHOM_DIAGNOSTICS
++  else orient_tb_forget_mapping(data);
++#endif
+ }
+ #else
+ static void unmap_file(void *data, map_t mapping)
+@@ -418,6 +535,9 @@
+   if (!UnmapViewOfFile(data)) {
+ 	  fprintf(stderr, "unmap failed, error code %lu\n", GetLastError());
+   }
++#if ORIENT_FATHOM_DIAGNOSTICS
++  else orient_tb_forget_mapping(data);
++#endif
+   if (!CloseHandle((HANDLE)mapping)) {
+ 	  fprintf(stderr, "CloseHandle failed, error code %lu\n", GetLastError());
+   }
+@@ -522,6 +642,26 @@
+ static struct PieceEntry *pieceEntry;
+ static struct PawnEntry *pawnEntry;
+ static struct TbHashEntry tbHash[1 << TB_HASHBITS];
++
++#if ORIENT_FATHOM_DIAGNOSTICS
++void orient_tb_diagnostics_snapshot(struct OrientTbDiagnostics *out)
++{
++  *out = orientTbDiagnostics;
++  out->piece_count = tbNumPiece; out->pawn_count = tbNumPawn;
++  out->piece_capacity = ORIENT_TB_MAX_PIECE;
++  out->pawn_capacity = ORIENT_TB_MAX_PAWN;
++  // Known mutable reader control/hash storage, not all ELF static/rodata.
++  // Fixed diagnostic ledgers and diagnostic counters are excluded.
++  out->static_bytes = sizeof(tbHash) + sizeof(pieceEntry) + sizeof(pawnEntry)
++      + sizeof(tbNumPiece) + sizeof(tbNumPawn) + sizeof(numWdl) + sizeof(numDtm)
++      + sizeof(numDtz) + sizeof(initialized) + sizeof(numPaths)
++      + sizeof(pathString) + sizeof(paths) + sizeof(TB_LARGEST)
++      + sizeof(TB_MaxCardinality) + sizeof(TB_MaxCardinalityDTM);
++#ifndef TB_NO_THREADS
++  out->static_bytes += sizeof(tbMutex);
++#endif
++}
++#endif
+ 
+ static void init_indices(void);
+ 
+@@ -756,6 +896,18 @@
+ #define pchr(i) piece_to_char[QUEEN - (i)]
+ #define Swap(a,b) {int tmp=a;a=b;b=tmp;}
+ 
++#if ORIENT_FATHOM_FIVE_PIECE_CATALOG
++static bool orientTbCatalogueFailed = false;
++#ifdef ORIENT_FATHOM_CATALOG_TEST
++static unsigned orientTbPieceLimit = ORIENT_TB_MAX_PIECE;
++static unsigned orientTbPawnLimit = ORIENT_TB_MAX_PAWN;
++#define ORIENT_TB_PIECE_LIMIT orientTbPieceLimit
++#define ORIENT_TB_PAWN_LIMIT orientTbPawnLimit
++#else
++#define ORIENT_TB_PIECE_LIMIT ORIENT_TB_MAX_PIECE
++#define ORIENT_TB_PAWN_LIMIT ORIENT_TB_MAX_PAWN
++#endif
++#endif
+ static void init_tb(char *str)
+ {
+   if (!test_tb(str, tbSuffix[WDL]))
+@@ -780,6 +932,13 @@
+   uint64_t key2 = calc_key_from_pcs(pcs, true);
+ 
+   bool hasPawns = pcs[W_PAWN] || pcs[B_PAWN];
++#if ORIENT_FATHOM_FIVE_PIECE_CATALOG
++  if (orientTbCatalogueFailed || (hasPawns ? (unsigned)tbNumPawn >= ORIENT_TB_PAWN_LIMIT
++                                         : (unsigned)tbNumPiece >= ORIENT_TB_PIECE_LIMIT)) {
++    orientTbCatalogueFailed = true;
++    return;
++  }
++#endif
+ 
+   struct BaseEntry *be = hasPawns ? &pawnEntry[tbNumPawn++].be
+                                   : &pieceEntry[tbNumPiece++].be;
+@@ -847,9 +1006,9 @@
+       int num = num_tables(be, type);
+       struct EncInfo *ei = first_ei(be, type);
+       for (int t = 0; t < num; t++) {
+-        free(ei[t].precomp);
++        ORIENT_TB_FREE(ei[t].precomp);
+         if (type != DTZ)
+-          free(ei[num + t].precomp);
++          ORIENT_TB_FREE(ei[num + t].precomp);
+       }
+       atomic_store_explicit(&be->ready[type], false, memory_order_relaxed);
+     }
+@@ -870,8 +1029,8 @@
+ 
+   // if pathString is set, we need to clean up first.
+   if (pathString) {
+-    free(pathString);
+-    free(paths);
++    ORIENT_TB_FREE(pathString);
++    ORIENT_TB_FREE(paths);
+ 
+     for (int i = 0; i < tbNumPiece; i++)
+       free_tb_entry((struct BaseEntry *)&pieceEntry[i]);
+@@ -882,6 +1041,11 @@
+ 
+     pathString = NULL;
+     numWdl = numDtm = numDtz = 0;
++#if ORIENT_FATHOM_FIVE_PIECE_CATALOG || ORIENT_FATHOM_DIAGNOSTICS
++    paths = NULL;
++    numPaths = 0;
++    tbNumPiece = tbNumPawn = 0;
++#endif
+   }
+ 
+   TB_LARGEST = 0;
+@@ -892,7 +1056,7 @@
+     return true;
+   }
+ 
+-  pathString = (char*)malloc(strlen(p) + 1);
++  pathString = (char*)ORIENT_TB_MALLOC(strlen(p) + 1, ORIENT_TB_PATHS);
+   strcpy(pathString, p);
+   numPaths = 0;
+   for (int i = 0;; i++) {
+@@ -903,7 +1067,7 @@
+     if (!pathString[i]) break;
+     pathString[i] = 0;
+   }
+-  paths = (char**)malloc(numPaths * sizeof(*paths));
++  paths = (char**)ORIENT_TB_MALLOC(numPaths * sizeof(*paths), ORIENT_TB_PATHS);
+   for (int i = 0, j = 0; i < numPaths; i++) {
+     while (!pathString[j]) j++;
+     paths[i] = &pathString[j];
+@@ -914,6 +1078,9 @@
+ 
+   tbNumPiece = tbNumPawn = 0;
+   TB_MaxCardinality = TB_MaxCardinalityDTM = 0;
++#if ORIENT_FATHOM_FIVE_PIECE_CATALOG
++  orientTbCatalogueFailed = false;
++#endif
+ 
+   if (!pieceEntry) {
+ #if defined(__cplusplus) && (__cplusplus >= 202002L)
+@@ -929,11 +1096,17 @@
+         which is better library behavior than just calling exit.
+      */
+ 
+-    pieceEntry = new PieceEntry[TB_MAX_PIECE]();
+-    pawnEntry = new PawnEntry[TB_MAX_PAWN]();
+-#else
+-    pieceEntry = (struct PieceEntry*)malloc(TB_MAX_PIECE * sizeof(*pieceEntry));
+-    pawnEntry = (struct PawnEntry*)malloc(TB_MAX_PAWN * sizeof(*pawnEntry));
++    pieceEntry = new PieceEntry[ORIENT_TB_MAX_PIECE]();
++#if ORIENT_FATHOM_DIAGNOSTICS
++    orient_tb_record_allocation(pieceEntry, ORIENT_TB_MAX_PIECE * sizeof(*pieceEntry), ORIENT_TB_CATALOG);
++#endif
++    pawnEntry = new PawnEntry[ORIENT_TB_MAX_PAWN]();
++#if ORIENT_FATHOM_DIAGNOSTICS
++    orient_tb_record_allocation(pawnEntry, ORIENT_TB_MAX_PAWN * sizeof(*pawnEntry), ORIENT_TB_CATALOG);
++#endif
++#else
++    pieceEntry = (struct PieceEntry*)ORIENT_TB_MALLOC(ORIENT_TB_MAX_PIECE * sizeof(*pieceEntry), ORIENT_TB_CATALOG);
++    pawnEntry = (struct PawnEntry*)ORIENT_TB_MALLOC(ORIENT_TB_MAX_PAWN * sizeof(*pawnEntry), ORIENT_TB_CATALOG);
+ #endif
+     if (!pieceEntry || !pawnEntry) {
+       fprintf(stderr, "Out of memory.\n");
+@@ -980,6 +1153,18 @@
+         init_tb(str);
+       }
+ 
++  // Five-piece mode changes only discovery/capacity, not encoding dimensions.
++#if ORIENT_FATHOM_FIVE_PIECE_CATALOG
++  if (orientTbCatalogueFailed) {
++    tb_free();
++    TB_MaxCardinality = TB_MaxCardinalityDTM = 0;
++    for (int index = 0; index < (1 << TB_HASHBITS); ++index) {
++      tbHash[index].key = 0; tbHash[index].ptr = NULL;
++    }
++    return false;
++  }
++  goto finished;
++#endif
+   // 6- and 7-piece TBs make sense only with a 64-bit address space
+   if (sizeof(size_t) < 8 || TB_PIECES < 6)
+     goto finished;
+@@ -1056,11 +1241,15 @@
+ {
+   tb_init("");
+ #if defined __cplusplus && __cplusplus >= 202002L
++#if ORIENT_FATHOM_DIAGNOSTICS
++  orient_tb_forget_allocation(pieceEntry);
++  orient_tb_forget_allocation(pawnEntry);
++#endif
+   delete[] pieceEntry;
+   delete[] pawnEntry;
+ #else
+-  free(pieceEntry);
+-  free(pawnEntry);
++  ORIENT_TB_FREE(pieceEntry);
++  ORIENT_TB_FREE(pawnEntry);
+ #endif
+   pieceEntry = NULL;
+   pawnEntry = NULL;
+@@ -1514,7 +1703,7 @@
+ 
+   *flags = data[0];
+   if (data[0] & 0x80) {
+-    d = (struct PairsData*)malloc(sizeof(struct PairsData));
++    d = (struct PairsData*)ORIENT_TB_MALLOC(sizeof(struct PairsData), ORIENT_TB_PAIRS);
+     d->idxBits = 0;
+     d->constValue[0] = type == WDL ? data[1] : 0;
+     d->constValue[1] = 0;
+@@ -1531,7 +1720,7 @@
+   int minLen = data[9];
+   int h = maxLen - minLen + 1;
+   uint32_t numSyms = (uint32_t)read_le_u16(data + 10 + 2 * h);
+-  d = (struct PairsData*)malloc(sizeof(struct PairsData) + h * sizeof(uint64_t) + numSyms);
++  d = (struct PairsData*)ORIENT_TB_MALLOC(sizeof(struct PairsData) + h * sizeof(uint64_t) + numSyms, ORIENT_TB_PAIRS);
+   d->blockSize = blockSize;
+   d->idxBits = idxBits;
+   d->offset = (uint16_t *)(&data[10]);
+--- /dev/null
++++ b/src/orient_tb_diagnostics.h
+@@ -0,0 +1,27 @@
++/* Diagnostic-only reader accounting; not an engine/UCI interface. */
++#ifndef ORIENT_TB_DIAGNOSTICS_H
++#define ORIENT_TB_DIAGNOSTICS_H
++#include <stdint.h>
++#ifdef __cplusplus
++extern "C" {
++#endif
++enum { ORIENT_TB_CATALOG = 0, ORIENT_TB_PATHS = 1, ORIENT_TB_PAIRS = 2 };
++struct OrientTbAllocationStats {
++  uint64_t live_bytes, peak_bytes, allocations, frees;
++};
++struct OrientTbDiagnostics {
++  struct OrientTbAllocationStats allocations[3];
++  uint64_t open_attempts, open_successes, open_failures;
++  uint64_t map_calls, unmap_calls, mapped_bytes, peak_mapped_bytes;
++  // Known mutable control/hash storage only. Excludes diagnostic ledgers and
++  // read-only encoding/attack tables; use ELF sections for whole-binary totals.
++  uint64_t static_bytes;
++  unsigned piece_count, pawn_count, piece_capacity, pawn_capacity;
++};
++// Available only in an ORIENT_FATHOM_DIAGNOSTICS build. Caller serializes with
++// initialization/probing/teardown; no locks or counters enter normal builds.
++void orient_tb_diagnostics_snapshot(struct OrientTbDiagnostics *out);
++#ifdef __cplusplus
++}
++#endif
++#endif
