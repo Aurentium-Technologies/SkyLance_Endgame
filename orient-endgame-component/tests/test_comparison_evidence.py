@@ -28,7 +28,9 @@ class ComparisonEvidenceGuards(unittest.TestCase):
 
     def test_relative_and_original_paths_resolve_only_verified_members(self):
         with tempfile.TemporaryDirectory() as temporary:
-            root = Path(temporary); component = root / "orient-endgame-component"
+            # macOS temporary paths may use /var while the canonical root is
+            # /private/var; compare canonical paths just as the verifier does.
+            root = Path(temporary).resolve(); component = root / "orient-endgame-component"
             component.mkdir(); (component / "result.json").write_text("{}")
             evidence = Evidence(root, {"original_component_root": "/original/component",
                                        "files": [{"path": "orient-endgame-component/result.json"}]})
