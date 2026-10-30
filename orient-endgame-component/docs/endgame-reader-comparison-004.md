@@ -1,5 +1,8 @@
 # Orient 016 versus shakmaty-syzygy: comparison 004
 
+This historical report names supporting files from the wider local research archive. Available public records and separate downloads are listed in the [evidence index](../../evidence/README.md); local-only paths below are not GitHub download links.
+
+
 Completed 28 October 2026, New Zealand date. On this machine and these warm-cache native query workloads, **Orient 016 is faster than pinned shakmaty-syzygy** with exact common-domain results. The primary mmap comparison gives Orient **1.55–1.67× WDL throughput, 1.67–2.02× DTZ throughput and 1.58–2.00× complete-root throughput** across the two corpora. Each range describes the two five-pair geometric means, not a confidence interval. Shakmaty initializes faster.
 
 These are query-stack timings, including implementation-specific board, move generation, validation and wrapper work. They do not isolate decoder speed, measure complete Orient searches, establish a portable fastest reader, or demonstrate Elo gain. No reader replacement or new engine candidate is adopted.
@@ -13,7 +16,7 @@ These are query-stack timings, including implementation-specific board, move gen
 
 Raw WDL uses Orient’s actual adapter versus `probe_wdl_after_zeroing`, with the same zero-halfmove eligibility envelope. Single DTZ uses a measurement-only shim into Fathom’s existing internal primitive versus Rust’s public `probe_dtz`; it is not a new production API. One Fathom implementation is linked. Both classify mate/stalemate before primitive DTZ timing.
 
-Complete roots use Orient’s actual root adapter, including native recommendation and validation work, versus a Rust envelope that probes the root and **every legal child** with matching Fathom DTZ/clock conventions. Native Rust `best_move` does less work and returns child DTZ, so it is diagnostic only. Both time legal generation, adjudication, UCI normalization and sorting. C++ adds another normalized vector; Rust uses fixed UCI fields. See the [independent harness audit](../artifacts/investigations/tablebases-004/cpp-harness-audit.md).
+Complete roots use Orient’s actual root adapter, including native recommendation and validation work, versus a Rust envelope that probes the root and **every legal child** with matching Fathom DTZ/clock conventions. Native Rust `best_move` does less work and returns child DTZ, so it is diagnostic only. Both time legal generation, adjudication, UCI normalization and sorting. C++ adds another normalized vector; Rust uses fixed UCI fields. See the independent harness audit (local archive: `../artifacts/investigations/tablebases-004/cpp-harness-audit.md`).
 
 ## Correctness and the input-domain discovery
 
@@ -84,8 +87,8 @@ The evidence supports retaining Orient 016’s current reader for the next exper
 
 ## Reproduction and evidence
 
-- [Frozen measurement protocol](../artifacts/investigations/tablebases-004/measurement-protocol.md) and [reproduction steps](../artifacts/investigations/tablebases-004/reproduction.md).
-- [Performance configuration](../artifacts/investigations/tablebases-004/performance-config.json) and [all trials/results](../artifacts/investigations/tablebases-004/performance/result.json). See the [independent saved-result audit](../artifacts/investigations/tablebases-004/performance-audit.md).
-- [Passed strict comparison](../artifacts/investigations/tablebases-004/correctness-shared/result.json), [typed audit](../artifacts/investigations/tablebases-004/typed-values-audit.json), and [independent semantics notes](../artifacts/investigations/tablebases-004/semantics-notes.md).
-- [Original parser differences](../artifacts/investigations/tablebases-004/correctness/differences.json) and [selection provenance](../artifacts/investigations/tablebases-004/fixture-provenance.json).
-- [Reader pin](../artifacts/investigations/tablebases-004/shakmaty-pin.json), [toolchain pin](../artifacts/investigations/tablebases-004/toolchain-pin.json), [builds](../artifacts/investigations/tablebases-004/harness-builds.json), [preservation checks](../artifacts/investigations/tablebases-004/preservation.json), and [test log](../artifacts/investigations/tablebases-004/python-tests.log).
+- Frozen measurement protocol (local archive: `../artifacts/investigations/tablebases-004/measurement-protocol.md`) and reproduction steps (local archive: `../artifacts/investigations/tablebases-004/reproduction.md`).
+- Performance configuration (local archive: `../artifacts/investigations/tablebases-004/performance-config.json`) and all trials/results (local archive: `../artifacts/investigations/tablebases-004/performance/result.json`). See the independent saved-result audit (local archive: `../artifacts/investigations/tablebases-004/performance-audit.md`).
+- Passed strict comparison (local archive: `../artifacts/investigations/tablebases-004/correctness-shared/result.json`), typed audit (local archive: `../artifacts/investigations/tablebases-004/typed-values-audit.json`), and independent semantics notes (local archive: `../artifacts/investigations/tablebases-004/semantics-notes.md`).
+- Original parser differences (local archive: `../artifacts/investigations/tablebases-004/correctness/differences.json`) and selection provenance (local archive: `../artifacts/investigations/tablebases-004/fixture-provenance.json`).
+- Reader pin (local archive: `../artifacts/investigations/tablebases-004/shakmaty-pin.json`), toolchain pin (local archive: `../artifacts/investigations/tablebases-004/toolchain-pin.json`), builds (local archive: `../artifacts/investigations/tablebases-004/harness-builds.json`), preservation checks (local archive: `../artifacts/investigations/tablebases-004/preservation.json`), and test log (local archive: `../artifacts/investigations/tablebases-004/python-tests.log`).

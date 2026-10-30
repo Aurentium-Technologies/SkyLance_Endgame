@@ -1,5 +1,8 @@
 # Five-piece endgame integration — 27 October 2026
 
+This historical report names supporting files from the wider local research archive. Available public records and separate downloads are listed in the [evidence index](../../evidence/README.md); local-only paths below are not GitHub download links.
+
+
 Orient now supports the complete three-, four- and five-piece Syzygy collection
 through an attributed local Fathom fork. The owner explicitly approved shared
 solved-position data and reader infrastructure while retaining Orient's own
@@ -69,10 +72,10 @@ clock overhead. The bridge suite contains 39 cases; downloader tests contain 7.
 
 Evidence under `artifacts/investigations/tablebases-001/`:
 
-- [Complete dataset audit](../artifacts/investigations/tablebases-001/dataset-verification.json).
-- [Upstream differential and output hashes](../artifacts/investigations/tablebases-001/comparison/result.json).
-- [Four-preset verification](../artifacts/investigations/tablebases-001/verification.json), build/test logs and [final bridge checks](../artifacts/investigations/tablebases-001/final-bridge-checks.json).
-- [Disabled-search regression](../artifacts/investigations/tablebases-001/disabled-after.json), with the preserved `disabled-before.json`.
+- Complete dataset audit (local archive: `../artifacts/investigations/tablebases-001/dataset-verification.json`).
+- Upstream differential and output hashes (local archive: `../artifacts/investigations/tablebases-001/comparison/result.json`).
+- Four-preset verification (local archive: `../artifacts/investigations/tablebases-001/verification.json`), build/test logs and final bridge checks (local archive: `../artifacts/investigations/tablebases-001/final-bridge-checks.json`).
+- Disabled-search regression (local archive: `../artifacts/investigations/tablebases-001/disabled-after.json`), with the preserved `disabled-before.json`.
 
 ## Cache experiment and decision
 
@@ -99,18 +102,18 @@ adoption gate. **Select 0 MiB.** Faster repeated raw lookups alone do not justif
 enabling the cache. Measurements vary between trials and establish no general
 speed or playing-strength gain.
 
-[Raw trials, memory readings and gate decision](../artifacts/investigations/tablebases-001/cache/result.json)
+Raw trials, memory readings and gate decision (local archive: `../artifacts/investigations/tablebases-001/cache/result.json`)
 also preserve the executable and fixture hashes. The reported process RSS is
 Linux whole-process memory, including mapped table pages and search storage;
 the explicit cache allocation above is the bounded additional value cache.
 
 ## Frozen delivery and limits
 
-The new [015 candidate checkpoint](../artifacts/checkpoints/orient-015-syzygy/checkpoint.json)
+The new 015 candidate checkpoint (local archive: `../artifacts/checkpoints/orient-015-syzygy/checkpoint.json`)
 pins the engine, source archive including Fathom/licence, reader revision,
 dataset manifest and effective five-piece/zero-cache settings. The separately
 ignored `config/lichess.endgame.local.json` profile targets it. Its
-[offline preflight](../artifacts/investigations/tablebases-001/offline-preflight.json)
+offline preflight (local archive: `../artifacts/investigations/tablebases-001/offline-preflight.json`)
 verifies a legal KQvK move with nonzero `tbhits`, followed by the existing bounded
 start-position search. No token, account API or live game is used by this check.
 Existing frozen candidates and the previous live profile remain recoverable.

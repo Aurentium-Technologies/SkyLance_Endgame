@@ -1,0 +1,419 @@
+{
+  "files": [
+    {
+      "path": "CMakeLists.txt",
+      "sha256": "01e228aead45741f5f20bc76af74f8a77810c81a9e9938908293e887bd5c619d",
+      "size": 10245
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "27bd3b20229f745a3e71e58dc385412ed062e4398884945f4f4d7b2f0fe5920c",
+      "size": 1076
+    },
+    {
+      "path": "README.md",
+      "sha256": "b18323b31144ff27b610ff6ef5f11e043dd2a6553193a0ebea0cd2b93fdc857e",
+      "size": 752
+    },
+    {
+      "path": "include/orient/chess.hpp",
+      "sha256": "f30360bfd2fe360b1a9fbcc514097e557e323d34a189c9323ce67b1e70d65404",
+      "size": 4444
+    },
+    {
+      "path": "include/orient/detail/tablebase_cache.hpp",
+      "sha256": "1c21dad739a52098533658d97c9d9ac313039e268470c49a2e3380317b34fca8",
+      "size": 3627
+    },
+    {
+      "path": "include/orient/nnue.hpp",
+      "sha256": "0165db4fa64c643f25969799acee6af50dbb7d739fec7ed53c4696e18d46261d",
+      "size": 1593
+    },
+    {
+      "path": "include/orient/search.hpp",
+      "sha256": "754ad71f5081e3e5e50d9e7a78e18b5d0f6b67d2879e119752ce1062bc1c051e",
+      "size": 2394
+    },
+    {
+      "path": "include/orient/tablebases.hpp",
+      "sha256": "283f1749b3cf5d1d1949ef223a0abbc900b7f254869234e163bb579080b07f55",
+      "size": 2378
+    },
+    {
+      "path": "src/chess.cpp",
+      "sha256": "bb762d411fcc7a194fedee05a7dc1af3a4535c5bec6bb837075f1d12e0c20d11",
+      "size": 24239
+    },
+    {
+      "path": "src/evaluation.cpp",
+      "sha256": "05667f08763df06b87262cc37e3acb6bdfb2262f25cb0fa4e41f5a65b7d9db4c",
+      "size": 8751
+    },
+    {
+      "path": "src/main.cpp",
+      "sha256": "bb296f5a54f5578f0c161e470aff6a0afc6a863d361ccaaeae134611531ee237",
+      "size": 20512
+    },
+    {
+      "path": "src/nnue.cpp",
+      "sha256": "f73649e454b5f843379f6c7dc7117ff1070f01b3dc2893dbfeae67dae49c1055",
+      "size": 6704
+    },
+    {
+      "path": "src/search.cpp",
+      "sha256": "1a856be4563c364d2ba46e24e7a0d9c2f5df0592fafe016379e795c4913b33ac",
+      "size": 28183
+    },
+    {
+      "path": "src/tablebases.cpp",
+      "sha256": "8c6d8a23c9342b8a724b2fcdf6840356f84769a15d11e64e559dd8e570d3e4bd",
+      "size": 11903
+    },
+    {
+      "path": "tests/fathom_scalar_decode_reference.hpp",
+      "sha256": "1205ee4222f70adea0086d05a7e4d26a8e51e2c66ca648396c2bdbbb37a434ea",
+      "size": 2367
+    },
+    {
+      "path": "tests/test_chess.cpp",
+      "sha256": "5d67d89abc99eb7547328221b8ccd8397340ad371f24cff12b0adfcbaf35566a",
+      "size": 17098
+    },
+    {
+      "path": "tests/test_endgame_playing_audit.py",
+      "sha256": "15c5c67ca18b08f7c29525ba960a1cbfbc20b3e64f9145b6948af3576c1d90f6",
+      "size": 10206
+    },
+    {
+      "path": "tests/test_endgame_playing_fixtures.py",
+      "sha256": "9ea628b468c089304a079b1b16fa19af8f32be296cf80c93a39dd62d09496e57",
+      "size": 5838
+    },
+    {
+      "path": "tests/test_endgame_referee.py",
+      "sha256": "ba29073ecdc2bdf54ccf2046774cf6baa2604f7cc287eb20a2b43dcb361715c5",
+      "size": 7422
+    },
+    {
+      "path": "tests/test_endgame_search.cpp",
+      "sha256": "7c71f16cd06beac83f20b802d6f83fff1b4470c96d6ef007a7a1782e76d85fea",
+      "size": 5881
+    },
+    {
+      "path": "tests/test_fathom_catalog.cpp",
+      "sha256": "4de71c4d501d6b60298fa34ae938e7ff0a05f2c4a98637b18f03b5e36e997b99",
+      "size": 8429
+    },
+    {
+      "path": "tests/test_fathom_map_failure.cpp",
+      "sha256": "00cad2454c776c07a3018154baa2e19365c248eac2b45256c0941b5f56537d95",
+      "size": 2381
+    },
+    {
+      "path": "tests/test_fathom_prefix.cpp",
+      "sha256": "8317b1a3b7a274c69376e176ae72598b9a8bcfbc56106cb7c7f1c70abb910a7c",
+      "size": 8438
+    },
+    {
+      "path": "tests/test_reader_comparison.py",
+      "sha256": "129f9125c18470d3c3ba31bd29f49de480240323837b625186fddd8390be6338",
+      "size": 8578
+    },
+    {
+      "path": "tests/test_reader_comparison_semantics.py",
+      "sha256": "aad82c18abbd9613e39e0abea244a13ad5345c450d892e642f089def8b3d6965",
+      "size": 4105
+    },
+    {
+      "path": "tests/test_reader_memory.py",
+      "sha256": "af44b88bb0953c48c7282f4abec310be0c0b12049497a0210eae0f2475efa6ed",
+      "size": 18609
+    },
+    {
+      "path": "tests/test_reader_memory_verification.py",
+      "sha256": "212bd9de62c22815fb83ef76c29e9723090025fbe63500524235e1c3e68bce2d",
+      "size": 7098
+    },
+    {
+      "path": "tests/test_reader_optimization.py",
+      "sha256": "6de081cc1c2c471c0118688c486ce99d857a13787685befb4446f09f8c4a8c4e",
+      "size": 5205
+    },
+    {
+      "path": "tests/test_search.cpp",
+      "sha256": "fa431b1dcedaa4e9c98880b63d9fc284a40bafe13ba17c02b2db71b0f4345bea",
+      "size": 25880
+    },
+    {
+      "path": "tests/test_search_internal.cpp",
+      "sha256": "3a40f408c69b489e2e039db7092885cbc9a52f8b23f38d24af07d6fbef69f152",
+      "size": 5544
+    },
+    {
+      "path": "tests/test_tablebase_cache.cpp",
+      "sha256": "80c0f455c170ba5551ec9899cf4b83bee442841b594fd2311ed9174a5ad9c62a",
+      "size": 8779
+    },
+    {
+      "path": "tests/test_tablebase_download.py",
+      "sha256": "92ce65e7ae958f46dd9b11bd6e6cf62f2c851a27ab770e37c2c49876226ff3b7",
+      "size": 6529
+    },
+    {
+      "path": "tests/test_tablebase_optimization.py",
+      "sha256": "89a1aaa4593ff0d111c20b4e9f0520d6ffc6f7c780fe0ccb9caf4b5a641e8428",
+      "size": 6231
+    },
+    {
+      "path": "tests/test_tablebases.cpp",
+      "sha256": "9ad96e37ef36800aeb70a344f7b517ba03e4d8ebf606e1b7504d5d4cdee02702",
+      "size": 12647
+    },
+    {
+      "path": "third_party/fathom/FORK.json",
+      "sha256": "f877fff5d79993ddd039103deb4d10f3593d1cb3a2781c5270d2c44071f9d938",
+      "size": 2040
+    },
+    {
+      "path": "third_party/fathom/LICENSE",
+      "sha256": "c8038055839bd02f995cd7d1bba19657720097f5604411a7977ebcb5b4a37759",
+      "size": 1149
+    },
+    {
+      "path": "third_party/fathom/ORIENT.md",
+      "sha256": "f9e9e3f0e7b52cce18dfa743a6b5e9e919239a1796faf005edef0ae933315c69",
+      "size": 4777
+    },
+    {
+      "path": "third_party/fathom/README.md",
+      "sha256": "8a44c2a068f97fb237cea30f8039f4942950668c97b8f37092d1065b26cd074b",
+      "size": 5924
+    },
+    {
+      "path": "third_party/fathom/UPSTREAM.json",
+      "sha256": "0fde7b3b53a5008fdb3974f4b6dd6494e82eec66046855c3f28f86569e58e481",
+      "size": 976
+    },
+    {
+      "path": "third_party/fathom/five-piece-catalogue.patch",
+      "sha256": "4a8b479aed218361943841ceef916bf56d2d43aa642c302a1014319299cec6d3",
+      "size": 14022
+    },
+    {
+      "path": "third_party/fathom/mapping-failure.patch",
+      "sha256": "8147e2410842d4764ea0964764d87970e8c546c822efdf8f44d60cdf8cfd8273",
+      "size": 750
+    },
+    {
+      "path": "third_party/fathom/prefix-length.patch",
+      "sha256": "951cc346dac408f2fe7d0e6814626b5964dfefc11e0d93b945a3f18d4602615d",
+      "size": 2493
+    },
+    {
+      "path": "third_party/fathom/src/orient_tb_diagnostics.h",
+      "sha256": "acc6353a6cba690a1450a0a370fb1c290df57237ef342df665a9a413fe2bee80",
+      "size": 1078
+    },
+    {
+      "path": "third_party/fathom/src/stdendian.h",
+      "sha256": "e5b8187eec89ef83e731ea92be8ca0df4b533d8d21075fc4e2c86b4b00d7b7c3",
+      "size": 8925
+    },
+    {
+      "path": "third_party/fathom/src/tbchess.c",
+      "sha256": "119f19fa8714686798ca7be011e5b234f99c93aec751e9492f2664757d6c029d",
+      "size": 31292
+    },
+    {
+      "path": "third_party/fathom/src/tbconfig.h",
+      "sha256": "69fe1821b471164bd759cf46c486d55b7fa727e348a5ee306b18d19537ac3a03",
+      "size": 5648
+    },
+    {
+      "path": "third_party/fathom/src/tbprobe.c",
+      "sha256": "46358784b9f219ecfc08d15a2931c6d581508981d5db331384c193bb917b9a07",
+      "size": 82200
+    },
+    {
+      "path": "third_party/fathom/src/tbprobe.h",
+      "sha256": "dc7808dc58c2a1af921a612f94041b917dfac94d3215a76a2b2b0c53c94ea561",
+      "size": 12815
+    },
+    {
+      "path": "tools/__init__.py",
+      "sha256": "af94f3807f521176954c1163524beaae93b0733a68497471ac74a1e1e0bcec43",
+      "size": 65
+    },
+    {
+      "path": "tools/audit_endgame_playing.py",
+      "sha256": "40a2c0a71fcfecfe414e1db1b64f22fe05a07341ddeaed4d931e4aa3972ab855",
+      "size": 28145
+    },
+    {
+      "path": "tools/benchmark_reader.cpp",
+      "sha256": "7bcb1234006c3e0c2fafca91a203dd767faa7f910d33e79fbff2d2841c22e175",
+      "size": 5643
+    },
+    {
+      "path": "tools/benchmark_reader_memory.cpp",
+      "sha256": "67c53aa4e509cbd09f352b6ea4ccab1bd621873c336533cbb6d443230b62abfc",
+      "size": 16942
+    },
+    {
+      "path": "tools/benchmark_tablebases.cpp",
+      "sha256": "46ffadaffef9f74c601b4eec5c8a5e616c07d38a88e8c65dd932bc3190011278",
+      "size": 14948
+    },
+    {
+      "path": "tools/checkpoint.py",
+      "sha256": "52b3e8876222bce70d90cdfa2c366c903630f6ca091d8a1cbc08983cc91e3e7d",
+      "size": 5899
+    },
+    {
+      "path": "tools/download_tablebases.py",
+      "sha256": "a6291896915d5773f8a9fe8412edc9833bd5be77ba289b03edbe95da0a54ae96",
+      "size": 5564
+    },
+    {
+      "path": "tools/endgame_referee.cpp",
+      "sha256": "f462531342151a587bad7264f23c5ee2e31af2e2e799979b4606a148dc59ec52",
+      "size": 10019
+    },
+    {
+      "path": "tools/experiment.py",
+      "sha256": "d33de8a101e3694017485b0dbd3369313bad4d42ac157799d4ea9c8c37c21c08",
+      "size": 27685
+    },
+    {
+      "path": "tools/matches.py",
+      "sha256": "3d168f74941345a791e50471f69c49a03ca29917519078b221ef1aab2bab8a93",
+      "size": 40782
+    },
+    {
+      "path": "tools/measure_reader_comparison.py",
+      "sha256": "30ac05d55c59e3bd50e4ee66779ce43fd3679d07979bea7de715ca37a6bc14bd",
+      "size": 14008
+    },
+    {
+      "path": "tools/measure_reader_memory.py",
+      "sha256": "39654c1a3c611b78aedb1fc959ab77e05efd7fb8cdcb43e5f723ca5efd12bbc1",
+      "size": 30550
+    },
+    {
+      "path": "tools/measure_reader_optimization.py",
+      "sha256": "f9c984e9e72843d79a48c8a3504e6b0573c5382c32e7e33adfc75e674b25110b",
+      "size": 8087
+    },
+    {
+      "path": "tools/measure_tablebase_cache.py",
+      "sha256": "39db3e49dba9d3d65e5fe7cbb43476c0bfc4778c3421e947f8cd472874bb3664",
+      "size": 4892
+    },
+    {
+      "path": "tools/measure_tablebase_optimization.py",
+      "sha256": "a6f6fac94be244156574097f81dab82876360fec5a2bc1eea8a88552213d91cb",
+      "size": 13366
+    },
+    {
+      "path": "tools/prepare_endgame_playing.py",
+      "sha256": "bb7236f2d4935a5f647df5715f0e336c49ec16db2c09840d59f43b970080d9bf",
+      "size": 18332
+    },
+    {
+      "path": "tools/reader_compare.cpp",
+      "sha256": "a2771c28092a5982fbf514fb54883cfb45f9e46aeb77ef432f68d73129a47c60",
+      "size": 10665
+    },
+    {
+      "path": "tools/reader_compare_dtz.cpp",
+      "sha256": "62594f26d2cc3e33361aec1b545c107f42fe09749c66e14381ca0c7a41389e34",
+      "size": 945
+    },
+    {
+      "path": "tools/run_endgame_playing.py",
+      "sha256": "89efc2861aeceebd32433dca41760c8a8a28fc6781af2408c81a2a0fdd0c7142",
+      "size": 8582
+    },
+    {
+      "path": "tools/shakmaty_reader_compare/COPYING",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "size": 35147
+    },
+    {
+      "path": "tools/shakmaty_reader_compare/Cargo.lock",
+      "sha256": "46543640d6631c781c1ad0ed857fdfdfa9d2f56e006d7f67ad2b6060608c73f1",
+      "size": 5610
+    },
+    {
+      "path": "tools/shakmaty_reader_compare/Cargo.toml",
+      "sha256": "2d71757f5656a9ce77262b9be4be8d7c877965aa9d3d05ce5741ebe6c924825f",
+      "size": 448
+    },
+    {
+      "path": "tools/shakmaty_reader_compare/README.md",
+      "sha256": "6928ab435b4aa96b2293ea35ccdd1a8928c6247680bdf42eee29478c34f5d081",
+      "size": 1445
+    },
+    {
+      "path": "tools/shakmaty_reader_compare/src/main.rs",
+      "sha256": "d3e149fe8f5265c2da62ba0850f5582b63243b1d985aac6c27380ae3d5fb97cb",
+      "size": 16157
+    },
+    {
+      "path": "tools/sprt.py",
+      "sha256": "b6e7261afd3297634f5b6e64b59b15234f5e846d70d71944477c779135c6ed7e",
+      "size": 4893
+    },
+    {
+      "path": "tools/syzygy345.json",
+      "sha256": "87203bb108e96aad4e7ba5328bf617ed7d59c9e203fcd4b5794ceed902a08e84",
+      "size": 69331
+    },
+    {
+      "path": "tools/tablebase_manifest.py",
+      "sha256": "30d995d1daec3f7174c630e8a8f54326325818700596f9b5db6e15b98401bfe2",
+      "size": 3167
+    },
+    {
+      "path": "tools/tablebase_probe.cpp",
+      "sha256": "907527fa7be07f1b165d6ca0f97d88ea18caf9e40fbfb446b07ec65881a77b22",
+      "size": 5405
+    },
+    {
+      "path": "tools/test_tablebase_uci.py",
+      "sha256": "69dd163fbcaea2fdb20e709c2c2f675311e5e360dadfa4daa987f6b9547a8a55",
+      "size": 3651
+    },
+    {
+      "path": "tools/test_uci.py",
+      "sha256": "a647e5eb9dc478102c9ac65c7b14ffe4dc08f26bf805baa73acfa6cb9002799d",
+      "size": 7902
+    },
+    {
+      "path": "tools/verify_bundle.py",
+      "sha256": "678429fa8f16bbac4aa7853002dae5b4da55499c2838d80ee398d96be946f752",
+      "size": 6022
+    },
+    {
+      "path": "tools/verify_reader_comparison.py",
+      "sha256": "dc30246bbe397abaf2e3adc08deae186139297b6d0d06d5aff7d0e3a93f9e338",
+      "size": 5215
+    },
+    {
+      "path": "tools/verify_reader_memory.py",
+      "sha256": "7e4db06537c82803d2bcc0650fb8bd640f7e5cdb869910b27baee892b8d37e4c",
+      "size": 15710
+    },
+    {
+      "path": "tools/verify_tablebases.py",
+      "sha256": "7a16f5c9874f182666418e26cf0669eb604d16f23209c73241fbb40cf3b9a703",
+      "size": 4963
+    }
+  ],
+  "frozen_at_utc": "2026-10-30T11:49:41.835627+00:00",
+  "git_base": "4d0e3275785c88d426db9f41dc4ab3c6dc7937e3",
+  "role": "baseline",
+  "schema_version": 1,
+  "source": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-007/baseline-source"
+}

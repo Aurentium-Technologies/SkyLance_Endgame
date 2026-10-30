@@ -1,0 +1,38 @@
+{
+  "baseline": {
+    "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/baseline-source.json",
+    "sha256": "98cff60245d26f0842e5fc47fb3de2fdbce559abe85277e41b2118fc7ab0dce5"
+  },
+  "candidate": {
+    "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/candidate-source.json",
+    "sha256": "56e0affb874b62d5a7ede3ceba725922d7a40fe26efe543db3f2a9456e43b65e"
+  },
+  "commands": {
+    "compiler": "g++-13 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "prepare": [
+      "orient-endgame-component/tools/reproduce_acceptance.py",
+      "--out",
+      "orient-endgame-component/artifacts/investigations/tablebases-008/run-002",
+      "--stage",
+      "prepare"
+    ],
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]"
+  },
+  "dataset": {
+    "complete": true,
+    "file_count": 290,
+    "manifest": {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5/manifest.json",
+      "sha256": "7d4eae2c333da3b8b9e485e0496efc56a07b4452e2bb53e83cfa6bceb9c7a73d"
+    },
+    "max_pieces": 5,
+    "root": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+    "total_bytes": 983957920
+  },
+  "freeze": {
+    "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/protocol/freeze.json",
+    "sha256": "3f9849ede90f76092bb2e5200b778fdd5ffca0ba99bbeb544e62f7a49acf224c"
+  },
+  "schema_version": 1,
+  "scope": "pre-007 baseline versus frozen current source; unchanged 007 acceptance protocol"
+}

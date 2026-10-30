@@ -1,5 +1,8 @@
 # Endgame playing diagnostic 001 — 28 October 2026
 
+This historical report names supporting files from the wider local research archive. Available public records and separate downloads are listed in the [evidence index](../../evidence/README.md); local-only paths below are not GitHub download links.
+
+
 Frozen Orient 015 with five-piece tablebases converted all 12 selected
 five-piece winning starts, compared with 9 of 12 for the same engine with
 probing disabled. Both configurations held every selected five-piece draw.
@@ -14,7 +17,7 @@ rating campaign was made for this experiment.
 
 ## Frozen comparison
 
-The [pre-game plan](../artifacts/endgame-playing-001/plan.json) binds the engine,
+The pre-game plan (local archive: `../artifacts/endgame-playing-001/plan.json`) binds the engine,
 settings, runner, referee, fixtures, measurement sources and dataset. All 23
 referenced artifact hashes passed post-game verification. Every one of the 290
 table files also passed its manifest verification.
@@ -39,12 +42,12 @@ experiments remain disabled. The existing 015 checkpoint and profiles are intact
 
 ## Position selection
 
-The [fixture manifest](../artifacts/endgame-playing-001/fixture-preparation/fixtures.json)
+The fixture manifest (local archive: `../artifacts/endgame-playing-001/fixture-preparation/fixtures.json`)
 was frozen before the games. It contains 12 five-piece wins, 12 five-piece draws
 and eight six-piece capture transitions. Colour/rank reflections balance the
 positions. Five-piece examples cover rook/pawn, pawn, bishop, knight and
 two-bishop endings. Four fixtures start at halfmove 98 or 99. The
-[opening PGN](../artifacts/endgame-playing-001/fixture-preparation/openings.pgn)
+opening PGN (local archive: `../artifacts/endgame-playing-001/fixture-preparation/openings.pgn`)
 preserves all six FEN fields; a transport smoke verified those counters before
 the fixed run.
 
@@ -108,7 +111,7 @@ and reports depth 8, score cp -243, bestmove `b1c1`. The game ended in actual
 checkmate at ply 48. Preserve the full history when reproducing this case;
 resetting to the FEN alone takes a different root-search path.
 
-The [full diagnosis](../artifacts/endgame-playing-001/diagnosis/README.md)
+The full diagnosis (local archive: `../artifacts/endgame-playing-001/diagnosis/README.md`)
 also verifies that the chosen move loses with the actual prior history. Its
 30-node certificate covers every White reply and one winning Black policy,
 reaching actual mate or a history-independent winning capture within seven
@@ -156,18 +159,18 @@ fixed run then supplies the complete real-game replay. The engine binary and
 rules sources remain frozen; the existing integration and optimization reports
 retain the earlier release/native/debug/sanitizer and differential evidence.
 
-- [Audit and all game summaries](../artifacts/endgame-playing-001/analysis/audit.json)
-- [Readable SAN games](../artifacts/endgame-playing-001/analysis/games-san.pgn)
-- [Unmodified runner PGN](../artifacts/endgame-playing-001/games.pgn)
-- [Move-by-move measurements](../artifacts/endgame-playing-001/analysis/move-audit.jsonl)
-- [Assessed outcome-degrading moves](../artifacts/endgame-playing-001/analysis/failing-positions.jsonl)
-- [Supplementary counts](../artifacts/endgame-playing-001/analysis/supplementary-counts.json)
-- [Full-history regression diagnosis](../artifacts/endgame-playing-001/diagnosis/README.md)
-- [Runner completion and artifact hashes](../artifacts/endgame-playing-001/run-result.json)
-- [Native tool test log](../artifacts/endgame-playing-001/verification/LastTest.log)
-- [Release/debug/sanitizer verification](../artifacts/endgame-playing-001/verification/measurement-three-preset-result.json)
-- [Measurement source/binary snapshot](../artifacts/endgame-playing-001/measurement-snapshot/snapshot.json)
-- [Final evidence manifest](../artifacts/endgame-playing-001/delivery.json)
+- Audit and all game summaries (local archive: `../artifacts/endgame-playing-001/analysis/audit.json`)
+- Readable SAN games (local archive: `../artifacts/endgame-playing-001/analysis/games-san.pgn`)
+- Unmodified runner PGN (local archive: `../artifacts/endgame-playing-001/games.pgn`)
+- Move-by-move measurements (local archive: `../artifacts/endgame-playing-001/analysis/move-audit.jsonl`)
+- Assessed outcome-degrading moves (local archive: `../artifacts/endgame-playing-001/analysis/failing-positions.jsonl`)
+- Supplementary counts (local archive: `../artifacts/endgame-playing-001/analysis/supplementary-counts.json`)
+- Full-history regression diagnosis (local archive: `../artifacts/endgame-playing-001/diagnosis/README.md`)
+- Runner completion and artifact hashes (local archive: `../artifacts/endgame-playing-001/run-result.json`)
+- Native tool test log (local archive: `../artifacts/endgame-playing-001/verification/LastTest.log`)
+- Release/debug/sanitizer verification (local archive: `../artifacts/endgame-playing-001/verification/measurement-three-preset-result.json`)
+- Measurement source/binary snapshot (local archive: `../artifacts/endgame-playing-001/measurement-snapshot/snapshot.json`)
+- Final evidence manifest (local archive: `../artifacts/endgame-playing-001/delivery.json`)
 
 The source snapshot preserves the measurement tools and their build inputs,
 separately from frozen 015's original source archive. The dataset remains on

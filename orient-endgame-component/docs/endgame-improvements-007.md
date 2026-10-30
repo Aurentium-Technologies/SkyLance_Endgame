@@ -95,23 +95,23 @@ native alternative order remain exact; no DTZ tolerance was added. Native 23/23
 CTest groups and six focused ASan/UBSan groups passed, including 64/32-bit scalar
 prefix checks, provider switching, cache invalidation, history and catalogue
 resize/failure recovery. LeakSanitizer itself is unavailable under the execution
-wrapper's ptrace; that failed attempt is preserved. See [review limits](../artifacts/investigations/tablebases-007/code-review.md).
+wrapper's ptrace; that failed attempt is preserved. See [review limits](../../evidence/tablebases-007/code-review.md).
 
 The generation-qualified adapter experiment measured 2.22% slower WDL in its
 old-data development screen and was removed from production. The short-symbol
 experiment was exact but measured 3.84% slower WDL, 12.60% slower DTZ and 19.42%
 slower complete roots over four development blocks. Its additional 512 bytes per
 pairs header were not adopted. All negative patches, binaries, source archives
-and raw results remain under 007. The native adapter and prefix decoder remain.
+and raw results remain in the separately packaged 007 evidence archive. The native adapter and prefix decoder remain.
 
 ## Evidence, reproduction and claim
 
-[Protocol](../artifacts/investigations/tablebases-007/protocol/PROTOCOL.md),
-[raw result](../artifacts/investigations/tablebases-007/performance/acceptance-002/result.json),
-[exact correctness](../artifacts/investigations/tablebases-007/verification/correctness-001/result.json),
-[separate raw-artifact recomputation](../artifacts/investigations/tablebases-007/independent-recomputation.json),
-[history proof](../artifacts/investigations/tablebases-007/history-guidance-proof.md),
-and [reproduction package](../artifacts/investigations/tablebases-007/README.md).
+[Protocol](../../evidence/tablebases-007/protocol/PROTOCOL.md),
+[raw result](../../evidence/tablebases-007/performance/acceptance-002/result.json),
+[exact correctness](../../evidence/tablebases-007/verification/correctness-001/result.json),
+[separate raw-artifact recomputation](../../evidence/tablebases-007/independent-recomputation.json),
+[history proof](../../evidence/tablebases-007/history-guidance-proof.md),
+and [reproduction package](../../evidence/tablebases-007/README.md).
 
 Run 001 failed preflight before any timing; a diagnostic-only unit-test target
 was mistakenly included in the instrumentation validator. Run 002 repaired only
@@ -130,3 +130,8 @@ No roster-wide fastest-reader, larger-table correctness, Elo or whole-engine
 strength claim follows. No Orient 017 engine checkpoint is certified here.
 
 At adoption, the retained `build/release/` engine, reader comparison, ordered probe and search benchmark were byte-identical to the accepted native executables. That build passed 23/23 CTest groups and the full-history UCI checks. Its preservation verification checked 5,247 original packaged files and 3,028 investigation 006 files, with only ten declared source/handoff differences. The original bundle manifest and checkpoints remain intact. Subsequent [pre-upload fixes](preupload-review-2026-10-30.md) change current source and binaries; this report remains evidence for the frozen 007 campaign.
+
+The [public evidence index](../../evidence/README.md) identifies the committed
+records and the separately published raw archive. Its offline verifier recomputes
+the original gates from saved raw outputs without downloading tables or running
+any historical executable.

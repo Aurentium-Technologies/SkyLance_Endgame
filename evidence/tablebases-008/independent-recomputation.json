@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "scope": "Separate raw-artifact implementation; same author, not external human review",
+  "correctness": {
+    "outputs": 44,
+    "stored_rows": 319972,
+    "compared_rows": 184006,
+    "move_records": 4703656,
+    "differences": 0
+  },
+  "timed_reader_samples": 60,
+  "timed_search_samples": 20,
+  "hot_samples": 10,
+  "fresh_startups": 200,
+  "ratios": {
+    "constructor_ms": 0.5401719793945895,
+    "configured_ready_ms": 0.8525277837033671,
+    "setup_first_root_ms": 0.876417828075859,
+    "continuity/wdl/wall_ms": 1.156887855868598,
+    "continuity/wdl/cpu_ms": 1.1587476341212428,
+    "continuity/wdl/p95_us": 1.1315654429328328,
+    "continuity/wdl/first_pass_ms": 1.0936935686782085,
+    "continuity/dtz/wall_ms": 1.401492009156873,
+    "continuity/dtz/cpu_ms": 1.4003752968864902,
+    "continuity/dtz/p95_us": 1.405216962682013,
+    "continuity/dtz/first_pass_ms": 1.336196710747098,
+    "continuity/all_moves/wall_ms": 1.3563108931015972,
+    "continuity/all_moves/cpu_ms": 1.3554509158571502,
+    "continuity/all_moves/p95_us": 1.343881964218037,
+    "continuity/all_moves/first_pass_ms": 1.6698720057882472,
+    "holdout/wdl/wall_ms": 1.5021678524212094,
+    "holdout/wdl/cpu_ms": 1.499579554619081,
+    "holdout/wdl/p95_us": 1.5011702648378458,
+    "holdout/wdl/first_pass_ms": 1.515965309726475,
+    "holdout/dtz/wall_ms": 1.4840756302863718,
+    "holdout/dtz/cpu_ms": 1.4845624622354454,
+    "holdout/dtz/p95_us": 1.5069558349458572,
+    "holdout/dtz/first_pass_ms": 1.489069610547118,
+    "holdout/all_moves/wall_ms": 1.071708486723958,
+    "holdout/all_moves/cpu_ms": 1.0721403370337539,
+    "holdout/all_moves/p95_us": 1.0715325794476227,
+    "holdout/all_moves/first_pass_ms": 1.2968354242164684,
+    "continuity/search/distinct_lookup_ms": 1.7580959346098408,
+    "continuity/search/warm_lookup_ms": 1.7939790736164718,
+    "continuity/search/search_ms": 1.8292146481370821,
+    "continuity/search/root_ms": 1.332817175190832,
+    "continuity/search/root_latency_median_us": 1.336710815790402,
+    "continuity/search/root_latency_p95_us": 1.3470106793235772,
+    "holdout/search/distinct_lookup_ms": 0.9007783781779806,
+    "holdout/search/warm_lookup_ms": 0.8643771425160482,
+    "holdout/search/search_ms": 0.9326639026101395,
+    "holdout/search/root_ms": 0.947786175765159,
+    "holdout/search/root_latency_median_us": 0.9434820753182847,
+    "holdout/search/root_latency_p95_us": 0.9504707465068124,
+    "hot/wall_ms": 0.9444925671526266,
+    "hot/cpu_ms": 0.9448517251653852,
+    "hot/p95_us": 0.9481359275046572,
+    "hot/first_pass_ms": 0.9909405883409004
+  },
+  "savings": {
+    "continuity": {
+      "after_init": 1966592,
+      "after_full_sweep": 1966592
+    },
+    "holdout": {
+      "after_init": 1966592,
+      "after_full_sweep": 1966592
+    }
+  },
+  "gates": {
+    "at_least_1mib_live_reader_saving_at_both_phases": true,
+    "constructor_at_least_20_percent_faster": true,
+    "configured_readiness_at_least_20_percent_faster": false,
+    "all_regression_ratios_at_most_1_05": false
+  },
+  "adopt": false
+}

@@ -1,5 +1,8 @@
 # Five-piece reader optimization 003
 
+This historical report names supporting files from the wider local research archive. Available public records and separate downloads are listed in the [evidence index](../../evidence/README.md); local-only paths below are not GitHub download links.
+
+
 Date: 28 October 2026, New Zealand local date.
 
 The exact prefix-length decoder accelerator passes the 20% research target and
@@ -42,7 +45,7 @@ remains a separate integration task.
 
 ## Protocol and rejected experiments
 
-The [protocol](../artifacts/investigations/tablebases-003/PROTOCOL.md) fixes the
+The protocol (local archive: `../artifacts/investigations/tablebases-003/PROTOCOL.md`) fixes the
 20% complete-probe time-reduction research target and the existing 1.05x minimum
 whole-path throughput adoption gate. Both complete probes and complete root
 searches must pass; reader/root p95, hot-root probes, distinct WDL and descendant
@@ -65,7 +68,7 @@ a useful speedup. No unfavorable result was discarded or rerun to change its
 decision.
 
 The prefix accelerator is a materially different candidate. Its
-[separate pre-timing protocol](../artifacts/investigations/tablebases-003/PROTOCOL-prefix.md)
+separate pre-timing protocol (local archive: `../artifacts/investigations/tablebases-003/PROTOCOL-prefix.md`)
 freezes another five paired trials, alternating baseline/candidate order, with
 the same corpora and gates. Each workload repeats three times. OS caches are
 prewarmed, processes start fresh, no whole-root result is cached, and the project
@@ -105,8 +108,8 @@ excludes lazy codebook setup; its 0.982945 ratio is not claimed as a startup gai
 All 30 trials across both rounds share identical complete-probe and search
 result hashes. Complete-probe hashes include WDL, DTZ, recommendation and ordered
 legal alternatives. Search hashes include moves, scores, nodes and tablebase
-hits. The [raw trials](../artifacts/investigations/tablebases-003/measurements-prefix/result.json)
-and [quantitative summary](../artifacts/investigations/tablebases-003/acceptance-summary.json)
+hits. The raw trials (local archive: `../artifacts/investigations/tablebases-003/measurements-prefix/result.json`)
+and quantitative summary (local archive: `../artifacts/investigations/tablebases-003/acceptance-summary.json`)
 retain values, configuration, fixtures, hardware and binary hashes.
 
 Peak RSS includes fixtures, search storage and mapped file pages. The isolated
@@ -116,7 +119,7 @@ No privileged cache flushing, perf-setting changes or hardware changes were used
 
 ## Profiling and correctness
 
-The [profiling diagnostic](../artifacts/investigations/tablebases-003/profiling/README.md)
+The profiling diagnostic (local archive: `../artifacts/investigations/tablebases-003/profiling/README.md`)
 adds optional sampled application scopes inside an isolated reader. Compiling
 it out reproduces the baseline benchmark and Fathom object byte-for-byte.
 All twelve diagnostic runs preserve results. Tiny-function timer overhead
@@ -172,7 +175,7 @@ zero, including halfmove 98 and actual repetition history. Every hit count is
 zero. Existing UCI stop, finite/infinite analysis, missing files, cache/path
 changes and history regressions pass in the full suite.
 
-The new [016 checkpoint](../artifacts/checkpoints/orient-016-reader-prefix/checkpoint.json)
+The new 016 checkpoint (local archive: `../artifacts/checkpoints/orient-016-reader-prefix/checkpoint.json`)
 pins native binary SHA-256
 `46304f7b2ef9d6b4f36b2a0fa0012e8c0cbf77a2a172f054b0cac4c4b6b3b429`,
 source including reader/licence/patches/tests, build settings and the verified
@@ -186,12 +189,12 @@ redirected to the new candidate.
 
 Retained evidence:
 
-- [Final five-pair confirmation](../artifacts/investigations/tablebases-003/measurements-integrated/result.json)
-- [Full build/test verification](../artifacts/investigations/tablebases-003/verification-summary.md)
-- [Final upstream comparison](../artifacts/investigations/tablebases-003/final-comparison/result.json)
-- [Disabled-tablebase equality](../artifacts/investigations/tablebases-003/disabled/result.json)
-- [Offline profile preflight](../artifacts/investigations/tablebases-003/offline-preflight-016.json)
-- [Final provenance and effective settings](../artifacts/investigations/tablebases-003/delivery.json)
+- Final five-pair confirmation (local archive: `../artifacts/investigations/tablebases-003/measurements-integrated/result.json`)
+- Full build/test verification (local archive: `../artifacts/investigations/tablebases-003/verification-summary.md`)
+- Final upstream comparison (local archive: `../artifacts/investigations/tablebases-003/final-comparison/result.json`)
+- Disabled-tablebase equality (local archive: `../artifacts/investigations/tablebases-003/disabled/result.json`)
+- Offline profile preflight (local archive: `../artifacts/investigations/tablebases-003/offline-preflight-016.json`)
+- Final provenance and effective settings (local archive: `../artifacts/investigations/tablebases-003/delivery.json`)
 
 The earlier 015 candidate and all prior profiles/experiments remain recoverable.
 All table files are unchanged. No online game, rating campaign or training-policy

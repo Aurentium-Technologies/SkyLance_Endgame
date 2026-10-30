@@ -1,0 +1,93 @@
+{
+  "campaign": "008",
+  "files": [
+    {
+      "original_path": "artifacts/investigations/tablebases-008/run-002/protocol/PROTOCOL.md",
+      "path": "protocol/PROTOCOL.md",
+      "sha256": "f92b79f6165babe4b1baec1b47b26d3d41c96d0ee93429c7517f9c9aae25dbfb",
+      "size": 5857
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-008/run-002/protocol/freeze.json",
+      "path": "protocol/freeze.json",
+      "sha256": "3f9849ede90f76092bb2e5200b778fdd5ffca0ba99bbeb544e62f7a49acf224c",
+      "size": 61377
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-008/run-002/baseline-source.json",
+      "path": "baseline-source.json",
+      "sha256": "98cff60245d26f0842e5fc47fb3de2fdbce559abe85277e41b2118fc7ab0dce5",
+      "size": 13690
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-008/run-002/candidate-source.json",
+      "path": "candidate-source.json",
+      "sha256": "56e0affb874b62d5a7ede3ceba725922d7a40fe26efe543db3f2a9456e43b65e",
+      "size": 16836
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-008/run-002/run-source-binding.json",
+      "path": "run-source-binding.json",
+      "sha256": "d7910fb93c736d70bc4b553cfa80fa23aece00dc0106800d345c039e559f63b8",
+      "size": 2138
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-008/run-002/correctness-config.json",
+      "path": "correctness-config.json",
+      "sha256": "f457a5bddc6ec81d4cec67d2d240fed122292e7560e29a4fbb2c7fee521b072b",
+      "size": 71123
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-008/run-002/performance-config002.json",
+      "path": "performance-config002.json",
+      "sha256": "0bd6d2a8275dfe8c2dcb13d8b4862223192fd2ac4068f2f91a8a17e16a15bcbd",
+      "size": 71617
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-008/run-002/verification/correctness-001/result.json",
+      "path": "verification/correctness-001/result.json",
+      "sha256": "92aa4f4248b6ab0337b859319b170c56a90692c028829b69a8624ed8d303606f",
+      "size": 73957
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-008/run-002/performance/acceptance-002/result.json",
+      "path": "performance/acceptance-002/result.json",
+      "sha256": "93a8ec0eb48e5c8a2bb0a6723f8c8946b74d9c1db72d81a071aca01803fdf031",
+      "size": 241203
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-008/run-002/independent-recomputation.json",
+      "path": "independent-recomputation.json",
+      "sha256": "0bb49cabda6ad4a74c6356d7e523d17484de28ae7210c318d70a647f9fec4320",
+      "size": 3075
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-008/run-002/runtime-source-match.json",
+      "path": "runtime-source-match.json",
+      "sha256": "ff192535ab1745dfda7b46644f8d6e8220ebeacba6656a80a95ece9f9d23df01",
+      "size": 3827
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-008/run-002/final-runtime-binary-equivalence.json",
+      "path": "final-runtime-binary-equivalence.json",
+      "sha256": "d794da4954be72c7476f782b4f37a440eda84ea61fcc6c265da0b2627c0ea0c0",
+      "size": 2409
+    },
+    {
+      "path": "statistics.csv",
+      "scope": "derived directly from completed result ratios",
+      "sha256": "64f57294232ba97a560975468a0c224f2067bb4f86778b5dee01069a6d9f3fa9",
+      "size": 2767
+    }
+  ],
+  "kind": "skylance-public-evidence",
+  "release": {
+    "bytes": 19493242,
+    "checksum_url": "https://github.com/Aurentium-Technologies/SkyLance_Endgame/releases/download/v0.1.0/skylance-evidence-008.tar.gz.sha256",
+    "filename": "skylance-evidence-008.tar.gz",
+    "sha256": "4e61d89eca49b26b88f0f06d5cd2cc46ff5011f6868a534e5a372931e3692cdd",
+    "url": "https://github.com/Aurentium-Technologies/SkyLance_Endgame/releases/download/v0.1.0/skylance-evidence-008.tar.gz"
+  },
+  "schema_version": 1,
+  "scope": "immutable current-source acceptance records and derived aggregate ratios; all raw samples in release asset"
+}

@@ -1,5 +1,8 @@
 # Current Orient endgame system compared with GitHub systems
 
+This historical report names supporting files from the wider local research archive. Available public records and separate downloads are listed in the [evidence index](../../evidence/README.md); local-only paths below are not GitHub download links.
+
+
 Checked 29 October 2026, New Zealand date. The retained system is **Orient 016 behavior**, with its Fathom prefix accelerator ON, runtime WDL cache zero, and the catalogue, diagnostics, compact-cache, root-list-reuse and profiling experiments OFF. The current reader includes disabled experiment 005 code; its entire source is not byte-identical to the frozen 016 source.
 
 The strongest available result favors Orient over pinned **shakmaty-syzygy 0.28.1** on this machine's measured warm query workloads. It does not establish a fastest-reader ranking across GitHub projects. Orient uses attributed Fathom infrastructure; these results do not describe an independently invented tablebase format or solver.
@@ -19,7 +22,7 @@ Five rotated paired trials used 9,985 continuity positions and 9,975 disjoint he
 | Held-out | DTZ | 6.606 | 11.026 | 1.669× | 1.300–2.160× |
 | Held-out | All legal root alternatives | 96.927 | 152.711 | 1.576× | 1.056–1.920× |
 
-All 30 primary paired comparisons favor Orient. Shakmaty's pread backend takes approximately 2.90–3.17 times Orient's elapsed time on these warm local workloads. Pair ranges show considerable laptop variability; the means are not portable constants or confidence intervals. The [original comparison](../../orient-endgame-component/docs/endgame-reader-comparison-004.md), [frozen protocol](../../orient-endgame-component/artifacts/investigations/tablebases-004/measurement-protocol.md) and [raw results](../../orient-endgame-component/artifacts/investigations/tablebases-004/performance/result.json) describe the measurement boundaries.
+All 30 primary paired comparisons favor Orient. Shakmaty's pread backend takes approximately 2.90–3.17 times Orient's elapsed time on these warm local workloads. Pair ranges show considerable laptop variability; the means are not portable constants or confidence intervals. The [original comparison](../../orient-endgame-component/docs/endgame-reader-comparison-004.md), frozen protocol (local archive: `../../orient-endgame-component/artifacts/investigations/tablebases-004/measurement-protocol.md`) and raw results (local archive: `../../orient-endgame-component/artifacts/investigations/tablebases-004/performance/result.json`) describe the measurement boundaries.
 
 These timings include implementation-specific board, validation, move generation and wrapper work. WDL and complete-root measurements use Orient's actual adapter; primitive DTZ uses a measurement shim. The Rust complete-root envelope evaluates every legal child. Its native best-move routine performs less work and is excluded from the primary ranking. This evidence measures query stacks, rather than isolated decoder cycles, complete engines or Elo.
 

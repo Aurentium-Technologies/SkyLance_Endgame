@@ -5,6 +5,42 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+# Public SkyLance spellings map to the retained definitions used by research
+# scripts and the reader fork. Remember the last synchronized value so changing
+# either spelling during reconfiguration works without stale-cache conflicts.
+foreach(option_suffix IN ITEMS NATIVE SANITIZERS TESTS COMPACT_TABLEBASE_CACHE
+    REUSE_ROOT_LEGAL TABLEBASE_PROFILING FATHOM_PREFIX_LENGTH
+    FATHOM_FIVE_PIECE_CATALOG FATHOM_DYNAMIC_CATALOG FATHOM_DIAGNOSTICS)
+  set(public_option "SKYLANCE_${option_suffix}")
+  set(legacy_option "ORIENT_${option_suffix}")
+  set(last_option "_SKYLANCE_LAST_${option_suffix}")
+  if(DEFINED ${public_option})
+    if(${public_option})
+      set(public_value ON)
+    else()
+      set(public_value OFF)
+    endif()
+    if(DEFINED ${legacy_option})
+      if(${legacy_option})
+        set(legacy_value ON)
+      else()
+        set(legacy_value OFF)
+      endif()
+      if(NOT public_value STREQUAL legacy_value)
+        if(DEFINED ${last_option} AND legacy_value STREQUAL "${${last_option}}")
+          # The public spelling changed; update the compatibility cache below.
+        elseif(DEFINED ${last_option} AND public_value STREQUAL "${${last_option}}")
+          set(public_value "${legacy_value}")
+        else()
+          message(FATAL_ERROR "Conflicting ${public_option}/${legacy_option}; use one spelling in a fresh build directory")
+        endif()
+      endif()
+    endif()
+    set(${public_option} "${public_value}" CACHE BOOL "Public value for ${legacy_option}" FORCE)
+    set(${legacy_option} "${public_value}" CACHE BOOL "Compatibility value for ${public_option}" FORCE)
+    set(${last_option} "${public_value}" CACHE INTERNAL "Last synchronized option value" FORCE)
+  endif()
+endforeach()
 option(ORIENT_NATIVE "Optimize for this CPU; resulting binaries are not portable" OFF)
 option(ORIENT_SANITIZERS "Enable address and undefined-behaviour sanitizers" OFF)
 option(ORIENT_TESTS "Build the focused endgame and integration checks" ON)
@@ -174,6 +210,10 @@ if(ORIENT_TESTS)
   find_package(Python3 3.10 REQUIRED COMPONENTS Interpreter)
   foreach(pair IN ITEMS
       "checkpoint_reproduction|test_checkpoint.py"
+      "ci_tables|test_ci_tables.py"
+      "acceptance_reproduction|test_reproduce_acceptance.py"
+      "public_evidence_integrity|test_public_evidence.py"
+      "comparison_evidence_integrity|test_comparison_evidence.py"
       "reader_memory_gates|test_reader_memory.py"
       "reader_memory_verification|test_reader_memory_verification.py"
       "reader_comparison_gates|test_reader_comparison.py"

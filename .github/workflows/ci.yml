@@ -3,14 +3,34 @@ name: SkyLance checks
 on:
   push:
   pull_request:
+  workflow_dispatch:
+  schedule:
+    # Weekly Sunday at 03:17 UTC; avoids the busiest start-of-hour queue.
+    - cron: '17 3 * * 0'
 
 permissions:
   contents: read
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    name: Release / ${{ matrix.label }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-24.04
+            compiler: g++
+            label: Linux GCC
+          - os: ubuntu-24.04
+            compiler: clang++
+            label: Linux Clang
+          - os: macos-15
+            compiler: clang++
+            label: macOS AppleClang
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    env:
+      CXX: ${{ matrix.compiler }}
     steps:
       - uses: actions/checkout@v7.0.1
         with:
@@ -27,4 +47,83 @@ jobs:
           "$RUNNER_TEMP/skylance/bin/skylance" --version
       - name: Verify branding files
         working-directory: assets/branding
-        run: sha256sum --check SHA256SUMS
+        run: shasum --algorithm 256 --check SHA256SUMS
+      - name: Check published documentation links
+        run: python3 orient-endgame-component/tools/check_public_links.py
+      - name: Verify committed evidence records
+        run: |
+          for campaign in 006 007 008; do
+            python3 orient-endgame-component/tools/verify_public_evidence.py --public-dir "evidence/tablebases-$campaign"
+          done
+
+  sanitizers:
+    name: ASan + UBSan / reader memory regressions
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      ASAN_OPTIONS: detect_leaks=1:halt_on_error=1
+      UBSAN_OPTIONS: halt_on_error=1:print_stacktrace=1
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - name: Restore tiny pinned regression tables
+        uses: actions/cache@v6.1.0
+        with:
+          path: orient-endgame-component/external/tablebases/ci-regressions
+          key: syzygy-regressions-v1-${{ hashFiles('orient-endgame-component/tools/syzygy345.json') }}
+      - name: Fetch or verify two real KQvK files (5,664 bytes)
+        run: |
+          python3 orient-endgame-component/tools/ci_tables.py
+          python3 orient-endgame-component/tools/ci_tables.py --verify-only
+      - name: Configure sanitizers
+        run: cmake -S orient-endgame-component -B build-sanitized -DCMAKE_BUILD_TYPE=Debug -DORIENT_NATIVE=OFF -DORIENT_SANITIZERS=ON
+      - name: Build sanitizer targets
+        run: cmake --build build-sanitized --parallel 2
+      - name: Exercise actual teardown and path-parser regressions
+        run: ./build-sanitized/test_dynamic_catalog --regressions-only "$PWD/orient-endgame-component/external/tablebases/ci-regressions"
+      - name: Run source-only checks under ASan and UBSan
+        # The complete-data groups run in the weekly/manual job below. The
+        # adaptive reader's P1 regressions ran above, without a skip path.
+        run: ctest --test-dir build-sanitized --output-on-failure --parallel 2 -E '^(dynamic_catalog|tablebase_map_failure|endgame_search|tablebase_uci)$'
+
+  full-table-checks:
+    name: Full pinned tables / Release and sanitizers
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      ORIENT_SYZYGY_PATH: ${{ github.workspace }}/orient-endgame-component/external/tablebases/syzygy/3-4-5
+      ASAN_OPTIONS: detect_leaks=1:halt_on_error=1
+      UBSAN_OPTIONS: halt_on_error=1:print_stacktrace=1
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - name: Restore full pinned collection
+        uses: actions/cache@v6.1.0
+        with:
+          path: orient-endgame-component/external/tablebases/syzygy/3-4-5
+          key: syzygy-complete-v1-${{ hashFiles('orient-endgame-component/tools/syzygy345.json') }}
+      - name: Fetch missing files and verify all cached bytes
+        # The downloader rehashes existing files against the pinned catalogue;
+        # a cache hit is never used as proof of table integrity.
+        run: |
+          python3 orient-endgame-component/tools/download_tablebases.py --workers 3
+          python3 orient-endgame-component/tools/download_tablebases.py --verify-only
+      - name: Configure and build portable Release
+        run: |
+          cmake -S orient-endgame-component -B build-full -DCMAKE_BUILD_TYPE=Release -DORIENT_NATIVE=OFF
+          cmake --build build-full --parallel 2
+      - name: Run all CTest groups with real tables
+        run: ctest --test-dir build-full --output-on-failure --parallel 2
+      - name: Check Python unittest discovery with real tables
+        env:
+          ORIENT_REFEREE_BINARY: ${{ github.workspace }}/build-full/orient-endgame-referee
+        run: python3 -m unittest discover -s orient-endgame-component/tests -p 'test_*.py'
+      - name: Configure and build full-data sanitizers
+        run: |
+          cmake -S orient-endgame-component -B build-full-sanitized -DCMAKE_BUILD_TYPE=Debug -DORIENT_NATIVE=OFF -DORIENT_SANITIZERS=ON
+          cmake --build build-full-sanitized --parallel 2
+      - name: Run all CTest groups under ASan and UBSan with real tables
+        run: ctest --test-dir build-full-sanitized --output-on-failure --parallel 2

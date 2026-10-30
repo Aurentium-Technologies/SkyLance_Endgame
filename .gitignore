@@ -1,5 +1,6 @@
 # Build outputs and interpreter caches.
 **/build/
+**/build-*/
 **/target/
 **/__pycache__/
 *.py[cod]

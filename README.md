@@ -10,6 +10,8 @@ SkyLance runs locally and connects to chess GUIs through UCI. The default build 
 
 The retained reader enables the prefix accelerator and adaptive material catalogue. The rejected fixed five-piece catalogue and diagnostic instrumentation remain disabled. No engine-strength rating is claimed.
 
+The [current-source confirmation](evidence/tablebases-008/README.md) found exact matching answers and lower reader metadata, but **failed the unchanged performance gates**. The older 007 speed measurements belong to its frozen historical source; they are not a current-source speed guarantee.
+
 ## Build
 
 Requirements: CMake 3.20+, a C++20 compiler, Python 3.10+ for the default test build, and standard threading support. The current implementation has been built and tested on Linux with GNU C++ 13.3.0.
@@ -17,12 +19,12 @@ Requirements: CMake 3.20+, a C++20 compiler, Python 3.10+ for the default test b
 ```sh
 git clone https://github.com/Aurentium-Technologies/SkyLance_Endgame.git
 cd SkyLance_Endgame
-cmake -S orient-endgame-component -B build -DCMAKE_BUILD_TYPE=Release -DORIENT_NATIVE=OFF
+cmake -S orient-endgame-component -B build -DCMAKE_BUILD_TYPE=Release -DSKYLANCE_NATIVE=OFF
 cmake --build build --parallel 2
 ./build/skylance --version
 ```
 
-`ORIENT_NATIVE=OFF` keeps the binary portable across compatible CPUs. Build locally for your platform; this repository does not require prebuilt executables.
+`SKYLANCE_NATIVE=OFF` keeps the binary portable across compatible CPUs. Build locally for your platform; this repository does not require prebuilt executables.
 
 ## Run
 
@@ -47,7 +49,7 @@ Enter `quit` to exit. To install the public executable in a local prefix:
 cmake --install build --prefix "$HOME/.local"
 ```
 
-This installs `bin/skylance`. The historical `orient` build target remains available for research scripts; both executable names identify as SkyLance. Internal `orient` namespaces, CMake options and the existing network-file format retain compatibility.
+This installs `bin/skylance`. The historical `orient` build target remains available for research scripts; both executable names identify as SkyLance. Public `SKYLANCE_*` CMake spellings map to the retained `ORIENT_*` definitions. Use one spelling per option in each configure command; changing either spelling later keeps its compatibility value synchronized. Internal `orient` namespaces, research environment variables and the existing network-file format retain compatibility.
 
 ## Optional tablebases
 
@@ -98,16 +100,27 @@ ORIENT_SYZYGY_PATH="$PWD/orient-endgame-component/external/tablebases/syzygy/3-4
   python3 -m unittest discover -s orient-endgame-component/tests -p 'test_*.py'
 ```
 
-The [30 October 2026 pre-upload review](orient-endgame-component/docs/preupload-review-2026-10-30.md) records **24/24 CTest groups** and **132 Python tests** passing with the local tables. An independent source-only build passed 20 CTest groups with four table-dependent skips. Focused ASan/UBSan checks also passed; the report describes their scope and limits. The [GitHub workflow](.github/workflows/ci.yml) builds, runs source-only checks, installs the engine and verifies the branding checksums.
+Current local verification after the evidence/CI update: **28/28 CTest groups**
+and **152 Python tests** pass with the full local collection. All 28 groups also
+pass under ASan/UBSan with leak detection disabled for the local ptrace wrapper;
+this is not a local LeakSanitizer pass. The actual hosted results are checked
+separately. The historical [30 October pre-upload review](orient-endgame-component/docs/preupload-review-2026-10-30.md)
+retains its original test counts and scope.
+
+The [GitHub workflow](.github/workflows/ci.yml) builds on Linux with GCC and Clang and on macOS with AppleClang. Every change also runs ASan/UBSan against the actual reader memory regressions using two pinned KQvK files (5,664 bytes). A weekly/manual job restores or downloads the full collection, verifies all cached bytes, and runs full-data Release, sanitizer and Python discovery checks. A green normal push does not by itself certify that scheduled full-table job.
 
 ## Repository contents and documentation
 
 The repository includes engine and reader source, build configuration, tests, developer tools, branding, licences, public reports and small provenance/checksum records. It includes the maintained Fathom reader and its unchanged upstream comparison copy.
 
-Downloaded table files, build trees, compiler caches, frozen checkpoints and raw investigation artifacts remain outside Git. Optional external comparator checkouts are referenced through the research documentation and retained client configuration. Historical reports may link to raw evidence available only in the original local research workspace; those artifacts are not downloadable from this repository. Their measurements describe frozen experiments, not a new benchmark of the current fixes.
+Downloaded table files, build trees, compiler caches, frozen checkpoints and raw investigation artifacts remain outside Git. Optional external comparator checkouts are referenced through the research documentation and retained client configuration. The [public evidence index](evidence/README.md) separates committed protocols/results from larger reproducibility archives and lists their availability. Tables remain separate downloads. Historical measurements describe their explicitly frozen source; use the follow-up source bindings before applying them to current code.
 
 `BUNDLE-MANIFEST.json` describes the original transfer archive. It is retained as provenance and is not a checksum manifest for this edited source checkout.
 
+- [Current-source confirmation and failed performance gates](evidence/tablebases-008/README.md)
+- [Public evidence and reproduction](evidence/README.md)
+- [Contributing](CONTRIBUTING.md)
+- [Changelog](CHANGELOG.md)
 - [Component README](orient-endgame-component/README.md)
 - [Build and continuation handoff](orient-endgame-component/HANDOFF.md)
 - [Pre-upload review and bug fixes](orient-endgame-component/docs/preupload-review-2026-10-30.md)

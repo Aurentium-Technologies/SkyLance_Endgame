@@ -1,0 +1,64 @@
+{
+  "campaign": "006",
+  "comparison_release": {
+    "bytes": 175902653,
+    "checksum_url": "https://github.com/Aurentium-Technologies/SkyLance_Endgame/releases/download/v0.1.0/skylance-evidence-006.tar.gz.sha256",
+    "filename": "skylance-evidence-006.tar.gz",
+    "sha256": "97b50229720af857ba494a8b1ec6a968ef023d907e38736b39f53cf815730381",
+    "url": "https://github.com/Aurentium-Technologies/SkyLance_Endgame/releases/download/v0.1.0/skylance-evidence-006.tar.gz"
+  },
+  "files": [
+    {
+      "original_path": "artifacts/investigations/tablebases-006/PROTOCOL.md",
+      "path": "PROTOCOL.md",
+      "sha256": "922fa613c924e2ec53d3dbb3d309f3544976436eaf8b80378666bbd18be16c67",
+      "size": 7171
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-006/protocol/freeze.json",
+      "path": "protocol/freeze.json",
+      "sha256": "bb6f6b2521aa4422660ffdc2161b101d195feb4098034f7714293250d14a96a6",
+      "size": 178828
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-006/performance/run001/result.json",
+      "path": "performance/run001/result.json",
+      "sha256": "7d9a681b2eb825a5161b137f0d163d0ed59c12960b6b0ea0c1798afa9fc7a156",
+      "size": 1074041
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-006/performance/run001/statistics.json",
+      "path": "performance/run001/statistics.json",
+      "sha256": "971462314fc713accdd732c80abbf109856805618b5d74efdb7dc0e5a6585a1a",
+      "size": 33957
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-006/performance/run001/per-material.csv",
+      "path": "performance/run001/per-material.csv",
+      "sha256": "94a899b89ddfc63c1e918a9940f0cd675c90cc007b86ec0816017e963e778255",
+      "size": 385202
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-006/performance/run001/latency-distributions.json",
+      "path": "performance/run001/latency-distributions.json",
+      "sha256": "d8c05dcc5318cc41ddc3d05b05bb3f4b4af75d4945d8f4956dda288095642882",
+      "size": 346772
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-006/independent-audit-final.json",
+      "path": "independent-audit-final.json",
+      "sha256": "24f5d35ab89bb1b63ccc611fe825e901ead6ae2504cc7b3124772521b514f300",
+      "size": 38005
+    }
+  ],
+  "kind": "skylance-public-evidence",
+  "release": {
+    "bytes": 25357511,
+    "checksum_url": "https://github.com/Aurentium-Technologies/SkyLance_Endgame/releases/download/v0.1.0/skylance-evidence-007.tar.gz.sha256",
+    "filename": "skylance-evidence-007.tar.gz",
+    "sha256": "cadfb4e863604626a2ecfc9492b342b144a8662029f6bead4eb25e293e2e53d0",
+    "url": "https://github.com/Aurentium-Technologies/SkyLance_Endgame/releases/download/v0.1.0/skylance-evidence-007.tar.gz"
+  },
+  "schema_version": 1,
+  "scope": "Immutable historical 006 index plus separately checksummed raw numeric/correctness audit archive; external binary/source payloads excluded"
+}

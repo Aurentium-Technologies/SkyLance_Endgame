@@ -26,7 +26,10 @@ unsigned queen(){return tb_probe_wdl(9,UINT64_C(1)<<62,1|(UINT64_C(1)<<62),8,0,0
 unsigned root(){std::array<unsigned,TB_MAX_MOVES> moves{};return tb_probe_root(9,UINT64_C(1)<<62,1|(UINT64_C(1)<<62),8,0,0,0,0,0,0,0,true,moves.data());}
 int main(int argc,char**argv){try{
  static_assert(TB_PIECES==7&&TB_HASHBITS==12);static_assert(sizeof(((EncInfo*)nullptr)->pieces)==7);
- const char*env=std::getenv("ORIENT_SYZYGY_PATH");if(argc<2&&!env){std::cout<<"Set ORIENT_SYZYGY_PATH for adaptive-catalogue tests\n";return 77;}fs::path data=argc>1?argv[1]:env;tb_free();released();
+ const bool regressionsOnly=argc>1&&std::string(argv[1])=="--regressions-only";
+ if(regressionsOnly&&argc!=3)throw std::runtime_error("usage: test_dynamic_catalog --regressions-only TABLE_DIRECTORY");
+ if(!regressionsOnly&&argc>2)throw std::runtime_error("usage: test_dynamic_catalog [TABLE_DIRECTORY]");
+ const char*env=std::getenv("ORIENT_SYZYGY_PATH");if(argc<2&&!env){std::cout<<"Set ORIENT_SYZYGY_PATH for adaptive-catalogue tests\n";return 77;}fs::path data=regressionsOnly?argv[2]:(argc>1?argv[1]:env);tb_free();released();
  Temp empty;std::ofstream(empty.path/"a")<<"unrelated";std::ofstream(empty.path/"abcd")<<"unrelated";
  auto before=snap();require(tb_init(empty.path.string().c_str()),"empty init");auto after=snap();
  require(after.open_attempts==before.open_attempts&&after.piece_capacity==0&&after.pawn_capacity==0,"empty directory discovery bound");require(queen()==TB_RESULT_FAILED,"empty outcome");tb_free();released();
@@ -71,6 +74,7 @@ int main(int argc,char**argv){try{
  // Aligned placeholders exercise discovery only, never six/seven-piece probes.
  link(data/"KQvK.rtbw",partial.path/"KQQQvKQ.rtbw");require(tb_init(partial.path.string().c_str())&&TB_LARGEST==6&&snap().piece_capacity==2,"six-piece discovery retained");tb_free();released();
  link(data/"KQvK.rtbw",partial.path/"KQQQQvKQ.rtbw");require(tb_init(partial.path.string().c_str())&&TB_LARGEST==7&&snap().piece_capacity==3,"seven-piece discovery retained");tb_free();released();
+ if(regressionsOnly){std::cout<<"Adaptive catalogue regression fixtures: teardown, empty sentinels, path-list boundaries, discovery and reuse passed\n";return 0;}
  before=snap();require(tb_init(data.string().c_str()),"complete init");after=snap();
  require(TB_LARGEST==5&&after.piece_count==84&&after.pawn_count==61&&after.piece_capacity==84&&after.pawn_capacity==61,"complete counts/capacities");
  require(after.open_attempts-before.open_attempts==435,"complete discovery open count");

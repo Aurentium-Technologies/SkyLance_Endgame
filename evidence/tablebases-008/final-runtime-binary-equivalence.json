@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "scope": "Final native Release runtime binaries versus the exact binaries used by completed008timing; docs/test registration/option-cache bookkeeping do not change these binaries",
+  "all_equal": true,
+  "binaries": [
+    {
+      "target": "orient",
+      "published_binary": "build/verify-native/orient",
+      "measured_binary": "artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient",
+      "sha256": "e2d8e916bbe8dd9c93adca726ddf82efef254493ba73b65b9e1caf63947f86d1",
+      "measured_sha256": "e2d8e916bbe8dd9c93adca726ddf82efef254493ba73b65b9e1caf63947f86d1",
+      "equal": true
+    },
+    {
+      "target": "skylance",
+      "published_binary": "build/verify-native/skylance",
+      "measured_binary": "artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient",
+      "sha256": "e2d8e916bbe8dd9c93adca726ddf82efef254493ba73b65b9e1caf63947f86d1",
+      "measured_sha256": "e2d8e916bbe8dd9c93adca726ddf82efef254493ba73b65b9e1caf63947f86d1",
+      "equal": true
+    },
+    {
+      "target": "orient-reader-compare",
+      "published_binary": "build/verify-native/orient-reader-compare",
+      "measured_binary": "artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-reader-compare",
+      "sha256": "1441144595698a7078459a3a6faf495cceb068d07c11638b7121eec3dbb3d8d2",
+      "measured_sha256": "1441144595698a7078459a3a6faf495cceb068d07c11638b7121eec3dbb3d8d2",
+      "equal": true
+    },
+    {
+      "target": "orient-tablebase-ordered-probe",
+      "published_binary": "build/verify-native/orient-tablebase-ordered-probe",
+      "measured_binary": "artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-tablebase-ordered-probe",
+      "sha256": "7e8c3b0b69df8a513d5eb3ee177bf8926a4a57cb7073eb0c4a33797dc7aea0dd",
+      "measured_sha256": "7e8c3b0b69df8a513d5eb3ee177bf8926a4a57cb7073eb0c4a33797dc7aea0dd",
+      "equal": true
+    },
+    {
+      "target": "orient-tablebase-bench",
+      "published_binary": "build/verify-native/orient-tablebase-bench",
+      "measured_binary": "artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-tablebase-bench",
+      "sha256": "ed339af7ab922e2a27e02d16bbe8976a00cf3ac251befb1ec9a09b8cb28eff87",
+      "measured_sha256": "ed339af7ab922e2a27e02d16bbe8976a00cf3ac251befb1ec9a09b8cb28eff87",
+      "equal": true
+    }
+  ]
+}

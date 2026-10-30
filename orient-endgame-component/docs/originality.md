@@ -1,5 +1,8 @@
 # Originality and provenance
 
+This historical report names supporting files from the wider local research archive. Available public records and separate downloads are listed in the [evidence index](../../evidence/README.md); local-only paths below are not GitHub download links.
+
+
 Orient's search, position evaluation, primary move generator and learned networks
 are developed independently for this project. The goal is to develop our own
 playing algorithm, with the longer-term ambition of surpassing Stockfish under
@@ -47,7 +50,7 @@ the tablebase manifest and effective settings when endgames are enabled. See
 
 ## Training provenance
 
-The optional neural evaluator, self-player, CPU trainer and integer export are original implementations. Every training run initializes weights randomly and accepts only verified Orient self-play manifests. Positions, search labels and completed-game outcomes come exclusively from Orient. Match games against external opponents are measurement evidence, not training data. Whole opening groups split across training and validation, and shared model-equivalent positions are removed from validation. Development, confirmation and holdout opening positions are excluded from training, together with entire games starting at those positions and their model-equivalent reflections. Generator binary/source hashes, options, seeds, data hashes, training configuration and network export agreement are retained. PyTorch is an optional numerical training dependency. See [the learning workflow](../learning/README.md).
+The optional neural evaluator, self-player, CPU trainer and integer export are original implementations. Every training run initializes weights randomly and accepts only verified Orient self-play manifests. Positions, search labels and completed-game outcomes come exclusively from Orient. Match games against external opponents are measurement evidence, not training data. Whole opening groups split across training and validation, and shared model-equivalent positions are removed from validation. Development, confirmation and holdout opening positions are excluded from training, together with entire games starting at those positions and their model-equivalent reflections. Generator binary/source hashes, options, seeds, data hashes, training configuration and network export agreement are retained. PyTorch is an optional numerical training dependency. See the learning workflow (local archive: `../learning/README.md`).
 
 For this release, self-play generation never attaches a tablebase provider and
 neural training remains Orient-only. Tablebase test positions, probe outcomes

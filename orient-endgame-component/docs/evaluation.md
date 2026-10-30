@@ -1,5 +1,8 @@
 # Orient's original evaluator
 
+This historical report names supporting files from the wider local research archive. Available public records and separate downloads are listed in the [evidence index](../../evidence/README.md); local-only paths below are not GitHub download links.
+
+
 All terms below were defined for Orient. There are no imported piece-square
 tables, network weights, opponent labels, or opponent move decisions. Values
 are initial engineering hypotheses, not measured optimal parameters.
@@ -41,7 +44,7 @@ least valuable legal attacker at each exchange step and allows either side to
 stop exchanging. SEE orders captures; the default search never prunes based on
 SEE. The classical evaluator remains the baseline. An optional original compact
 neural evaluator is integrated but disabled by default; no trained playing network
-has been established. See [original learning](../learning/README.md) for architecture,
+has been established. See original learning (local archive: `../learning/README.md`) for architecture,
 integer format and the data/export verification workflow.
 
 Search-cache correctness: root searches with UCI `searchmoves` do not store a

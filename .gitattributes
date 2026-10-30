@@ -9,3 +9,5 @@
 *.yml text eol=lf
 *.png binary
 *.tar.gz binary
+# Historical checksums bind exact bytes, including original CSV line endings.
+evidence/** -text

@@ -1,0 +1,1103 @@
+{
+  "all_semantic_results_equal": true,
+  "binaries": {
+    "baseline": {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-reader-compare",
+      "sha256": "d8b3955c741660c41bc9852bc6198db9a8099ef8e40b30b1a2891b14ee0f312d"
+    },
+    "candidate": {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-reader-compare",
+      "sha256": "1441144595698a7078459a3a6faf495cceb068d07c11638b7121eec3dbb3d8d2"
+    }
+  },
+  "cache_mib": [
+    0,
+    1,
+    4,
+    16
+  ],
+  "config": {
+    "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/correctness-config.json",
+    "sha256": "f457a5bddc6ec81d4cec67d2d240fed122292e7560e29a4fbb2c7fee521b072b"
+  },
+  "corpora": {
+    "continuity": {
+      "file": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/primary.fen",
+        "sha256": "1c6c1a6b87c817a713af8f0a26a8f0117022e0370b1f7d3ff9d36f3ee743d70f"
+      },
+      "positions": 11000
+    },
+    "holdout": {
+      "file": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-007/fixtures/holdout.fen",
+        "sha256": "27b8750057b7bd8e8595b6103cc7a691386956de5b6864f34288873ca175ffb7"
+      },
+      "positions": 11000
+    },
+    "old_continuity": {
+      "file": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-005/fixtures/continuity-shared-valid.fen",
+        "sha256": "4890e1378c57a3c4bd3c10ad034921aba16165ab562a4b5faf897ac773460ceb"
+      },
+      "positions": 9985
+    },
+    "old_holdout": {
+      "file": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-005/fixtures/holdout-shared-valid.fen",
+        "sha256": "8a383285daa93874ef344bcbf51c815b2741e0e581405a7d5f4bb0a480ff1ada"
+      },
+      "positions": 9975
+    },
+    "special": {
+      "file": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-005/fixtures/special-shared-valid.fen",
+        "sha256": "a63d18b6e66f37a6807309ee2fc193774d9fa7ccf995cfbf3c9888f051598867"
+      },
+      "positions": 2003
+    }
+  },
+  "dataset": {
+    "complete": true,
+    "file_count": 290,
+    "manifest": {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5/manifest.json",
+      "sha256": "7d4eae2c333da3b8b9e485e0496efc56a07b4452e2bb53e83cfa6bceb9c7a73d"
+    },
+    "max_pieces": 5,
+    "root": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+    "total_bytes": 983957920
+  },
+  "difference_rows": 0,
+  "differences": [],
+  "engine_binaries": {
+    "baseline": {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient",
+      "sha256": "46304f7b2ef9d6b4f36b2a0fa0012e8c0cbf77a2a172f054b0cac4c4b6b3b429"
+    },
+    "candidate": {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient",
+      "sha256": "e2d8e916bbe8dd9c93adca726ddf82efef254493ba73b65b9e1caf63947f86d1"
+    }
+  },
+  "errors": [],
+  "exact_ordered_results_equal": true,
+  "operations": [
+    "wdl",
+    "dtz",
+    "all_moves"
+  ],
+  "ordered_probe_binaries": {
+    "baseline": {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-tablebase-ordered-probe",
+      "sha256": "f10db4db13f38ef3c3ff31115cc9d82ea361a6e169cb74a99846d5d3e7731c69"
+    },
+    "candidate": {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-tablebase-ordered-probe",
+      "sha256": "7e8c3b0b69df8a513d5eb3ee177bf8926a4a57cb7073eb0c4a33797dc7aea0dd"
+    }
+  },
+  "outputs": {
+    "shared-continuity-native-baseline": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "0",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/primary.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 11000,
+      "rows_expected": 11000,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-continuity-native-baseline.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-continuity-native-baseline.jsonl",
+        "sha256": "cbdaa3c4eaeb0cea10005ad945069da9ac64e0eaa70a399f9b349abce145f88d"
+      }
+    },
+    "shared-continuity-native-candidate": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "0",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/primary.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 11000,
+      "rows_expected": 11000,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-continuity-native-candidate.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-continuity-native-candidate.jsonl",
+        "sha256": "cbdaa3c4eaeb0cea10005ad945069da9ac64e0eaa70a399f9b349abce145f88d"
+      }
+    },
+    "shared-continuity-reader-baseline": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-reader-compare",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/primary.fen",
+        "verify",
+        "1",
+        "mmap"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": false,
+      "rows": 11000,
+      "rows_expected": 11000,
+      "schema": "reader",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-continuity-reader-baseline.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-continuity-reader-baseline.jsonl",
+        "sha256": "3fb93702a74a90de21853c635385d86f555f04b575f514198aeeff4e0c65a6f4"
+      }
+    },
+    "shared-continuity-reader-candidate": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-reader-compare",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/primary.fen",
+        "verify",
+        "1",
+        "mmap"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": false,
+      "rows": 11000,
+      "rows_expected": 11000,
+      "schema": "reader",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-continuity-reader-candidate.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-continuity-reader-candidate.jsonl",
+        "sha256": "3fb93702a74a90de21853c635385d86f555f04b575f514198aeeff4e0c65a6f4"
+      }
+    },
+    "shared-holdout-native-baseline": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "0",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-007/fixtures/holdout.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 11000,
+      "rows_expected": 11000,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-holdout-native-baseline.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-holdout-native-baseline.jsonl",
+        "sha256": "207a6c86dfbe290d60b1dc77f0a55b198b2722aeb80a0aea922f0e5080092bb1"
+      }
+    },
+    "shared-holdout-native-candidate": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "0",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-007/fixtures/holdout.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 11000,
+      "rows_expected": 11000,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-holdout-native-candidate.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-holdout-native-candidate.jsonl",
+        "sha256": "207a6c86dfbe290d60b1dc77f0a55b198b2722aeb80a0aea922f0e5080092bb1"
+      }
+    },
+    "shared-holdout-reader-baseline": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-reader-compare",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-007/fixtures/holdout.fen",
+        "verify",
+        "1",
+        "mmap"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": false,
+      "rows": 11000,
+      "rows_expected": 11000,
+      "schema": "reader",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-holdout-reader-baseline.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-holdout-reader-baseline.jsonl",
+        "sha256": "c1b093b668df5081a32327ef6b1adf5b214ad08a2421df9ec5d24fb98cc2863a"
+      }
+    },
+    "shared-holdout-reader-candidate": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-reader-compare",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-007/fixtures/holdout.fen",
+        "verify",
+        "1",
+        "mmap"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": false,
+      "rows": 11000,
+      "rows_expected": 11000,
+      "schema": "reader",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-holdout-reader-candidate.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-holdout-reader-candidate.jsonl",
+        "sha256": "c1b093b668df5081a32327ef6b1adf5b214ad08a2421df9ec5d24fb98cc2863a"
+      }
+    },
+    "shared-old_continuity-native-baseline": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "0",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-005/fixtures/continuity-shared-valid.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 9985,
+      "rows_expected": 9985,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-old_continuity-native-baseline.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-old_continuity-native-baseline.jsonl",
+        "sha256": "058afe5e5377c821d617e0e166125d4a95a3ed13b8f2ae42c005094d957e937d"
+      }
+    },
+    "shared-old_continuity-native-candidate": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "0",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-005/fixtures/continuity-shared-valid.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 9985,
+      "rows_expected": 9985,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-old_continuity-native-candidate.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-old_continuity-native-candidate.jsonl",
+        "sha256": "058afe5e5377c821d617e0e166125d4a95a3ed13b8f2ae42c005094d957e937d"
+      }
+    },
+    "shared-old_continuity-reader-baseline": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-reader-compare",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-005/fixtures/continuity-shared-valid.fen",
+        "verify",
+        "1",
+        "mmap"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": false,
+      "rows": 9985,
+      "rows_expected": 9985,
+      "schema": "reader",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-old_continuity-reader-baseline.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-old_continuity-reader-baseline.jsonl",
+        "sha256": "4b73b7731d73f59f09fedc994be09e4634c2e7bea521ffcfb2b962efee6da46c"
+      }
+    },
+    "shared-old_continuity-reader-candidate": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-reader-compare",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-005/fixtures/continuity-shared-valid.fen",
+        "verify",
+        "1",
+        "mmap"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": false,
+      "rows": 9985,
+      "rows_expected": 9985,
+      "schema": "reader",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-old_continuity-reader-candidate.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-old_continuity-reader-candidate.jsonl",
+        "sha256": "4b73b7731d73f59f09fedc994be09e4634c2e7bea521ffcfb2b962efee6da46c"
+      }
+    },
+    "shared-old_holdout-native-baseline": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "0",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-005/fixtures/holdout-shared-valid.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 9975,
+      "rows_expected": 9975,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-old_holdout-native-baseline.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-old_holdout-native-baseline.jsonl",
+        "sha256": "535b263887d71a5206369f531297e70c7da4238b503212ea00ff717cc23e1732"
+      }
+    },
+    "shared-old_holdout-native-candidate": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "0",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-005/fixtures/holdout-shared-valid.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 9975,
+      "rows_expected": 9975,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-old_holdout-native-candidate.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-old_holdout-native-candidate.jsonl",
+        "sha256": "535b263887d71a5206369f531297e70c7da4238b503212ea00ff717cc23e1732"
+      }
+    },
+    "shared-old_holdout-reader-baseline": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-reader-compare",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-005/fixtures/holdout-shared-valid.fen",
+        "verify",
+        "1",
+        "mmap"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": false,
+      "rows": 9975,
+      "rows_expected": 9975,
+      "schema": "reader",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-old_holdout-reader-baseline.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-old_holdout-reader-baseline.jsonl",
+        "sha256": "3b9f455c4ee71263b3e1f73751ee5f5f5f00d6b0cb8b326f52f38b3a1101f347"
+      }
+    },
+    "shared-old_holdout-reader-candidate": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-reader-compare",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-005/fixtures/holdout-shared-valid.fen",
+        "verify",
+        "1",
+        "mmap"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": false,
+      "rows": 9975,
+      "rows_expected": 9975,
+      "schema": "reader",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-old_holdout-reader-candidate.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-old_holdout-reader-candidate.jsonl",
+        "sha256": "3b9f455c4ee71263b3e1f73751ee5f5f5f00d6b0cb8b326f52f38b3a1101f347"
+      }
+    },
+    "shared-special-native-baseline": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "0",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-005/fixtures/special-shared-valid.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 2003,
+      "rows_expected": 2003,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-special-native-baseline.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-special-native-baseline.jsonl",
+        "sha256": "f91eae9c480d959eadcb18a6a7b2e67ec936ecaf60095858208fb03a7ab28b10"
+      }
+    },
+    "shared-special-native-candidate": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "0",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-005/fixtures/special-shared-valid.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 2003,
+      "rows_expected": 2003,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-special-native-candidate.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-special-native-candidate.jsonl",
+        "sha256": "f91eae9c480d959eadcb18a6a7b2e67ec936ecaf60095858208fb03a7ab28b10"
+      }
+    },
+    "shared-special-reader-baseline": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-reader-compare",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-005/fixtures/special-shared-valid.fen",
+        "verify",
+        "1",
+        "mmap"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": false,
+      "rows": 2003,
+      "rows_expected": 2003,
+      "schema": "reader",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-special-reader-baseline.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-special-reader-baseline.jsonl",
+        "sha256": "21207b72c12fc75ab426483fb7b7928a5fa4f5c5270e5037b4e1829e58247d0c"
+      }
+    },
+    "shared-special-reader-candidate": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-reader-compare",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-005/fixtures/special-shared-valid.fen",
+        "verify",
+        "1",
+        "mmap"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": false,
+      "rows": 2003,
+      "rows_expected": 2003,
+      "schema": "reader",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-special-reader-candidate.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/shared-special-reader-candidate.jsonl",
+        "sha256": "21207b72c12fc75ab426483fb7b7928a5fa4f5c5270e5037b4e1829e58247d0c"
+      }
+    },
+    "upstream-material-0": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/upstream-ordered",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "0",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/positions.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 10005,
+      "rows_expected": 10005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-0.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-0.jsonl",
+        "sha256": "2cb029768dd93956c0a73911da7d2e15c3c1c28ed1b5f4fcfd6f717281b946d9"
+      }
+    },
+    "upstream-material-1": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/upstream-ordered",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "1",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/positions.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 10005,
+      "rows_expected": 10005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-1.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-1.jsonl",
+        "sha256": "2cb029768dd93956c0a73911da7d2e15c3c1c28ed1b5f4fcfd6f717281b946d9"
+      }
+    },
+    "upstream-material-16": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/upstream-ordered",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "16",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/positions.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 10005,
+      "rows_expected": 10005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-16.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-16.jsonl",
+        "sha256": "2cb029768dd93956c0a73911da7d2e15c3c1c28ed1b5f4fcfd6f717281b946d9"
+      }
+    },
+    "upstream-material-4": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/upstream-ordered",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "4",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/positions.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 10005,
+      "rows_expected": 10005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-4.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-4.jsonl",
+        "sha256": "2cb029768dd93956c0a73911da7d2e15c3c1c28ed1b5f4fcfd6f717281b946d9"
+      }
+    },
+    "upstream-material-baseline-0": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "0",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/positions.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 10005,
+      "rows_expected": 10005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-baseline-0.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-baseline-0.jsonl",
+        "sha256": "2cb029768dd93956c0a73911da7d2e15c3c1c28ed1b5f4fcfd6f717281b946d9"
+      }
+    },
+    "upstream-material-baseline-1": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "1",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/positions.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 10005,
+      "rows_expected": 10005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-baseline-1.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-baseline-1.jsonl",
+        "sha256": "2cb029768dd93956c0a73911da7d2e15c3c1c28ed1b5f4fcfd6f717281b946d9"
+      }
+    },
+    "upstream-material-baseline-16": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "16",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/positions.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 10005,
+      "rows_expected": 10005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-baseline-16.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-baseline-16.jsonl",
+        "sha256": "2cb029768dd93956c0a73911da7d2e15c3c1c28ed1b5f4fcfd6f717281b946d9"
+      }
+    },
+    "upstream-material-baseline-4": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "4",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/positions.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 10005,
+      "rows_expected": 10005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-baseline-4.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-baseline-4.jsonl",
+        "sha256": "2cb029768dd93956c0a73911da7d2e15c3c1c28ed1b5f4fcfd6f717281b946d9"
+      }
+    },
+    "upstream-material-candidate-0": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "0",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/positions.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 10005,
+      "rows_expected": 10005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-candidate-0.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-candidate-0.jsonl",
+        "sha256": "2cb029768dd93956c0a73911da7d2e15c3c1c28ed1b5f4fcfd6f717281b946d9"
+      }
+    },
+    "upstream-material-candidate-1": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "1",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/positions.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 10005,
+      "rows_expected": 10005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-candidate-1.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-candidate-1.jsonl",
+        "sha256": "2cb029768dd93956c0a73911da7d2e15c3c1c28ed1b5f4fcfd6f717281b946d9"
+      }
+    },
+    "upstream-material-candidate-16": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "16",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/positions.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 10005,
+      "rows_expected": 10005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-candidate-16.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-candidate-16.jsonl",
+        "sha256": "2cb029768dd93956c0a73911da7d2e15c3c1c28ed1b5f4fcfd6f717281b946d9"
+      }
+    },
+    "upstream-material-candidate-4": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "4",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/positions.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 10005,
+      "rows_expected": 10005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-candidate-4.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-material-candidate-4.jsonl",
+        "sha256": "2cb029768dd93956c0a73911da7d2e15c3c1c28ed1b5f4fcfd6f717281b946d9"
+      }
+    },
+    "upstream-special-0": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/upstream-ordered",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "0",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/special.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 2005,
+      "rows_expected": 2005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-0.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-0.jsonl",
+        "sha256": "a1c7a3f2389569cd4f1a7c4696e6629c0c1a526f98eb8a5494604df54fd433f0"
+      }
+    },
+    "upstream-special-1": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/upstream-ordered",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "1",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/special.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 2005,
+      "rows_expected": 2005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-1.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-1.jsonl",
+        "sha256": "a1c7a3f2389569cd4f1a7c4696e6629c0c1a526f98eb8a5494604df54fd433f0"
+      }
+    },
+    "upstream-special-16": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/upstream-ordered",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "16",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/special.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 2005,
+      "rows_expected": 2005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-16.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-16.jsonl",
+        "sha256": "a1c7a3f2389569cd4f1a7c4696e6629c0c1a526f98eb8a5494604df54fd433f0"
+      }
+    },
+    "upstream-special-4": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/upstream-ordered",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "4",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/special.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 2005,
+      "rows_expected": 2005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-4.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-4.jsonl",
+        "sha256": "a1c7a3f2389569cd4f1a7c4696e6629c0c1a526f98eb8a5494604df54fd433f0"
+      }
+    },
+    "upstream-special-baseline-0": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "0",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/special.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 2005,
+      "rows_expected": 2005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-baseline-0.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-baseline-0.jsonl",
+        "sha256": "a1c7a3f2389569cd4f1a7c4696e6629c0c1a526f98eb8a5494604df54fd433f0"
+      }
+    },
+    "upstream-special-baseline-1": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "1",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/special.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 2005,
+      "rows_expected": 2005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-baseline-1.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-baseline-1.jsonl",
+        "sha256": "a1c7a3f2389569cd4f1a7c4696e6629c0c1a526f98eb8a5494604df54fd433f0"
+      }
+    },
+    "upstream-special-baseline-16": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "16",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/special.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 2005,
+      "rows_expected": 2005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-baseline-16.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-baseline-16.jsonl",
+        "sha256": "a1c7a3f2389569cd4f1a7c4696e6629c0c1a526f98eb8a5494604df54fd433f0"
+      }
+    },
+    "upstream-special-baseline-4": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "4",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/special.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 2005,
+      "rows_expected": 2005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-baseline-4.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-baseline-4.jsonl",
+        "sha256": "a1c7a3f2389569cd4f1a7c4696e6629c0c1a526f98eb8a5494604df54fd433f0"
+      }
+    },
+    "upstream-special-candidate-0": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "0",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/special.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 2005,
+      "rows_expected": 2005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-candidate-0.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-candidate-0.jsonl",
+        "sha256": "a1c7a3f2389569cd4f1a7c4696e6629c0c1a526f98eb8a5494604df54fd433f0"
+      }
+    },
+    "upstream-special-candidate-1": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "1",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/special.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 2005,
+      "rows_expected": 2005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-candidate-1.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-candidate-1.jsonl",
+        "sha256": "a1c7a3f2389569cd4f1a7c4696e6629c0c1a526f98eb8a5494604df54fd433f0"
+      }
+    },
+    "upstream-special-candidate-16": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "16",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/special.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 2005,
+      "rows_expected": 2005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-candidate-16.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-candidate-16.jsonl",
+        "sha256": "a1c7a3f2389569cd4f1a7c4696e6629c0c1a526f98eb8a5494604df54fd433f0"
+      }
+    },
+    "upstream-special-candidate-4": {
+      "argv": [
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-tablebase-ordered-probe",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5",
+        "4",
+        "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/special.fen"
+      ],
+      "exit_code": 0,
+      "has_nonlexicographic_alternatives": true,
+      "rows": 2005,
+      "rows_expected": 2005,
+      "schema": "native",
+      "stderr": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-candidate-4.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/verification/correctness-001/upstream-special-candidate-4.jsonl",
+        "sha256": "a1c7a3f2389569cd4f1a7c4696e6629c0c1a526f98eb8a5494604df54fd433f0"
+      }
+    }
+  },
+  "schema_version": 1,
+  "scope": "Exact raw reader and native ordered probe results; engine/search executable identities bound for later tests and timing, not exercised by this controller.",
+  "search_binaries": {
+    "baseline": {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/baseline-native/orient-tablebase-bench",
+      "sha256": "60a32a822c59a22825cd3e66a251eb85d821f336e2c87c8e30488e782d81cf09"
+    },
+    "candidate": {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/candidate-native/orient-tablebase-bench",
+      "sha256": "ed339af7ab922e2a27e02d16bbe8976a00cf3ac251befb1ec9a09b8cb28eff87"
+    }
+  },
+  "sources": {
+    "dataset_verifier": {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/tools/tablebase_manifest.py",
+      "sha256": "30d995d1daec3f7174c630e8a8f54326325818700596f9b5db6e15b98401bfe2"
+    },
+    "shared_tools": {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/tools/experiment.py",
+      "sha256": "d33de8a101e3694017485b0dbd3369313bad4d42ac157799d4ea9c8c37c21c08"
+    },
+    "verifier": {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-007/verify_improvements.py",
+      "sha256": "919c79b8175b60f7cb2f37421c56b138a8a3fa62b0f66522aceef48427c44b2f"
+    }
+  },
+  "status": "passed",
+  "tablebase_manifest": {
+    "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5/manifest.json",
+    "sha256": "7d4eae2c333da3b8b9e485e0496efc56a07b4452e2bb53e83cfa6bceb9c7a73d"
+  },
+  "upstream": {
+    "probe": {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-008/run-002/build/upstream-ordered",
+      "sha256": "ae59022c0abd271b11f6f770d700fbc26ca5e7105dea289cd11d5b469b027cfe"
+    }
+  },
+  "upstream_corpora": {
+    "material": {
+      "file": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/positions.fen",
+        "sha256": "4b471aabf478afe28cfe9f8ba64eb6921a33d459269b6f908e83ae1828b351b5"
+      },
+      "positions": 10005
+    },
+    "special": {
+      "file": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-002/comparison/special.fen",
+        "sha256": "bc39a306e440f3fbff50c1a7fff7b2baf3c35374d90627066bf6688c8c7164ad"
+      },
+      "positions": 2005
+    }
+  },
+  "variant_names": [
+    "baseline",
+    "candidate"
+  ]
+}

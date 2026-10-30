@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "scope": "Current production C++/headers/reader/compiled benchmark clients match008frozen candidate; final CMake additionally changes option-cache bookkeeping/test registration only, proven by byte-identical native binaries",
+  "all_equal": true,
+  "files": [
+    {
+      "path": "include/orient/chess.hpp",
+      "sha256": "f30360bfd2fe360b1a9fbcc514097e557e323d34a189c9323ce67b1e70d65404",
+      "size": 4444
+    },
+    {
+      "path": "include/orient/detail/tablebase_cache.hpp",
+      "sha256": "1c21dad739a52098533658d97c9d9ac313039e268470c49a2e3380317b34fca8",
+      "size": 3627
+    },
+    {
+      "path": "include/orient/nnue.hpp",
+      "sha256": "0165db4fa64c643f25969799acee6af50dbb7d739fec7ed53c4696e18d46261d",
+      "size": 1593
+    },
+    {
+      "path": "include/orient/search.hpp",
+      "sha256": "754ad71f5081e3e5e50d9e7a78e18b5d0f6b67d2879e119752ce1062bc1c051e",
+      "size": 2394
+    },
+    {
+      "path": "include/orient/tablebases.hpp",
+      "sha256": "283f1749b3cf5d1d1949ef223a0abbc900b7f254869234e163bb579080b07f55",
+      "size": 2378
+    },
+    {
+      "path": "src/chess.cpp",
+      "sha256": "bb762d411fcc7a194fedee05a7dc1af3a4535c5bec6bb837075f1d12e0c20d11",
+      "size": 24239
+    },
+    {
+      "path": "src/evaluation.cpp",
+      "sha256": "05667f08763df06b87262cc37e3acb6bdfb2262f25cb0fa4e41f5a65b7d9db4c",
+      "size": 8751
+    },
+    {
+      "path": "src/main.cpp",
+      "sha256": "03fd641b71fbba1be6e01655a89303cd9bc3649db018bb3fb0accc27032bf066",
+      "size": 20537
+    },
+    {
+      "path": "src/nnue.cpp",
+      "sha256": "f73649e454b5f843379f6c7dc7117ff1070f01b3dc2893dbfeae67dae49c1055",
+      "size": 6704
+    },
+    {
+      "path": "src/search.cpp",
+      "sha256": "020b5811ea727569f9d0155a200a2d51644ed322d936068bd5629804e78ac8a2",
+      "size": 29719
+    },
+    {
+      "path": "src/tablebases.cpp",
+      "sha256": "8c6d8a23c9342b8a724b2fcdf6840356f84769a15d11e64e559dd8e570d3e4bd",
+      "size": 11903
+    },
+    {
+      "path": "third_party/fathom/src/orient_tb_diagnostics.h",
+      "sha256": "acc6353a6cba690a1450a0a370fb1c290df57237ef342df665a9a413fe2bee80",
+      "size": 1078
+    },
+    {
+      "path": "third_party/fathom/src/stdendian.h",
+      "sha256": "e5b8187eec89ef83e731ea92be8ca0df4b533d8d21075fc4e2c86b4b00d7b7c3",
+      "size": 8925
+    },
+    {
+      "path": "third_party/fathom/src/tbchess.c",
+      "sha256": "119f19fa8714686798ca7be011e5b234f99c93aec751e9492f2664757d6c029d",
+      "size": 31292
+    },
+    {
+      "path": "third_party/fathom/src/tbconfig.h",
+      "sha256": "69fe1821b471164bd759cf46c486d55b7fa727e348a5ee306b18d19537ac3a03",
+      "size": 5648
+    },
+    {
+      "path": "third_party/fathom/src/tbprobe.c",
+      "sha256": "a4f3e7a23b295ca01edd15b30652310f79c286b9d9dcef0bba2363d89c82c7eb",
+      "size": 90496
+    },
+    {
+      "path": "third_party/fathom/src/tbprobe.h",
+      "sha256": "dc7808dc58c2a1af921a612f94041b917dfac94d3215a76a2b2b0c53c94ea561",
+      "size": 12815
+    },
+    {
+      "path": "tools/benchmark_reader_memory.cpp",
+      "sha256": "67c53aa4e509cbd09f352b6ea4ccab1bd621873c336533cbb6d443230b62abfc",
+      "size": 16942
+    },
+    {
+      "path": "tools/benchmark_tablebases.cpp",
+      "sha256": "46ffadaffef9f74c601b4eec5c8a5e616c07d38a88e8c65dd932bc3190011278",
+      "size": 14948
+    },
+    {
+      "path": "tools/reader_compare.cpp",
+      "sha256": "a2771c28092a5982fbf514fb54883cfb45f9e46aeb77ef432f68d73129a47c60",
+      "size": 10665
+    },
+    {
+      "path": "tools/reader_compare_dtz.cpp",
+      "sha256": "62594f26d2cc3e33361aec1b545c107f42fe09749c66e14381ca0c7a41389e34",
+      "size": 945
+    },
+    {
+      "path": "tools/tablebase_probe.cpp",
+      "sha256": "907527fa7be07f1b165d6ca0f97d88ea18caf9e40fbfb446b07ec65881a77b22",
+      "size": 5405
+    }
+  ]
+}

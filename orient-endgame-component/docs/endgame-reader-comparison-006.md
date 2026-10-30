@@ -1,5 +1,8 @@
 # Five-piece comparison 006
 
+This historical report names supporting files from the wider local research archive. Available public records and separate downloads are listed in the [evidence index](../../evidence/README.md); local-only paths below are not GitHub download links.
+
+
 Completed 30 October 2026, 00:22 NZDT. Local comparison of the retained Orient 016 query stack with five pinned external implementations.
 
 The roster-wide superiority claim is **not supported** under the frozen decision rules. Each result below is retained regardless of its direction.
@@ -49,7 +52,7 @@ Per-material query-latency summaries are descriptive and exclude result hashing;
 
 The known full-history draw loss remains open. FEN-query correctness does not certify arbitrary repetition histories. No production algorithm, history policy, profile, training configuration or checkpoint was changed.
 
-Evidence: [protocol](../artifacts/investigations/tablebases-006/PROTOCOL.md), [freeze](../artifacts/investigations/tablebases-006/protocol/freeze.json), [correctness](../artifacts/investigations/tablebases-006/verification/result.json), [raw campaign](../artifacts/investigations/tablebases-006/performance/run001/result.json), [statistics](../artifacts/investigations/tablebases-006/performance/run001/statistics.json), [per-material results](../artifacts/investigations/tablebases-006/performance/run001/per-material.csv), [latency histograms and raw sidecars](../artifacts/investigations/tablebases-006/performance/run001/latency-distributions.json).
+Evidence: [protocol](../../evidence/tablebases-006/PROTOCOL.md), [freeze](../../evidence/tablebases-006/protocol/freeze.json), correctness (local archive: `../artifacts/investigations/tablebases-006/verification/result.json`), [raw campaign](../../evidence/tablebases-006/performance/run001/result.json), [statistics](../../evidence/tablebases-006/performance/run001/statistics.json), [per-material results](../../evidence/tablebases-006/performance/run001/per-material.csv), [latency histograms and raw sidecars](../../evidence/tablebases-006/performance/run001/latency-distributions.json).
 
 
 Additional descriptive tasks were measured after the primary campaign, five fresh-process samples per row. Native Stockfish ranking returns ranks/scores rather than every move's raw WDL/DTZ. No matched Orient speed ratio is inferred from this separate work.

@@ -1,5 +1,8 @@
 # Reader memory and startup experiment 005
 
+This historical report names supporting files from the wider local research archive. Available public records and separate downloads are listed in the [evidence index](../../evidence/README.md); local-only paths below are not GitHub download links.
+
+
 Date: 29 October 2026, New Zealand date. **Decision: do not adopt.** The optional five-piece catalogue is implemented and verified, but stays OFF. It saves **1,966,592 requested allocation bytes (1.88 MiB)** and reduces measured constructor/configured-readiness times by **71.56% / 44.14%**, while several held-out probe and complete-search measurements exceed the agreed 5% slowdown limit. Orient 016 remains retained; no 017 checkpoint or new offline profile is created.
 
 ## Implementation and boundaries
@@ -77,7 +80,7 @@ Both new build options remain **OFF**. Orient 016 and all earlier candidates/pro
 
 Configure a separate native Release build with catalogue ON and diagnostics OFF for the prototype; use a separate diagnostics-ON build for memory attribution. The timing baseline is reconstructed from 016 plus the common measurement clients. Keep encoding dimensions seven and all other experimental settings OFF. Run the saved correctness configuration, then the saved performance configuration into fresh directories using the corresponding verifier/controller. Neither starts games or training.
 
-- [Frozen protocol](../artifacts/investigations/tablebases-005/PROTOCOL.md), [performance configuration](../artifacts/investigations/tablebases-005/performance-config.json) and [all timing/diagnostic results](../artifacts/investigations/tablebases-005/performance/result.json).
-- [Exact correctness result](../artifacts/investigations/tablebases-005/correctness/result.json), [independent audit](../artifacts/investigations/tablebases-005/independent-audit.md) and [disabled/default-off checks](../artifacts/investigations/tablebases-005/postchecks.json).
-- [Four-build verification](../artifacts/investigations/tablebases-005/verification.json), [fork patch check](../artifacts/investigations/tablebases-005/fork-patch-check.json) and [pre-timing guard repair](../artifacts/investigations/tablebases-005/preflight-guard-fix.md).
+- Frozen protocol (local archive: `../artifacts/investigations/tablebases-005/PROTOCOL.md`), performance configuration (local archive: `../artifacts/investigations/tablebases-005/performance-config.json`) and all timing/diagnostic results (local archive: `../artifacts/investigations/tablebases-005/performance/result.json`).
+- Exact correctness result (local archive: `../artifacts/investigations/tablebases-005/correctness/result.json`), independent audit (local archive: `../artifacts/investigations/tablebases-005/independent-audit.md`) and disabled/default-off checks (local archive: `../artifacts/investigations/tablebases-005/postchecks.json`).
+- Four-build verification (local archive: `../artifacts/investigations/tablebases-005/verification.json`), fork patch check (local archive: `../artifacts/investigations/tablebases-005/fork-patch-check.json`) and pre-timing guard repair (local archive: `../artifacts/investigations/tablebases-005/preflight-guard-fix.md`).
 - [Local fork record](../third_party/fathom/FORK.json) and [optional source delta](../third_party/fathom/five-piece-catalogue.patch); upstream MIT attribution remains retained.

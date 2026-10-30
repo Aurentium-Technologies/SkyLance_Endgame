@@ -1,0 +1,2728 @@
+{
+  "binaries": {
+    "fathom": {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/build/orient-fathom/fathom-compare",
+      "sha256": "269dacf332a13d7626739875dc8a867c69f49d9f786135e7c7036e7fb5410a35"
+    },
+    "orient": {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/build/orient-fathom/orient-compare",
+      "sha256": "195dcb5c1d9af5bed249620c32831c655eba699c7c4f76b995089ccd77500588"
+    },
+    "pyrrhic_c": {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/build/pyrrhic-c/pyrrhic-c-compare",
+      "sha256": "1bc9bdde46c0390ee195e19749e70107877e688d5ab7b0be1b82e8bcca177981"
+    },
+    "pyrrhic_rs": {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/build/pyrrhic-rs/release/orient-pyrrhic-rs-compare",
+      "sha256": "e4932d5e002d6f57bce42f4820e2831b2a7fb4137bb94b3b494bcb9de379d626"
+    },
+    "shakmaty": {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/build/shakmaty/release/orient-shakmaty-reader-compare",
+      "sha256": "adcca721cbbb48dba7d539eda7fef09c4d9aef1db874a795fce171c83209c687"
+    },
+    "stockfish": {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/build/stockfish/stockfish-reader-compare",
+      "sha256": "fa92fa7ce2f2306a1404732cef21cfcd228f4349793cb12378898ad31bb539cf"
+    }
+  },
+  "blocks": 30,
+  "correctness": {
+    "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/result.json",
+    "sha256": "8ef46c2debd9a680c5edd7ac08a6fe1650fa96811bc3b5562a03d50707127cc2"
+  },
+  "cpu": 0,
+  "dataset": {
+    "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/tablebases/syzygy/3-4-5/manifest.json",
+    "sha256": "7d4eae2c333da3b8b9e485e0496efc56a07b4452e2bb53e83cfa6bceb9c7a73d"
+  },
+  "environment": {
+    "affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "epoch": 1793271007.5780425,
+    "frequencies": {
+      "/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq": "1499986",
+      "/sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq": "1499980",
+      "/sys/devices/system/cpu/cpu10/cpufreq/scaling_cur_freq": "1500017",
+      "/sys/devices/system/cpu/cpu11/cpufreq/scaling_cur_freq": "1500005",
+      "/sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq": "1500020",
+      "/sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq": "1499984",
+      "/sys/devices/system/cpu/cpu4/cpufreq/scaling_cur_freq": "1500032",
+      "/sys/devices/system/cpu/cpu5/cpufreq/scaling_cur_freq": "1500130",
+      "/sys/devices/system/cpu/cpu6/cpufreq/scaling_cur_freq": "1499998",
+      "/sys/devices/system/cpu/cpu7/cpufreq/scaling_cur_freq": "1500014",
+      "/sys/devices/system/cpu/cpu8/cpufreq/scaling_cur_freq": "1499597",
+      "/sys/devices/system/cpu/cpu9/cpufreq/scaling_cur_freq": "1499995"
+    },
+    "loadavg": [
+      1.51171875,
+      1.7763671875,
+      1.44140625
+    ],
+    "meminfo": "MemTotal:       32630460 kB\nMemFree:         1144860 kB\nMemAvailable:    8727756 kB\nBuffers:          131812 kB\nCached:          8643100 kB\nSwapCached:        93384 kB\nActive:          8114996 kB\nInactive:       20987148 kB\nActive(anon):    7313792 kB\nInactive(anon): 14402868 kB\nActive(file):     801204 kB\nInactive(file):  6584280 kB\nUnevictable:      389812 kB\nMlocked:             168 kB\nSwapTotal:       2097148 kB\nSwapFree:           3028 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:             15780 kB\nWriteback:             0 kB\nAnonPages:      20624532 kB\nMapped:          1578768 kB\nShmem:           1389424 kB\nKReclaimable:     682152 kB\nSlab:            1131132 kB\nSReclaimable:     682152 kB\nSUnreclaim:       448980 kB\nKernelStack:       74960 kB\nPageTables:       291616 kB\nSecPageTables:      3776 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    18412376 kB\nCommitted_AS:   68530232 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      268988 kB\nVmallocChunk:          0 kB\nPercpu:            13728 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:     14336 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:           34644 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:     1443568 kB\nDirectMap2M:    24539136 kB\nDirectMap1G:     7340032 kB\n",
+    "temperatures": {
+      "/sys/class/thermal/thermal_zone0/temp": "59000",
+      "/sys/class/thermal/thermal_zone1/temp": "44000",
+      "/sys/class/thermal/thermal_zone10/temp": "48050",
+      "/sys/class/thermal/thermal_zone11/temp": "44050",
+      "/sys/class/thermal/thermal_zone12/temp": "33000",
+      "/sys/class/thermal/thermal_zone13/temp": "50050",
+      "/sys/class/thermal/thermal_zone14/temp": "50000",
+      "/sys/class/thermal/thermal_zone2/temp": "43000",
+      "/sys/class/thermal/thermal_zone3/temp": "48000",
+      "/sys/class/thermal/thermal_zone4/temp": "31000",
+      "/sys/class/thermal/thermal_zone5/temp": "48000",
+      "/sys/class/thermal/thermal_zone6/temp": "0",
+      "/sys/class/thermal/thermal_zone7/temp": "46000",
+      "/sys/class/thermal/thermal_zone8/temp": "20000",
+      "/sys/class/thermal/thermal_zone9/temp": "43050"
+    }
+  },
+  "g++": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "gcc": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "host": {
+    "cpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           39 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  12\nOn-line CPU(s) list:                     0-11\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Core(TM) i7-10810U CPU @ 1.10GHz\nCPU family:                              6\nModel:                                   166\nThread(s) per core:                      2\nCore(s) per socket:                      6\nSocket(s):                               1\nStepping:                                0\nCPU(s) scaling MHz:                      31%\nCPU max MHz:                             4900.0000\nCPU min MHz:                             400.0000\nBogoMIPS:                                3199.92\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp vnmi md_clear flush_l1d arch_capabilities\nVirtualization:                          VT-x\nL1d cache:                               192 KiB (6 instances)\nL1i cache:                               192 KiB (6 instances)\nL2 cache:                                1.5 MiB (6 instances)\nL3 cache:                                12 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0-11\nVulnerability Gather data sampling:      Not affected\nVulnerability Ghostwrite:                Not affected\nVulnerability Indirect target selection: Mitigation; Aligned branch/return thunks\nVulnerability Itlb multihit:             KVM: Mitigation: Split huge pages\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Mitigation; Clear CPU buffers; SMT vulnerable\nVulnerability Old microcode:             Not affected\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Mitigation; Enhanced IBRS\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI SW loop, KVM SW loop\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Mitigation; IBPB before exit to userspace",
+    "git_commit": "unavailable",
+    "git_status": "?? GOAL.md\n?? orient-endgame-component/\n?? research/",
+    "logical_cpus": 12,
+    "machine": "x86_64",
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "timestamp_utc": "2026-10-29T10:50:07.550703+00:00"
+  },
+  "inputs": [
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/PROTOCOL.md",
+      "sha256": "922fa613c924e2ec53d3dbb3d309f3544976436eaf8b80378666bbd18be16c67"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/build/orient-fathom/build-manifest.json",
+      "sha256": "c943b0c3c3a2c7d69558172251311c3e450f7a2be7ecbf87c2cd4368282074a5"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/build/pyrrhic-c/build-manifest.json",
+      "sha256": "b10019f9532b0fadf80827c4dcd309457f86581dfab6419016c3b0fe416ea9aa"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/build/pyrrhic-c/compiler-argv.json",
+      "sha256": "33222e2dcc4e01b8bd54b8ffa45331ac2201e5f31a974eef501bb9e5d6080c65"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/build/pyrrhic-c/hook-selftest.json",
+      "sha256": "82d4131384f6bb96e95d307d2308ba2055d1bdf77734c7ba526f3c023154b787"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/build/pyrrhic-rs/build-manifest.json",
+      "sha256": "20ebd7cee405bc1129aa974e8adb5c18c20a6f789d8df5840a372e26a56b778b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/build/shakmaty/build-manifest.json",
+      "sha256": "5433274cc6a9683c57b594853e6e5e0bc85975f4d3d115049549a380eba9e95c"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/build/stockfish/provenance.json",
+      "sha256": "257cb0a85cbd5b1bdfb6337a46ee76d8b634ab4a621dd2de80273c7763669f67"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/build/stockfish/rank-timing-build-manifest.json",
+      "sha256": "b6ba4d478edd7495e11151605b9d603cb32b83e60c0988ad2e16ea4b77ed1234"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/build/stockfish/stockfish-ranked-root-timing",
+      "sha256": "16bff6408005a2e2ecdfd322605335158887c1eaffa077477af05dd6cf7d222d"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/campaign.py",
+      "sha256": "02b43ccf59baffb0830473c7b60ed27fd5c23e2d066875e7a116b409a7ff93ae"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/build_stockfish.py",
+      "sha256": "6cfc7221bd38673464a942088dd8afc3c47a5c4e43cdb471b5177959ce61aca2"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/generate.cpp",
+      "sha256": "31024c40a9dced59c9919014e58983faf16a87b230f20728fc14d25b563e9fb7"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/orient-fathom/fathom_dtz.cpp",
+      "sha256": "8b609a216ed3474a5a14edf60aa53afefa9058bb3e8f7b922f0556a21dc2fdeb"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/orient-fathom/main.cpp",
+      "sha256": "bed2fff6b085dc3c1b7e6c4e7790e4a1fd0c582b0e83ae34a285723ea4939119"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/orient-fathom/orient_dtz.cpp",
+      "sha256": "4f6446467248e921a53af28a9889a33862bd1bf5cab0ab419fc130c8ebed6aa8"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/pyrrhic-c/bridge.c",
+      "sha256": "4237f0287ac115dfb3d5eea0ac767e4e8c9c26df7aea0c6c5d57c2663c0c4cfd"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/pyrrhic-c/bridge.h",
+      "sha256": "60161a274bbff43a55ad9c5bfbe72afd551ef0493969502dbcfe5c5ebc431de7"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/pyrrhic-c/build.py",
+      "sha256": "995b49783c3e3a7a760d818221a9effc1c75b30b7c8f39083a4339180df821cd"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/pyrrhic-c/client.cpp",
+      "sha256": "e2fd068493e50b36505269f0d0eb0d5f5b163c9e3e5aeefc85d2b39e34dde8a9"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/pyrrhic-c/fathom_attack_hooks.h",
+      "sha256": "559a89737382dba1356ce6b9cc7a8833be32a4f845bb845d107a41284686d49e"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/pyrrhic-c/hook-extraction.json",
+      "sha256": "d9ad1d9e130b71449c83c18c126779281a1e328389d572d210260c6a27031813"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/pyrrhic-c/hook-selftest.cpp",
+      "sha256": "ec47e2a308ff483ef9cd9c86fa28ad05ea4649245692d9baaf9e2b468694ea88"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/pyrrhic-c/tbconfig.h",
+      "sha256": "dd873b4ecde38ccdaecec6c7ce0f092a48b96cbf0d9ff982d0b51e86b0d5015e"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/pyrrhic-rs/COPYING",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/pyrrhic-rs/Cargo.lock",
+      "sha256": "5e2d949ffa13abb15b7b12639f5878936d08e62744077deb56dd2d12258e5d77"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/pyrrhic-rs/Cargo.toml",
+      "sha256": "6acab7cd2b04e95679b9551d3568805fa6d608e72bdc60d25008ba50ffca464d"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/pyrrhic-rs/src/main.rs",
+      "sha256": "da14f4329466f5691bf515a43ea2f5f3253e2846bbf818ab2e7ead62292c8c15"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/shakmaty/COPYING",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/shakmaty/Cargo.lock",
+      "sha256": "46543640d6631c781c1ad0ed857fdfdfa9d2f56e006d7f67ad2b6060608c73f1"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/shakmaty/Cargo.toml",
+      "sha256": "0c60601df5fe9ed79ff258838b189ef7cf3291a9b9077e5527a70034b1808a46"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/shakmaty/README.md",
+      "sha256": "6928ab435b4aa96b2293ea35ccdd1a8928c6247680bdf42eee29478c34f5d081"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/shakmaty/src/main.rs",
+      "sha256": "e8664fc618af08fa99a92461cb06d0a47491de4d6495f98f90c40d6ffc66736d"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/stockfish_compare.cpp",
+      "sha256": "ae8767c2b30a2d973782033700c81412a0cbc4bd8493f9d4239be41a0895aecf"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/stockfish_misc.cpp",
+      "sha256": "d0033f6cef9743ffcc152479e7ca27dce68c51f4464a83718eecd5ed400739e8"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/clients/stockfish_rank_timing.cpp",
+      "sha256": "bf55cc2320ff49cd92703603c02d009eaf39442c37b88f65548a302031d0fdc3"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/candidates.fen",
+      "sha256": "0edc60756894c77a63c42e5923adc9efa283471ccc3735b40a3febcf61c383ec"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/excluded-keys.txt",
+      "sha256": "8750c7188c68818d3d92a089dc57fdb8e614080af75a7915a022bd5b318e8367"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/exclusion-sources.json",
+      "sha256": "bd29d637a88c2de66332aadf95a19fd5761628107a9b772e8a9d81dbf47618e0"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/generation-rejections.tsv",
+      "sha256": "495192499b92b7ed8379bd3c26d1d2b295aa202bb69cae3ac3147d0106ea03fa"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/materials-five.txt",
+      "sha256": "805bb5115e5cb0d1fc1f48278a1f60ad2dcfc5455c48b77334b7362fa75cb473"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/native-ranking-diagnostic.fen",
+      "sha256": "06fa0f0b4b01911717aae809c6377eeb7a2f8ed3f43be0bb8df20adb901d4862"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/parse-fathom.jsonl",
+      "sha256": "2808e778daa8eb6a094ad61c341a8d07fa8187300f1396684995f0a26249491a"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/parse-fathom.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/parse-orient.jsonl",
+      "sha256": "2808e778daa8eb6a094ad61c341a8d07fa8187300f1396684995f0a26249491a"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/parse-orient.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/parse-pyrrhic_c.jsonl",
+      "sha256": "2808e778daa8eb6a094ad61c341a8d07fa8187300f1396684995f0a26249491a"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/parse-pyrrhic_c.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/parse-pyrrhic_rs.jsonl",
+      "sha256": "a50d2b577cc2b6208c00fac10650111edb12b3b2c04f3aafd8caec86d6148a22"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/parse-pyrrhic_rs.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/parse-shakmaty.jsonl",
+      "sha256": "a50d2b577cc2b6208c00fac10650111edb12b3b2c04f3aafd8caec86d6148a22"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/parse-shakmaty.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/parse-stockfish.jsonl",
+      "sha256": "464bf3094079df24c5075654be43d997442ffee608a71d889af8770a1011a692"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/parse-stockfish.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/parser-rejections.json",
+      "sha256": "62cdbe6b9f5f38f2e04693b39223e8a22c16c3030c7be6dfb5da086e5dfd84ce"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/primary-materials.json",
+      "sha256": "ce00a153d553c67964db181b89ca4fbf3702c26bb520f14ae48507373b0adbff"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/primary.fen",
+      "sha256": "1c6c1a6b87c817a713af8f0a26a8f0117022e0370b1f7d3ff9d36f3ee743d70f"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/selection.json",
+      "sha256": "fe124d061181773257cf8f098e1b832a679529a5ac57666ea0ae70aa8505f9e3"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/fixtures/special.fen",
+      "sha256": "9dc1ce67e9abaea795e18d6317e7b9d16dea31e56ff6426d6bfa5a6841dee0bb"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/independent-audit-preflight.md",
+      "sha256": "79e25cece75f5990589e66e55d6f3970113154457daf9539409d64c6957c816f"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/fathom-packaged-source.json",
+      "sha256": "1111d266d7488a3cba6d29f543103a286f5d3491578660841759099fb2181016"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/fathom-packaged-source.tar.gz",
+      "sha256": "2e7f5faa5f89a31bd6560653e8a97600271c913dba1e2e0923dcac4e7f0682d7"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/BUNDLE-MANIFEST.json",
+      "sha256": "553ee8e2c818e115d71b895b464df2ec9e574a592eeb46fbe64322d93340798d"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/CMakeLists.txt",
+      "sha256": "01e228aead45741f5f20bc76af74f8a77810c81a9e9938908293e887bd5c619d"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/GOAL.md",
+      "sha256": "6b9049b3a2984b10852dec737c8764216a034599ac5b4c515aa9fec833c47b9a"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/HANDOFF.md",
+      "sha256": "861d225632c21b81572496cd8fa5fc5b4c2dd16f8d4104bde8815032c119ab76"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/LICENSE",
+      "sha256": "27bd3b20229f745a3e71e58dc385412ed062e4398884945f4f4d7b2f0fe5920c"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/include/orient/chess.hpp",
+      "sha256": "f30360bfd2fe360b1a9fbcc514097e557e323d34a189c9323ce67b1e70d65404"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/include/orient/detail/tablebase_cache.hpp",
+      "sha256": "1c21dad739a52098533658d97c9d9ac313039e268470c49a2e3380317b34fca8"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/include/orient/nnue.hpp",
+      "sha256": "0165db4fa64c643f25969799acee6af50dbb7d739fec7ed53c4696e18d46261d"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/include/orient/search.hpp",
+      "sha256": "754ad71f5081e3e5e50d9e7a78e18b5d0f6b67d2879e119752ce1062bc1c051e"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/include/orient/tablebases.hpp",
+      "sha256": "283f1749b3cf5d1d1949ef223a0abbc900b7f254869234e163bb579080b07f55"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/src/chess.cpp",
+      "sha256": "bb762d411fcc7a194fedee05a7dc1af3a4535c5bec6bb837075f1d12e0c20d11"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/src/evaluation.cpp",
+      "sha256": "05667f08763df06b87262cc37e3acb6bdfb2262f25cb0fa4e41f5a65b7d9db4c"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/src/main.cpp",
+      "sha256": "bb296f5a54f5578f0c161e470aff6a0afc6a863d361ccaaeae134611531ee237"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/src/nnue.cpp",
+      "sha256": "f73649e454b5f843379f6c7dc7117ff1070f01b3dc2893dbfeae67dae49c1055"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/src/search.cpp",
+      "sha256": "1a856be4563c364d2ba46e24e7a0d9c2f5df0592fafe016379e795c4913b33ac"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/src/tablebases.cpp",
+      "sha256": "8c6d8a23c9342b8a724b2fcdf6840356f84769a15d11e64e559dd8e570d3e4bd"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/third_party/fathom/FORK.json",
+      "sha256": "f877fff5d79993ddd039103deb4d10f3593d1cb3a2781c5270d2c44071f9d938"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/third_party/fathom/LICENSE",
+      "sha256": "c8038055839bd02f995cd7d1bba19657720097f5604411a7977ebcb5b4a37759"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/third_party/fathom/ORIENT.md",
+      "sha256": "f9e9e3f0e7b52cce18dfa743a6b5e9e919239a1796faf005edef0ae933315c69"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/third_party/fathom/README.md",
+      "sha256": "8a44c2a068f97fb237cea30f8039f4942950668c97b8f37092d1065b26cd074b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/third_party/fathom/UPSTREAM.json",
+      "sha256": "0fde7b3b53a5008fdb3974f4b6dd6494e82eec66046855c3f28f86569e58e481"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/third_party/fathom/five-piece-catalogue.patch",
+      "sha256": "4a8b479aed218361943841ceef916bf56d2d43aa642c302a1014319299cec6d3"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/third_party/fathom/mapping-failure.patch",
+      "sha256": "8147e2410842d4764ea0964764d87970e8c546c822efdf8f44d60cdf8cfd8273"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/third_party/fathom/prefix-length.patch",
+      "sha256": "951cc346dac408f2fe7d0e6814626b5964dfefc11e0d93b945a3f18d4602615d"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/third_party/fathom/src/orient_tb_diagnostics.h",
+      "sha256": "acc6353a6cba690a1450a0a370fb1c290df57237ef342df665a9a413fe2bee80"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/third_party/fathom/src/stdendian.h",
+      "sha256": "e5b8187eec89ef83e731ea92be8ca0df4b533d8d21075fc4e2c86b4b00d7b7c3"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/third_party/fathom/src/tbchess.c",
+      "sha256": "119f19fa8714686798ca7be011e5b234f99c93aec751e9492f2664757d6c029d"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/third_party/fathom/src/tbconfig.h",
+      "sha256": "69fe1821b471164bd759cf46c486d55b7fa727e348a5ee306b18d19537ac3a03"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/third_party/fathom/src/tbprobe.c",
+      "sha256": "46358784b9f219ecfc08d15a2931c6d581508981d5db331384c193bb917b9a07"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/third_party/fathom/src/tbprobe.h",
+      "sha256": "dc7808dc58c2a1af921a612f94041b917dfac94d3215a76a2b2b0c53c94ea561"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/tools/reader_compare.cpp",
+      "sha256": "a2771c28092a5982fbf514fb54883cfb45f9e46aeb77ef432f68d73129a47c60"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained/tools/reader_compare_dtz.cpp",
+      "sha256": "62594f26d2cc3e33361aec1b545c107f42fe09749c66e14381ca0c7a41389e34"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained.json",
+      "sha256": "09c68d701300aecca91d6e1618e2e1b6fd923675bc706b1ed05e4c215da772dd"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/orient-retained.tar.gz",
+      "sha256": "fbecb7a034fe0143149eaa84f6ea4916d0a9ae3207e33add42c7f0d5d3bedfbd"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-c/LICENSE",
+      "sha256": "f82c38bf86482e75743c1d8e8ad02c82f95c6ccc1ba8744051f8a6a9c6ff85a1"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-c/README.md",
+      "sha256": "2ea84bcbc9fa024725e311610b1e91836342adce5d4464f8a9055dc85a35ea76"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-c/api.h",
+      "sha256": "1e73a65ee25fdef7bb95480cb4dcd191392bc50270534a14397f9a2752c963a6"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-c/stdendian.h",
+      "sha256": "f51598cf66cafa889560623d742eba88bcb460fd1c81e603f80712111a7821eb"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-c/tbchess.c",
+      "sha256": "d76e67b6c7482a59225675aa8df47e0a0fe2ab0d36ac3c06bfa232a402b2ca41"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-c/tbconfig.h",
+      "sha256": "55bfe4dfc50db0d2e5f5f29945c8c253147b53e9bcb363ec69812ee12778ed02"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-c/tbprobe.c",
+      "sha256": "c71ade3555cfdf9b8ae2dabdce63f6f2301c7794c813c33513fbb6da55d6b54f"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-c/tbprobe.h",
+      "sha256": "c98f6e8cac9ea7e08dc62f247fb1f1535be4269f94d341b58b635120ca5279ee"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-c-0613a390.tar.gz",
+      "sha256": "258a37a2957277e91629b374aa3af49c57fe74a9c7089f1cfedefa767209eda5"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-c-pin.json",
+      "sha256": "a1292a3e74ced15c0989c14cbf1e0a7b13b2f141a2ecac666610950b9c6817ce"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/.github/workflows/ci.yml",
+      "sha256": "e7a376b7571b50f31a75a921c6612b40460a1659a991c3d5e37ac04d225f3ca5"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/.gitignore",
+      "sha256": "d54fb0608ef08d5fdeb011c6672b9ddad10213d488ceca7e2b61394a550b0e75"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/Cargo.lock",
+      "sha256": "aa9bc165a7e73778109dd31989846ef2e70fa9e67616de1eb044f0bb307561bd"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/Cargo.toml",
+      "sha256": "882103c5deaa901b4a9c0177c2bb13cd94584092c2edbcdc862f9b149f7a7b82"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/LICENSE",
+      "sha256": "53c4bf8bd57e1bb1cf9c835290688d7889768591f8a6082512fc3ff13bd6b443"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/LICENSE-PYRRHIC",
+      "sha256": "be22b721bb1edc3139562328de1cb24fc024378b74d7e6ed7127be6349ab6189"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/README.md",
+      "sha256": "8332c4ed4bb8a534788c58787771e77659206c3ec04bbf8d41d2c02ad5bc8054"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/docs/validation.md",
+      "sha256": "6ee0ec9877e4ed11c34f2f8ad5f37345ef419af2747ddd6cc5ef87c0415a9860"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/examples/syzygy_probe.rs",
+      "sha256": "b311d8ad839bfe7544953c28236e67c511cab6e0a945a14fcdcb40a82f8b4dce"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/nix/syzygy-3-4-5.json",
+      "sha256": "7ae2d9397a98bfbd05149bb078ed619eb146357d0da38946b83cbb8e31116c61"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/src/engine_adapter.rs",
+      "sha256": "e19a41ecf631ca6f43a7338c4b6c557344665d5ebc1485c3d3feb1ebfdf75207"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/src/fuzz_support.rs",
+      "sha256": "dee79072cc36330e12d2a3b0e01c6e98f41dad38bb7201a4ae48370141e616d3"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/src/lib.rs",
+      "sha256": "9cbda890cdd722596f4beaf4f96715c7a88927e9a18b5b1a605080b6af1913b5"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/src/storage.rs",
+      "sha256": "602ba5c6d75faedd8c51cda3715a0638098114f822c4ecdf25c1d0d53c89b22a"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/src/table_decoder.rs",
+      "sha256": "40f5eadc6425f67d1e954b7a529c2bbca7f392d8e491b1d5eb1e6c64c301f105"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/src/table_encoder.rs",
+      "sha256": "c9487b90aeae7b09693480d250af50e7501e4234f83ba82d84172a2bb607de7a"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/src/table_lookup.rs",
+      "sha256": "353f847db01f4ed33d42be3b1e31c258f7650252408f2e89183e82511bd10e62"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/src/table_moves.rs",
+      "sha256": "02b24a4c18d62aab2181844c60e2393e4d33096fc503e6d5c9f8e38d2a7169a8"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/src/table_parser.rs",
+      "sha256": "bb72d74205cceade0a8ad212e979451337847de53c5351655a3f37dc3714863e"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/src/table_position.rs",
+      "sha256": "c79460dc96f5182e210aa73f9609378981de6c248e0f0e4afa4ee55971367357"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/src/table_probe.rs",
+      "sha256": "0a6d9ae47eb01a5dda8cc67fcbebe157cb945c97f4a1c879703f5b2365677adf"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/src/tablebases.rs",
+      "sha256": "5fb73e0d8c0cd6b76d5f6ad1301eef5d9303ff305835708b56590c661742a41d"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/src/tbprobe.rs",
+      "sha256": "385bb9c471f628d09c2d3e114c04b4c790c92bd640c8af5234ed87e1b2be3029"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/src/tests.rs",
+      "sha256": "b1b7ace70d1b714dfcbda09c4c84751578d9c7fd2136ba4e6b9443581b69b92b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tests/decoder_boundary.rs",
+      "sha256": "666b37f011a2243ad7208591123acb708f12cc0298a79cf4cb759753a1ef8a48"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tests/discovery.rs",
+      "sha256": "6062d3a98132cb802dd5d8688fb4e312650cb9e4eab0ecda510fda2299db6ad2"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tests/king_validation.rs",
+      "sha256": "c19d1bba6b9bbb55d656a5aca7a28e79b73b9b8f2adc29e48dfa2eeeded10be3"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/compare_syzygy.py",
+      "sha256": "b39f3175e19186856a03211fff743cb26b31c6376eabfc8bc872ec631f3abcf2"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/fetch_syzygy_ci.py",
+      "sha256": "d8e1c432c57b1b25ebbdf4b4e88c786f1be842598e984f51c5a68e39a088fbb7"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/generate_syzygy_cases.py",
+      "sha256": "df592a749cee3fd79306674934898a1a64ebb4c4994e2ef3a1aa9e283499838b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/requirements.txt",
+      "sha256": "3ab2ee95f5917369dd6ca04faf92933138f31dcfec8021719581a95c9e511289"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/syzygy-fuzz/.gitignore",
+      "sha256": "92bee6f3e5d5a64c89c366cab9b5bdc618de0748cc1eeea1355b07856185ea0e"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/syzygy-fuzz/Cargo.lock",
+      "sha256": "432985a302fc88f7500592da961eaab4293cf4c69faaa4b948eee1c440dc8ad7"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/syzygy-fuzz/Cargo.toml",
+      "sha256": "05ebafa9a9ba95c0d9c54cb59144b280d324fc7518dbdaac73bc92a230df541b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/syzygy-fuzz/README.md",
+      "sha256": "7ae0f72c051385862d76a4633445179abfd848e87f30fc15795bb3bd63611585"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/syzygy-fuzz/fuzz_targets/decoder.rs",
+      "sha256": "bca45d7bdf8f0c658ce5b34e5d71f3f530005498d388c8611e296c4482d88e9d"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/syzygy-fuzz/fuzz_targets/metadata.rs",
+      "sha256": "bd60065d2ae4526baf17096fd4ed2221b14de1b695f8e6366af30c412f6cf66b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/syzygy-fuzz/fuzz_targets/public_position.rs",
+      "sha256": "e7c1f55a41fa4fba01c89ae16c0310bb0c2d06341778f21e58b36b1439f3e8a2"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/syzygy-fuzz/prepare_corpus.py",
+      "sha256": "16cf12c9fc3d9ba34d0d5828c4cc3ede431be89e405e7d5efd5542e43b82ad59"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/syzygy-reference/.gitignore",
+      "sha256": "b53ee26e6ff1da219b0563333a76d2c9ec19eec713d6ee54e11a1edacb0e9f3d"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/syzygy-reference/Cargo.lock",
+      "sha256": "515c57355038ca60c9d4957b7889f1a35878130f82b0497a7ddd73d7b1f29e64"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/syzygy-reference/Cargo.toml",
+      "sha256": "7786d14cddf2f6cc62f3459fe0658413d068c3ed50530877bd87675d5f7bdd05"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/syzygy-reference/README.md",
+      "sha256": "b52d0beda2936931f607d2d47f3bb66404085d99409ec5570cc157ae2493f22f"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/syzygy-reference/src/main.rs",
+      "sha256": "072f87ad921a43db295a2947bea3f8a05ba24f4fe3cd6359229693a9cb0d7432"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/syzygy_compact_cases.jsonl",
+      "sha256": "ebd8d0b3bc93011b2d0ddfcfedeaad47bffd7ff8d2b637bbd6c14f0ff14beda8"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/syzygy_full_regressions.jsonl",
+      "sha256": "1a43c966235b73ae5ccc851502f068d20cbf4efe7de9633d17efc13986435d40"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/tests/test_compare_syzygy.py",
+      "sha256": "9fee5b2a7a0d6e8bfbba668dea60532d8aeaacd6a1c575bf0b35223778e9a175"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/tests/test_fetch_syzygy_ci.py",
+      "sha256": "652e4dbf960d36799c11600e80ad5d9c7797f23b5fa86ff1a16828c2c46cb910"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161/tools/tests/test_generate_syzygy_cases.py",
+      "sha256": "6d7b7459ba02c605c188b26078187c1c77dc9b9152a8e8e99633ac6fab75f5f7"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-3801b3e6c48311f7834c11e7652e7b3d65863161.tar.gz",
+      "sha256": "611efacdd0283c540e7b8cf97223101de80e3ae2e15dd5eff7f950de90ba4b36"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/pyrrhic-rs-pin.json",
+      "sha256": "c41b2509fdfb326742364ef5af6cfc8bb26f3215221657b9867c20927af6d2a8"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/shakmaty-packaged-source.json",
+      "sha256": "96217d6f7331a3bf75d400200e46dd60705677b71fa2c45b6474328cb9a16c3b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/shakmaty-packaged-source.tar.gz",
+      "sha256": "482080f023c4cb66d98d510011065e67bc355263739184f09bd5f6852cb10a4d"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.clang-format",
+      "sha256": "b6095a2ffada423b2211e3d65bb45c74844f6b1f05263c58f0aeaff809cad9e0"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.git-blame-ignore-revs",
+      "sha256": "ff1a36050a8891fdf58000a94d739f14eb9416957f56401940e3056b63627241"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.gitattributes",
+      "sha256": "450658d7b29478a13d4eb188c340ce1046f7c32acce249d71397a784064e6d83"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.github/ISSUE_TEMPLATE/BUG-REPORT.yml",
+      "sha256": "7ac0f699d4df7e1dd0a672f6ce70d4827753b83b61d332bcc3c482d09c21cc69"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.github/ISSUE_TEMPLATE/config.yml",
+      "sha256": "644df000761c1ae3e80bb68ba98025921483645de974155d7db9e7e774c1f5a1"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.github/ci/arm_matrix.json",
+      "sha256": "93d29f2f4171dca49a31c7a1301545e6b4522939bb85d830a92c53203cf97486"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.github/ci/libcxx17.imp",
+      "sha256": "56ad72fe6a93cf1d080be5b234c838a3b495a176e1f359269f05a03c8ac961f3"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.github/ci/universal_matrix.json",
+      "sha256": "949f6a820ece1a254e4d76fcc69b48e7fae3be59e672f3efc686d6331b38c931"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.github/workflows/arm_compilation.yml",
+      "sha256": "8f8d3869ec55a8d695cee7bbe7f040bfada572aac26eb35230c481c143243a8d"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.github/workflows/avx2_compilers.yml",
+      "sha256": "0198d503263a531734ae0774bffa44836d79e3e9e29a70d02d2f55396c872ab2"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.github/workflows/clang-format.yml",
+      "sha256": "4230ccd6352d504e6fd15ad2e1fbe4615b56b9fd6dff852b614764a96b8ddbd7"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.github/workflows/codeql.yml",
+      "sha256": "ad3e3805708a08be8246ba4c5af6c81b8adbbd2d313575f0ada77c1097161435"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.github/workflows/games.yml",
+      "sha256": "57897a631ffa7aac9aca507b3c5583629ac3135efd821e3f83a2e210a28ad97b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.github/workflows/iwyu.yml",
+      "sha256": "ba5822e2d779dc3a6146e80c813fc5a1371eceadcb66c3fe5c230b6d42de6028"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.github/workflows/matetrack.yml",
+      "sha256": "8accf6b9122b0fdd16aa8655a9ea6f5a59bcc44dadc75d5484dda28d8f4e1b25"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.github/workflows/msvc.yml",
+      "sha256": "286f4913823fc72b6d6d6b61b0bc86a9fb365bddf0a59558e1c81969aa71e57b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.github/workflows/official_release.yml",
+      "sha256": "df4d7a74b031a69a201a1bdf07d3a54fc783a58a42925f9218cb4a365ac5cbac"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.github/workflows/sanitizers.yml",
+      "sha256": "fd5de888a6183ab143c083336334eeebec36884ed770dc0ba229d39a38f2e2d7"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.github/workflows/stockfish.yml",
+      "sha256": "bb39af94744d74e4467fdfabd4c94973aaeb3d544cb497943ddf8f6d9467dfc8"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.github/workflows/tests.yml",
+      "sha256": "187c135c55eb9c4093e83fdb817c366e99006fd4dc13a7191765f9af7da849a9"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.github/workflows/universal_compilation.yml",
+      "sha256": "7e05f1ac044f44f1c6f733aefb0abdda422df31fcf9f20558b071e9cdfb28840"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.github/workflows/upload_binaries.yml",
+      "sha256": "f550b4f22ae623ce100b6e8bc35b9ca96607166965ba640b59069e691650d3b5"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.github/workflows/wasm_compilation.yml",
+      "sha256": "aecf8617c834e2e2799567f8498502c5408e6e47cab7c277ab08734543a2ab66"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/.gitignore",
+      "sha256": "3dac258b0d1e44d98f9ff303b9e1759d5c69a1852e3c3588223158f50f387534"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/AUTHORS",
+      "sha256": "51cfd08ec692a24314014061d339406563745426b8057ddb221003b586ea5396"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/CITATION.cff",
+      "sha256": "f98b029076a0aa0a668f03e5e2623a98cfa34854ff6cb66b852e0a736802a701"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/CONTRIBUTING.md",
+      "sha256": "b3f68dcb61f3742a54aeaebebdb700edb5ce70d55023f7f323252a3d66919946"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/Copying.txt",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/README.md",
+      "sha256": "ae3ef5c2282400d643c6e923d0b8b8d8fe35cf98762701f0379c79bde16c3a26"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/Top CPU Contributors.txt",
+      "sha256": "2f5589fb7df96e732605cf4af303f4c126e7adc3f1cbbcd23b48e1cbfc6c50ca"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/scripts/.gitattributes",
+      "sha256": "1d5d71dcc6ccd28ab46a335349ecc74742ca4b81f4fcad212f8d134f70f1f13e"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/scripts/check_universal.sh",
+      "sha256": "b1e5566a695b519c504cf13e11c2cf58a73e1338d1beb6bcf8b8af04446c781b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/scripts/check_universal_arm.sh",
+      "sha256": "26adf3da328e8d1ca4209554841f6d7cc05fb6242df69c67fdde306a64185139"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/scripts/check_universal_macos.sh",
+      "sha256": "86ce982e76e7c89e2062daeba92ff149e80417789ef02e4450060ca29917cf6b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/scripts/check_universal_riscv.sh",
+      "sha256": "75b4cef47585deb04c0cbea9d06df390891076b7c6d971a9f3ac24353792c68c"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/scripts/get_native_properties.sh",
+      "sha256": "ff5caf017460c2b27e37987c493a4b2be4e726c1c453c3eaac90569dfed155a4"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/scripts/net.sh",
+      "sha256": "d40160517a3fa3dfea38443084664b37757b427b6d6cc4fc6eeacf2e7fc3966b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/Makefile",
+      "sha256": "4132238bc75b8d9ea94375df26da868d15613513045d2cbc486f581708ab2562"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/attacks.cpp",
+      "sha256": "d852abff8c3334c918f303a2490425966f9224e826adc25344336f76792cd474"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/attacks.h",
+      "sha256": "31c056f3027a100e3535e2ae2abdb9d5b9e64133372b9ddebbd9ae4f828eb257"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/benchmark.cpp",
+      "sha256": "0a8d3f29278ad53abbceee284721a3ac4ddd7c768052de928672a2869bc2da80"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/benchmark.h",
+      "sha256": "bd4822d67e441a0546e49aadfb85c400a3dbe8f8b3bce8131814b156aedf2f27"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/bitboard.cpp",
+      "sha256": "b73064f2270344bce175865174666b92d1f3653c6ee4f98fd075f0fb1865b735"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/bitboard.h",
+      "sha256": "621affdc9c8c6f096b0c4f2adaeac075197a1ce61b4e3e278d223bdb23c467df"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/engine.cpp",
+      "sha256": "2c3c110232411367c24a41a351d59ceeaee42bd4a0c8b318e079e21e9ff14406"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/engine.h",
+      "sha256": "be37f8052c96707478840fd2e5512eae79d50f581f1a5a1b6471246defaffe86"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/evaluate.cpp",
+      "sha256": "f421bdd8794ad5383966aafbf81b47d49aa151f7e582dedcc7d441c09fcee7f5"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/evaluate.h",
+      "sha256": "f30186f13e2f6f23cf830c24e505a6f13f087cdedee78c6fc55ea253a6ee14d1"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/history.h",
+      "sha256": "f6e957d6e717348f58aa308f88aefddb5975e6a6c1d23e936ecf3548cbb48c39"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/incbin/UNLICENCE",
+      "sha256": "80f60d0578200231dac96e2a42bf508f22ce8540b96f96777b649498656842ff"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/incbin/incbin.h",
+      "sha256": "70995329299ec55d414ad6df6929ddcfe0a43a40102cf6c05ff3c74ddd2765cb"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/main.cpp",
+      "sha256": "20ecc928260f46dfa3622ef0a4d810fe880322b1444659d155ce295be84b343a"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/memory.cpp",
+      "sha256": "5f995a965d0b5e3f54677f857080a2a224e0f9139b2009c903bb28b145e3d252"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/memory.h",
+      "sha256": "ab7fc8da563807ac89c93b60eee3dc81f30e19c0c4f0f4b6166251635006f1a9"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/misc.cpp",
+      "sha256": "920c2a8cb2bc354dadc949f410bf3bcf0e2cd9eb34b3395026e1bb3ee3acbc39"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/misc.h",
+      "sha256": "e15cb384b208503734e8cbef928a59e333539012fe4d700082abba9cf8b6fdd7"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/movegen.cpp",
+      "sha256": "7c9b415b3c6ae28b4f69f937b0b3ad49084dbd009d8f3895ba9374a937882313"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/movegen.h",
+      "sha256": "0ba251ab90282995eba69c83a583a3043ed6ca745efd073688abefdd4e04d3ec"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/movepick.cpp",
+      "sha256": "a6c7ee8c47a506c25aa8ef723ce2ab38a215caa49779a02459b00c8e5bf10033"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/movepick.h",
+      "sha256": "2ea1e375bb87b0d8a803bd2b9bfd87623a7d81ec133f90fd02434051c6796c70"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/features/full_threats.cpp",
+      "sha256": "7c4ccd138d312f8a218b6ecf264319b8cc0a5b05f7403533cafe4322b63fedd8"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/features/full_threats.h",
+      "sha256": "6aa8b0d43eb905e75d2f792210346ca8e5e004432e6890c90b6189dfa23bde74"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/features/k32h3.cpp",
+      "sha256": "88d69c96342e6d75dbc3b1e7cf513003372ffc6c3bbb8846a9af7d41c61c0964"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/features/k32h3.h",
+      "sha256": "b738a11262fdf5bb95ce527e680d98d3d0ea3a6799dd454db5c4ab6fd20a23c8"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/features/pp_3wide.cpp",
+      "sha256": "78659afd3e349d4f019f76448b0b66c25007c34da3cd7f73e7a060aa69a36bbd"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/features/pp_3wide.h",
+      "sha256": "49880d343b09cccfda8b5b4f4a0197097e05cfbaac8353c08ac617898b82cd81"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/layers/affine_transform.h",
+      "sha256": "b0a30ba12d1f11e8fddab66d8592c42ac3ca56233d0117ccf3bb9a9c27fefda2"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/layers/affine_transform_sparse_input.h",
+      "sha256": "5471180cbe69b91f7f39278bef5c79ce37f538307cb8f11d3f51fafe9a0eab14"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/layers/clipped_relu.h",
+      "sha256": "13d0f93da3b40df3a7c4b23fe34a4199e5f3cee03f529eac4f060299efa64e76"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/layers/sqr_clipped_relu.h",
+      "sha256": "d2b6fb4f7045d2851f7ca48c4daa9a6292655ba026dc7b94c34105706eb7504b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/network.cpp",
+      "sha256": "cc3846de8347171ac377fb5556c7274ccdf2b7637f2e5d4c40d881a5cfbe2614"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/network.h",
+      "sha256": "fcd4c2f5b774a463f115009dcea2ae83cab38d2bf31bac4f2d33e8130aa9c656"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/nnue_accumulator.cpp",
+      "sha256": "ccf94379d64ad9da6f5c59f4a9ea221c0f078092bdf99b3a369c1ebad84c8511"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/nnue_accumulator.h",
+      "sha256": "26d9e328947a39fd43720b7b041b47307872ce59804321778d3e37c719727341"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/nnue_architecture.h",
+      "sha256": "dc7197b30b335fee270b7d93b0495a4b7b9424d70bceec7968f9687ec84ed678"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/nnue_common.h",
+      "sha256": "5e96de3d38f6b41e06da6acc475b03e80976696bcbe0b61e37aa2f4b5cb62fd7"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/nnue_feature_transformer.h",
+      "sha256": "f46b1b8daa4c83d664838a9ca06abf1c9ac82f409aed4e5c5b1277ccff31d958"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/nnue_misc.cpp",
+      "sha256": "f4c9e37f9c1af6a057b1775281312b422c0b76272622c98d5e51e261052bba14"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/nnue_misc.h",
+      "sha256": "a8d3fec5eae59d3bde9bf61879aa8cdb0551067ab929bdfc66333e008cee2144"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/nnz_helper.h",
+      "sha256": "5118876cd8008d84f397c07785be4f5ad2df9715e5d671b1537888f3d469fd0b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/nnue/simd.h",
+      "sha256": "5b852bfd84a6cbfd2ec86faa642122985fa6c2b49204c635c05cb8b7e524afee"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/numa.h",
+      "sha256": "c594e71c33722e7c2566944b77acac74bb0c35401747ddcaa893c91aeb048c81"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/perft.h",
+      "sha256": "8d56f3aa20aba4163e06ea4032b65812948a64d93d4fb9c9ea5d1bb7b85f4b21"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/position.cpp",
+      "sha256": "d25079dba25fd8d48441b27a0c4c5959c2b11f4c78b774903fab01944573e128"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/position.h",
+      "sha256": "450456dceeb4942c39742a36410f6a1735ee4f24dcf3616ad1c387dff409a659"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/score.cpp",
+      "sha256": "dd615e29eef52f85f6aeb69fca50fda34b30de9b442f7119986ccee78bbac07c"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/score.h",
+      "sha256": "b1355a14624fb743e7bde5b68030ae40650e3b34c36a4feac6d4b4704e56efd1"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/search.cpp",
+      "sha256": "7f485ec5df2f8aa013a8aac27f17f88f73befbce4072adeb77d43da5b8730895"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/search.h",
+      "sha256": "80d6981444494876c27e4f3a0e8eeead7439ad8f8aa9c642c73a1222edd84a26"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/shm.h",
+      "sha256": "b33e127ffd444e1382d804d3d84d7023aa09789d94d1f44695710d179d906c92"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/shm_unix.h",
+      "sha256": "9370ad96b19e41f34d85ae6086db5cd2d769803c3c20c63217d90090a9ff4337"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/syzygy/tbprobe.cpp",
+      "sha256": "14ad48aaf98e3d411ea82d33a908a6631de76f08e1ce8131e917d55dd9d19f45"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/syzygy/tbprobe.h",
+      "sha256": "5b86ca73b73cd9850f7cd89a766a7d8e861fbb2e0dfa8ae3ebf151801e1d3930"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/thread.cpp",
+      "sha256": "775f58a59e78c9bb5b4d13f2547178c89c7b2e1ed2a04b537b1dc4a3203463c2"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/thread.h",
+      "sha256": "94cca507023bdbcd83fcdcfbee66bd49c8359013e7cb569e58f6f62aba76efc3"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/thread_native.h",
+      "sha256": "e716bc066bac3feb1a80d65d03022a9a4a415fd961bf72a4922cbc85b55666d4"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/timeman.cpp",
+      "sha256": "f604f6387ace75d3eb7648f5b278f7d842bc72f5d0100637b26693fafbf6bc7d"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/timeman.h",
+      "sha256": "bb1b4a3124b36ac3cf511a2c5b781a340657aa4b4f17eb2bf965efb08c1121ed"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/tt.cpp",
+      "sha256": "cc0c5304f6cb4e1acd7276cd1acf88055ba99a680af11b9c29ac342f5c96e634"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/tt.h",
+      "sha256": "674e66a5505ce1093a37036f184a4927449ca5b468939ebae6e8b840d74d2b39"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/tune.cpp",
+      "sha256": "3f0157baeaf981aa1e60aa178a33e9017f73efe82724d3694aa6088307fdaa36"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/tune.h",
+      "sha256": "9298669723766aea05f2d4317e5cd8119cdb6ad3f1d3e48f47ecc63c25bc3703"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/types.h",
+      "sha256": "701cb3784d5c69d7f0e065400a72b811dde46790413c19e16e685ce643a1a4d1"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/uci.cpp",
+      "sha256": "6e7143986f9447ec8788229db6fad56c22578a32e77a9127c1b878aa74e87755"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/uci.h",
+      "sha256": "6ad20b4d5f02ad529ccc947d425f182ff68ad17dd8ab6f3984a652709f9307d0"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/ucioption.cpp",
+      "sha256": "5d699e2fa1d57cfa5f3169412dc8fc5d26685563be38c221cdbfde7237305e8a"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/ucioption.h",
+      "sha256": "85468dec1694abd49af3997edac57eb48a897a844369f86ecfb75ea575d546cb"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/universal/entry_arm64.cpp",
+      "sha256": "8d344fa02d4a6315c49bae32a5182578557c8543a8f146cf6690495f48691bdf"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/universal/entry_riscv64.cpp",
+      "sha256": "85ef23b0eeb56620df3dfe149ed2f60b2b6fbee2f66944e22173ac3fd9f718dc"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/universal/entry_x86.cpp",
+      "sha256": "0a57bc973d68a03e0720bbfdadca3cb061e84c51e61e6234d2e8be8cf452e561"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/universal/nnue_embed.cpp",
+      "sha256": "a1c8960bb0f57ca54d83ea99c0170b79061ebeb103bacc7866212e4aba78a3a2"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/universal/patch_x86_slice.sh",
+      "sha256": "f20555e2a4327077ba4d4f3a83292e4da54c7033516c523d2299219db2cd8bd8"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/src/universal/rewrite_asm_sections.awk",
+      "sha256": "0811fae900d717365f261755e87c5d926506ee20de8f95dde3d7df873176dee3"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/tests/.gitattributes",
+      "sha256": "1d5d71dcc6ccd28ab46a335349ecc74742ca4b81f4fcad212f8d134f70f1f13e"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/tests/instrumented.py",
+      "sha256": "f934b350b0175f7ea254ced4e8cf530a4671bcab8706d592d9130c874ec60a7f"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/tests/perft.sh",
+      "sha256": "eb197e6d33e0b6b85592d4686103a113f61125a204f1f5a1786de8c7eb457f71"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/tests/reprosearch.sh",
+      "sha256": "e6226b7cf82ce36a9b5d04dbe8a31dda48651944311d5bfbdfc97d3d2a6f37f7"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/tests/signature.sh",
+      "sha256": "360a4b30bc99789c5603c8627a21eff45d4b5849f42deaa32f766801bd6eb7c7"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish/tests/testing.py",
+      "sha256": "0a002681606fc2e9ed57c00e8a576c9c230e0868ac325f39a4d86539bfe72465"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/sources/stockfish-ff7cee4244ec96ea488c402669e3674c0574dce6.tar.gz",
+      "sha256": "fe0e9b07f6ec9d83685159dfb050c9f5159cc17900227af7fc2e800afea11fe2"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/tests/controller-tests.log",
+      "sha256": "7afb1aa9430f9280dadddfdb1524ba3700bda86fca8467c622a512e5ce2feb87"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/tests/fathom-symbols.json",
+      "sha256": "ba8e0bc9cafb734c012070b84f7b4917e939c7f6fc0cd15ded9d9c1c259aae14"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/tests/orient-symbols.json",
+      "sha256": "ba8e0bc9cafb734c012070b84f7b4917e939c7f6fc0cd15ded9d9c1c259aae14"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/tests/pyrrhic-rs-build-final.log",
+      "sha256": "5c9abae252b8a5f8de34bf196b288a125f1eeb150e6f7404dc015f9b62ec08db"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/tests/pyrrhic-rs-test-final.log",
+      "sha256": "da33afda6f70dcbd455f81fdba360b1ec5d0f8850ef298f635156f370cdb757b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/tests/pyrrhic-rs-tests-failed001.log",
+      "sha256": "dbd95a1d02b105f5af60cb859a85ee0e22a7cf9a7b6785a65782d7344b0a6dc0"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/tests/shakmaty-tests.log",
+      "sha256": "e08990981ad802a16f5dc363a75d19b4e970054a55809ae852cd6722d913e301"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/tests/test_campaign.py",
+      "sha256": "8fcb0f9db6492b67d504bdcc63f0b372581b12c94743dddd7b3aee7e253ebb76"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_continuity-fathom.jsonl",
+      "sha256": "4b73b7731d73f59f09fedc994be09e4634c2e7bea521ffcfb2b962efee6da46c"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_continuity-fathom.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_continuity-orient.jsonl",
+      "sha256": "4b73b7731d73f59f09fedc994be09e4634c2e7bea521ffcfb2b962efee6da46c"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_continuity-orient.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_continuity-pyrrhic_c.jsonl",
+      "sha256": "db9803b562a5dddbd4feb99e79554c1d97d34fe99df81c891969718af4c801cc"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_continuity-pyrrhic_c.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_continuity-pyrrhic_rs.jsonl",
+      "sha256": "eede42b28b821f3a177715188121e7f26e7171a8f7c54e08071b1b8c78910040"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_continuity-pyrrhic_rs.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_continuity-shakmaty.jsonl",
+      "sha256": "6dbfdc198059d097116915819e14e30182ad72f6c4f05d2805bf8a7c2945cbfc"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_continuity-shakmaty.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_continuity-stockfish.jsonl",
+      "sha256": "522a21d01440df6ec1a7e0d36f0634c4a5b7c11e48352e005dfa18b2a6b9d973"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_continuity-stockfish.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_holdout-fathom.jsonl",
+      "sha256": "3b9f455c4ee71263b3e1f73751ee5f5f5f00d6b0cb8b326f52f38b3a1101f347"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_holdout-fathom.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_holdout-orient.jsonl",
+      "sha256": "3b9f455c4ee71263b3e1f73751ee5f5f5f00d6b0cb8b326f52f38b3a1101f347"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_holdout-orient.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_holdout-pyrrhic_c.jsonl",
+      "sha256": "b88254af3730cc32291b058b9ad6cbfcada744e3281db71c2ad07f72a83945df"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_holdout-pyrrhic_c.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_holdout-pyrrhic_rs.jsonl",
+      "sha256": "e6a9a1fd544983a76304d66e8d14869739e8b33b984484c48cbf06bfb6073bca"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_holdout-pyrrhic_rs.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_holdout-shakmaty.jsonl",
+      "sha256": "47059f56e6de1b63e1a31d7abb0528ec558adb299d3f1bc60f21a587f4b3b7e1"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_holdout-shakmaty.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_holdout-stockfish.jsonl",
+      "sha256": "d5fdfe3c1d724859c1d9b0ccb90d6df38617e7e5fe468c87420ef7584dfadcd4"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_holdout-stockfish.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_special-fathom.jsonl",
+      "sha256": "21207b72c12fc75ab426483fb7b7928a5fa4f5c5270e5037b4e1829e58247d0c"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_special-fathom.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_special-orient.jsonl",
+      "sha256": "21207b72c12fc75ab426483fb7b7928a5fa4f5c5270e5037b4e1829e58247d0c"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_special-orient.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_special-pyrrhic_c.jsonl",
+      "sha256": "b7d64439a497f4b1217e50f0afcd5d64d17d5cd8a77fd772483d0fa81889a8fa"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_special-pyrrhic_c.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_special-pyrrhic_rs.jsonl",
+      "sha256": "6d3483dbb61b89450a9aedd9fc3b7b19d0b5b4474afb7effcd73900bbbba64ef"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_special-pyrrhic_rs.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_special-shakmaty.jsonl",
+      "sha256": "dd871bbc2887d12d229eb6a52e16997d1112f7db10dc2caf707fd577b1731092"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_special-shakmaty.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_special-stockfish.jsonl",
+      "sha256": "fbed2120c95c1184ed16b2c30f38aef473b6bf703d27cf76f36a1de395d8ce9b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/archived_special-stockfish.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/differences.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/primary-fathom.jsonl",
+      "sha256": "3fb93702a74a90de21853c635385d86f555f04b575f514198aeeff4e0c65a6f4"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/primary-fathom.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/primary-orient.jsonl",
+      "sha256": "3fb93702a74a90de21853c635385d86f555f04b575f514198aeeff4e0c65a6f4"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/primary-orient.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/primary-pyrrhic_c.jsonl",
+      "sha256": "1ff346f50c9ec0564c4fbd77e7da804483f6d3a9e0ff9b4cdf5c7747cafb5569"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/primary-pyrrhic_c.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/primary-pyrrhic_rs.jsonl",
+      "sha256": "6df7cb3640ccae84cb8a5b47b05e5f3e1fa149d2aa2b120dfa4eaad142aceda0"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/primary-pyrrhic_rs.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/primary-shakmaty.jsonl",
+      "sha256": "bf1d0bde577a54a9432d05085d6e7dace33e7f55ee502fd30f4bb4ddada72f95"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/primary-shakmaty.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/primary-stockfish.jsonl",
+      "sha256": "1d61a4dfca2a73d47e6f8f4fc6d2fa201fc5c1699e1a5bee4a5811d5140fb382"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/primary-stockfish.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/result.json",
+      "sha256": "8ef46c2debd9a680c5edd7ac08a6fe1650fa96811bc3b5562a03d50707127cc2"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/special006-fathom.jsonl",
+      "sha256": "637b017bfb87bb99153e3347c44bb012993d6e6eaad4e39188fefdc03729cebb"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/special006-fathom.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/special006-orient.jsonl",
+      "sha256": "637b017bfb87bb99153e3347c44bb012993d6e6eaad4e39188fefdc03729cebb"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/special006-orient.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/special006-pyrrhic_c.jsonl",
+      "sha256": "637b017bfb87bb99153e3347c44bb012993d6e6eaad4e39188fefdc03729cebb"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/special006-pyrrhic_c.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/special006-pyrrhic_rs.jsonl",
+      "sha256": "a1ec875e63a5eb4d43e3332216a883acf90007c8c0a7254ac929678c9e0a628c"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/special006-pyrrhic_rs.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/special006-shakmaty.jsonl",
+      "sha256": "4c2a2f15b38915cfa7e8a190a1bc057dcbbf867c55d5de76a6385441336f34b8"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/special006-shakmaty.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/special006-stockfish.jsonl",
+      "sha256": "57f673c7efc2b30619aff3516ad5b0cab221707420ace0391f274123182dca17"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/special006-stockfish.jsonl.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/stockfish-native-ranked-root.jsonl",
+      "sha256": "df8ef6fc11c3dce9fc55409edbcbca458f97f7f0ac31cd580b7a468bb4e4d02e"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/verification/stockfish-native-ranked-root.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/fathom-upstream/LICENSE",
+      "sha256": "c8038055839bd02f995cd7d1bba19657720097f5604411a7977ebcb5b4a37759"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/fathom-upstream/Makefile",
+      "sha256": "8c7a0f5c9ed34aa6d25212a954d044c62f294c7eef82b3ad4b33dae49e7a5a4d"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/fathom-upstream/README.md",
+      "sha256": "8a44c2a068f97fb237cea30f8039f4942950668c97b8f37092d1065b26cd074b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/fathom-upstream/src/apps/Makefile",
+      "sha256": "bf2486c1c6c30f80d6f3baaabc83ff9ea578bc1085fe4ad702771d1aff35ecfb"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/fathom-upstream/src/apps/fathom.c",
+      "sha256": "3d466fae6e9c5cb3028df61634c638fa2f9b1aa553ce6288fcd618da396b03c8"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/fathom-upstream/src/stdendian.h",
+      "sha256": "e5b8187eec89ef83e731ea92be8ca0df4b533d8d21075fc4e2c86b4b00d7b7c3"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/fathom-upstream/src/tbchess.c",
+      "sha256": "119f19fa8714686798ca7be011e5b234f99c93aec751e9492f2664757d6c029d"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/fathom-upstream/src/tbconfig.h",
+      "sha256": "69fe1821b471164bd759cf46c486d55b7fa727e348a5ee306b18d19537ac3a03"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/fathom-upstream/src/tbprobe.c",
+      "sha256": "7ed0cc80626271342bfe413d6c421756b6851f977a064461f5f555e1b598df35"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/fathom-upstream/src/tbprobe.h",
+      "sha256": "dc7808dc58c2a1af921a612f94041b917dfac94d3215a76a2b2b0c53c94ea561"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/.github/FUNDING.yml",
+      "sha256": "2f9fd7bcbf611188eba57e64b0c4459ab87554b7f2cd1b0a0fb8dfb987395137"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/.github/dependabot.yml",
+      "sha256": "afa5d56586b02ee4762f0db1b64fbbaff64d9527ac2046bbcdeaa9bfe125b853"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/.github/workflows/ci.yml",
+      "sha256": "87443a15bbef34c97459e28337020639975253c9d72d6a87c7385f21b7d11432"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/.gitignore",
+      "sha256": "2bebfdcbb5d03229ac49493faa645af03e5dbca54f987611265cf4192647320e"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/COPYING",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/Cargo.toml",
+      "sha256": "bd4a0c41a9ede5a398121f0b6d6fada8b25f825f1ec5aba91f610b93c55df679"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/README.md",
+      "sha256": "4df5da3c529f28aa7f2cc0ca35bc3c577c3ded8d3e0a2ba43989abdf6ab53d7b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/.gitignore",
+      "sha256": "d21db343d9990904d5258870238e13118ac82593d4ea54a88b3e97c10bf4af29"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/Cargo.toml",
+      "sha256": "9a0ede4906c216a096ddd4ea116a35276755ab71824f1506a16058963e4030b2"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/fen_from_ascii/chessops-roundtrip-fail",
+      "sha256": "bfba139f8595b89f2da6b832db734a67a283bc127bba862973783a74aa9761c0"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/fen_from_ascii/empty",
+      "sha256": "d663a96cce1c8098e0bc13bf54034bf0357f5d212215d5b2c8c995e96765b926"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/fen_from_ascii/endgame",
+      "sha256": "514cd7fd694a03db83af168b24b972f6a0f3bc0e98f811472c928e9f87a2edd5"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/fen_from_ascii/horde",
+      "sha256": "3cd5186f223094179c960654b5ef9a5392e2738918f34fd514a97f7afc85c2c1"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/fen_from_ascii/initial",
+      "sha256": "6c47d197300802706c715ba25b5e03e3808b31bd18af918af0acaf3451f88af1"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/fen_from_ascii/scid-3check",
+      "sha256": "f10bccc10c1230643c304d472f773855c787e4099f9db448287fc6667751aabd"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/fen_from_ascii/scid-zh",
+      "sha256": "ac98146d8106032b344cdaed8fd6690af496954df5d64aa9b464f146bb2cd52e"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/fen_from_ascii/too-many-empty-ranks",
+      "sha256": "3788e39752ad7fd1ae827889046828da4d8d29acac5c41366ada92760f47da0d"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/fen_from_ascii/winboard-3check",
+      "sha256": "9ae80e1dca15889744e7f3a7d3ac3a096062967630dc11e9b3d0f1cfb17d115e"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/fen_from_ascii/winboard-zh",
+      "sha256": "de2fbc3563660d2f83a50c22d4f57f3cc273e7506d0ffcd2d662198db7d27cfd"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/packed_setup_from_bytes/default-3check.bin",
+      "sha256": "e4453586bcc81f42539058b0ab65f50c7b24ca2817b9cba2fa2b8a6339682537"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/packed_setup_from_bytes/default.bin",
+      "sha256": "bd1581d51c6494ba96e1dcde577f666f3661d1eb46964c778812382947604aad"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/packed_setup_from_bytes/empty.bin",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/packed_setup_from_bytes/ep.bin",
+      "sha256": "c0099e5eab8dd78f11152cb2cde624d7710f173fa7d8f13692cdf9586602b890"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/packed_setup_from_bytes/example-crazyhouse.bin",
+      "sha256": "b758110101cf0584b27cebc0ea252ea15504545309a95c64d933c722e7817fc5"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/packed_setup_from_bytes/large.bin",
+      "sha256": "36d47ffb5ee45a8c63722926cab3985bebfd06a4880285b02860e85941a1c0a2"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/pgn/anastasian-lewis.pgn",
+      "sha256": "7c2394e65a50e788ab2ff0429ea7ae223af01ef58dcd38c2228d7a740b86e166"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/pgn/antichess-programfox.pgn",
+      "sha256": "67a1411f9cc378b062eeb98de6d41f6d6621e840b05ea69a928b9fe596e5983b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/pgn/bare",
+      "sha256": "cb1a802a357aaea21a0e874533733b874cf81322eae1143f2e5a8f4197948c14"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/pgn/cutechess-fischerrandom.pgn",
+      "sha256": "208bbd55bafeb674193edfedf33e53f02056bbf1243f5a4a3567eeee50b0ebb6"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/pgn/kasparov-deep-blue-1997.pgn",
+      "sha256": "220baed5c5b820b1ee054b72734c1af9c2b75d87c8a9448701dadbe08ef8e877"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/pgn/knightvuillaume-jannlee-zh-lichess.pgn",
+      "sha256": "017a60ea56e64bea989351e3a9fe32652112bfe4709aca80020ffeaa0e087e32"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/pgn/molinari-bordais-1979.pgn",
+      "sha256": "31bff846c13842647195faca6364da7ff31c4d2fee7861361fef98b879ce7dca"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/pgn/saturs-jannlee-zh-lichess.pgn",
+      "sha256": "262603291023944b21376fc308dcf53441dcc9597d7325faec88e419e6728b25"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/san_from_ascii/capture",
+      "sha256": "4bfc228f66a01d1d1997ef75f4cf7256c3bb2e227c1be3caed20b2d371372085"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/san_from_ascii/castle-long",
+      "sha256": "6e4a05eca8aadd252e6e11707e6f98217dcb6b02333ebf85b39a498bf24be8d0"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/san_from_ascii/castle-short",
+      "sha256": "a34987ce1af00d5d5c4f2684639b5a579fd0fc5de26ed9b3e60086b817f8406b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/san_from_ascii/drop",
+      "sha256": "1cc6b2a762a6eceb640f4340fd7dde8320e1c62a410aed759dacf2fca106660e"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/san_from_ascii/longest",
+      "sha256": "4101c977488c84b83754ec07c68a01656212df81bf8ed972cdca607b3820b7e8"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/san_from_ascii/move",
+      "sha256": "fccc28bae8ae570c5dff255478ac737c600b4f6bf1ebf98cbb5e5a7271bc61d1"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/san_from_ascii/promotion",
+      "sha256": "ca120c470d4eccc2d5b9754b66f320638ee51eb8f8c435ddb5151a9cd8e87e0a"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/syzygy_pawnful/KNvKP.rtbw",
+      "sha256": "f21332cc4b380764847d6c32511dee16cbf56e65604596ca24e784f8e4c13bdb"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/uci_from_ascii/drop",
+      "sha256": "5184c6d2654c7252fa365d9e3a4c0df0dc582118cae783937fa2c04098593124"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/uci_from_ascii/move",
+      "sha256": "67b1ec6d7300b1fe19503f0c7596439330666040a26c4d75a4e089a960026213"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/uci_from_ascii/null",
+      "sha256": "8982b0e36eb1bacbb400dea0997b13cce756d7a48dbe0b05c560a13c1973afd0"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/corpus/uci_from_ascii/promotion",
+      "sha256": "a4de8fb9d9ce8bec5c8df22dd869541300e6aec05dae7b93cd585793f223242a"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/fuzz_targets/bincode_roundtrip.rs",
+      "sha256": "5dec9bec0da6c79ee4923fadbb5555367a65c0d584136218e3e9ce9a94a06829"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/fuzz_targets/fen_from_ascii.rs",
+      "sha256": "816a497eef31f94cd9e36af29a59535db0407504531e6cc36976c70eb0c7c767"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/fuzz_targets/fen_from_setup.rs",
+      "sha256": "e5813d9f966be4ef0fa1ca709a404f806aa77391689952a522d773442c9a306f"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/fuzz_targets/incremental_zobrist.rs",
+      "sha256": "8bf061e9f1611c512b35666f1c83b170268bd0cc8a8113dccb2648dce0c0561d"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/fuzz_targets/legals_are_legal.rs",
+      "sha256": "3a5de59b9efa4972c92becb9f6e0c85e8d253298bd4a66eb3a9d9ec8cd6ed9d6"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/fuzz_targets/packed_setup_from_bytes.rs",
+      "sha256": "cf7c022251c8745e6a34fc5817faddf366a170883a055abccd68f6544340b1a9"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/fuzz_targets/packed_setup_from_setup.rs",
+      "sha256": "e23912cedfc0b2ab55f9e16c172565d63c79e92fcdb4fe9fe33beb0fb162c920"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/fuzz_targets/pgn.rs",
+      "sha256": "9555d903f22d0c3c377f5c311c939755433343011facb9f5aceb33ef93184c96"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/fuzz_targets/san_from_ascii.rs",
+      "sha256": "fb746a935ecdff25f63950bb8586d061dff678b5c2dd81feb6c868fb8012630c"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/fuzz_targets/syzygy_pawnful.rs",
+      "sha256": "0230f898ef46ea926396b0d43816cad1e48d22596b15b480bb66299970dc52b9"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/fuzz/fuzz_targets/uci_from_ascii.rs",
+      "sha256": "33396487a318868581578decddb470e9dd2d5de8fc6f67333b6f5b3e3fc4b1c4"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/CHANGELOG.md",
+      "sha256": "f0c1c234c450773694a4377de22e3a73582742753a965224eaddcee00bd4824f"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/Cargo.toml",
+      "sha256": "b11bc721b764b4711b893a4ea8c755e9687feb664655d13e9fe23553264d50cd"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/README.md",
+      "sha256": "dd373feac50735505b031a0fcc67f323fd03f84df2eb6805ea7d84e5f484d5c9"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/benches/benches.rs",
+      "sha256": "c251220b4fbe28b6ce49aab597a203abf5862ca3a6eeed977b7de7009edd4d15"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/benches/lichess_db_1000k.pgn",
+      "sha256": "518283bb0e215225b58104c72eb9982b210c862210244a539cb9ed53bcb91666"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/benches/lichess_db_100k.pgn",
+      "sha256": "040695ef63a35a546c77f991d51f480d21d83381063af837c1a7c7f87678c8c1"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/benches/lichess_db_10k.pgn",
+      "sha256": "7ed132d57a0d612f22ac97d0b341a1b00b525b744fb45437f4f72d0d274f3466"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/benches/twic1599_1000k.pgn",
+      "sha256": "26d2857ce2866625568bf6f4415b88a3d0e8926de62fc8c1033f126e47b4da43"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/benches/twic1599_100k.pgn",
+      "sha256": "8dc0d86f7888ea21cb6b0187f1e37849955f6c566e9d48916e0924f26b78d223"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/benches/twic1599_10k.pgn",
+      "sha256": "6eca0670866e15ba7c79afe8f270587d7d9dd462bc3425ee2f10fd84bfa74c0f"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/examples/count_games.rs",
+      "sha256": "a23f7b4c8ec45fa6faa7370b5f5cc8856ec0a1f129be1aa657f28b499b628f86"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/examples/parallel_validate.rs",
+      "sha256": "9029e42b39f2182f124cde6d1fefe27d9b090bb396d7416b046c1db7afc99106"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/examples/stats.rs",
+      "sha256": "2823fa572ecd41490cdb124864dcf1cdf96a18895cf3ae128ad775bdd0727c64"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/examples/validate.rs",
+      "sha256": "c9333e5fb0ab65a137f3bc6ee524bf06538375127abf3a7dc770f2ec4b7de182"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/src/buffer.rs",
+      "sha256": "43aed2f6db26e064e89e2a06486bdf763f40397890e3fd6adc17752b1d181d30"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/src/comment.rs",
+      "sha256": "f52f4ab01a54a689cf365070b11db1d6be44507695086a653de667e5acd4bf94"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/src/lib.rs",
+      "sha256": "a7e94284b8845c882491ee42db76630a7a9c55942f07f6263486a1254441e8a0"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/src/nag.rs",
+      "sha256": "4c8584c1dd0b0cf73ec0410810dadc6589af363b461449edb8bc4801bbea8a1e"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/src/reader.rs",
+      "sha256": "f1cbf4d5524f2c2bdd479a4cfade21579b35e36767fed3c93a3ad0ad891498b6"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/src/tag.rs",
+      "sha256": "73b4cb4c77180410bf7ea1645b8288daa14a76726122fc4f1195d12a2707345b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/pgn-reader/src/visitor.rs",
+      "sha256": "f314cc9725b6c6acf1fa0453b357815766c40928a34c0a36783bff3bc87e0dc8"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/rustfmt.toml",
+      "sha256": "aa60e6f3213eeeec0880d940c3aeafdfd8815a7fc230780e6a9ac3dc18e1bfa8"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/CHANGELOG.md",
+      "sha256": "f35725c0fa6bd59badd51d9acee1c600dbbff3ab0ab367fb2aa220b7347c469e"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/Cargo.toml",
+      "sha256": "894833766536f5b21541289933607c03a5c48d095578b7de650b22a2b40e6a7c"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/README.md",
+      "sha256": "b53dc4ef522a7a5e069959aa03b061b406872d0c82cb472373fc5b62131dc171"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/benches/benches.rs",
+      "sha256": "11f78066792820d270a64ff67447a4e1afd6fee03d0d4530eb71e7da21270d89"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/src/attacks.rs",
+      "sha256": "28111e404b12ef4672dbcb5babc1574a74afa7cf1b6e94d9013eb7c0d0f896bf"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/src/bitboard.rs",
+      "sha256": "49802a8ec770b8e9a0ada17da0904b8e3213df48ad0e9468e51f31e60316dc72"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/src/board.rs",
+      "sha256": "7408cce36a2c4bed1502d0a4babb89b04d6e8263df9730c9262db88766afb5ab"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/src/castling_side.rs",
+      "sha256": "c498dc5c6e7d664a4e766132983d1600b5f11d92111c36ad3659d14bdcea6141"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/src/color.rs",
+      "sha256": "5d5028b74629b7ca1d4c8492ec6944642f0c88d464ee0c161f7a7aaa124c8f6f"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/src/fen.rs",
+      "sha256": "253d12d4cf88af505cdf00d212a33c0c85da9b33c74958b029fed81ab942ec15"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/src/lib.rs",
+      "sha256": "96f812b7f94e7c9cb92c77e352ebe9b7cac559b218d8c72857e185a863997288"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/src/m.rs",
+      "sha256": "44baf9e7e28ddcf5d6dd6743831f02c3ec1bf2d8f9fa46c44b53893b4668a2fc"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/src/packed.rs",
+      "sha256": "bc25bee2cf0c6232ac0cd64d4970d984b1ab0abfae068c9ab1a0474d346e6283"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/src/perft.rs",
+      "sha256": "457ea0904fb82afe49ce635f349cfda7c4cf1aa95a7df0a92b0c0e5ef5dc3a47"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/src/position.rs",
+      "sha256": "0204ddd436673b5ed9788999ad1202e375f29f03302f1904c0232099e086ae41"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/src/role.rs",
+      "sha256": "43fffbc6cd2e8c7e0be0ba55d57877d065a63d42128d5ae81c15317a21b85fbe"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/src/san.rs",
+      "sha256": "1cf5c328ded01c244ba8368415f2b5e691d8b0c523e19c4dfa565354b7b0ede5"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/src/setup.rs",
+      "sha256": "c174ad2351313f5bde01aee47a3af9ebdd546f3a9c7551da49ec4fcc35a97d1f"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/src/square.rs",
+      "sha256": "8b9570ea55cf5e1662d6ecbd81d37617489365216b224c40ff99cba9c4700f9b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/src/types.rs",
+      "sha256": "771c21e9193e8e97d00038ed47295890c0ed57a35b2c46d66caf105d8a3a2a19"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/src/uci.rs",
+      "sha256": "508e3c883b3f1bc266ec2aad556227e38326586c4be3e9e425dc5161521db49a"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/src/util.rs",
+      "sha256": "be0baa3510b9d9bbdf76bd63602776aa865482d76f6caba8f645172cd4644e18"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/src/variant.rs",
+      "sha256": "159276dd0007870cfe4cd9c2e926ac0537645f4ed3cd034154084721aba53e95"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/src/zobrist.rs",
+      "sha256": "a99e728aa49a29a3b91c995f0defb67642ac4b872db5798c414c5bd08029f588"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/tests/3check.perft",
+      "sha256": "f45c7e5c98f2b5122b1386d4bab93191da46bbf3492cdd2d16daa07cf5e6e8ba"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/tests/antichess.perft",
+      "sha256": "b37a556d8078c47ecb08eeac75784b47bac249602156dba3bd0caa6602087d09"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/tests/atomic.perft",
+      "sha256": "a0fc1a760e22bae9fd3fad45742f56a655c29897a24ba4009425148a29588855"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/tests/chess960.perft",
+      "sha256": "3be99480584aaee776e961cd436a8cac5b672773f58448ce1ea373dcc881e534"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/tests/crazyhouse.perft",
+      "sha256": "f677aa2d08d1e4c607665009d204ea07386356488031fea2c2bbb1406aee250e"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/tests/horde.perft",
+      "sha256": "291e1a9010c3694232cd9b1e12a06026023ffa27b188bd44e14732a8c7990e8d"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/tests/horde_insufficient_material.csv",
+      "sha256": "5e96e589811660610da5d40ba2a755d22efece21211ab10178818c44792173bb"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/tests/horde_insufficient_material.rs",
+      "sha256": "897dfc20a0f73921fd9caf6d2102a77198e33fe2ae23107aabbddebec39d506a"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/tests/perft.rs",
+      "sha256": "f3dda3deaf21a1b95bc31393967aad8788d75b35e0c9be87eafa059e61a5ce62"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/tests/racingkings.perft",
+      "sha256": "4466c98e5af6ca98c8d8539525d1072b98fd75550a6accf7629edc50f2481f11"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/tests/random.perft",
+      "sha256": "8f7aee8acaa2a988cc117befceb7c0d8d3304fa5749861d561ba95fceb1fecdd"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/tests/tricky.perft",
+      "sha256": "a539f0edbb91da814cae27e4fa65e5abcf203c4be7a819fe1b9ce620e76aa219"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/tests/zobrist.csv",
+      "sha256": "6537a5f32dec5cd5147ae8aa7681c6613b9c079e9d166651f7ed9ebd03a3175c"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty/tests/zobrist.rs",
+      "sha256": "bfca102361ccf623f2676867b68d8893cdde55be033be02e7a6bdcb05e1d0a5b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/CHANGELOG.md",
+      "sha256": "508c019e1b32af1a331f3bef30c2a4a4ce011215c7b9f9a038677ebf52e6ea51"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/Cargo.toml",
+      "sha256": "b76506e475c02ee7f25cad542a6f87d0de04f6fc1ed04bf786e4160ee043b95e"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/README.md",
+      "sha256": "5ba927f65bef61d7e025f735d9c658c4f4c65984e39a68277a31d87d8023ec0b"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/benches/benches.rs",
+      "sha256": "232f75c4b0a4c9e4826a25c6741c8f4790ed5184d7231e5fd478511fbfffb181"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/download-test-tables.sh",
+      "sha256": "87b8ff6f36a31a896e86df2c6588a7cc7ef840255f11db2bbadfc904a1aa16e5"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/examples/fathom.rs",
+      "sha256": "c7c638e1e8b4cffc11783051e5c5640470b539ba75d9f94814cd30f9ef279e13"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/src/errors.rs",
+      "sha256": "36d74b209220ed3dfe0df4089cfb03185ae369857ea3f361e234778eaee4b2a9"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/src/filesystem.rs",
+      "sha256": "18945fa7985c6e92d05efa04ef3222f7140e8d22d889cd88752149c69b060b00"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/src/lib.rs",
+      "sha256": "d1445fed0a1612e68f972cb68cee7e32277f622da481e8062e3b94ec326c64f4"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/src/material.rs",
+      "sha256": "60229ed68cab2ce68e0c2fe833b87d64e7dcf2aacafd6e97d301eb9cc75b9b8a"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/src/table.rs",
+      "sha256": "b2f4515b9c16565787f6886fc3ceeff4d3461ca4a5a397402c58814e4f2a00b9"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/src/tablebase.rs",
+      "sha256": "3cfc72b5a3f38d9eea8d56f923ffc7ce21a2b00b9f8081d931bfa6e89afceaee"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/src/types.rs",
+      "sha256": "79b99f3446cee0f359d5700c8de0d853228bd801cf5cb3b9ba8481361a4a3683"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/tables/antichess/TEST-SOURCE.txt",
+      "sha256": "f0763b768559d5e04ee33e4eae6078fbcf44facc8eb792ca404b08d29f1e92ad"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/tables/atomic/TEST-SOURCE.txt",
+      "sha256": "6b37b7b3909f3e7c286ef5c484471d437c9fab4aae265180e01a28b99354ee0a"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/tables/chess/SOURCE-5.txt",
+      "sha256": "8eb40b15a41fd7d10c47c6b70949261bba85aa01cf70309329cfab20391bfdb8"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/tables/chess/SOURCE-6.txt",
+      "sha256": "38aa47cbc59c2f9ed6f2baa77312e2f886bcad9df0328e291c401ef4f237e818"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/tables/chess/SOURCE.txt",
+      "sha256": "e09df94798ad6d4e81490588d4fe7360c6dc5ac04b6a26ea5bb705dfc819002c"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/tables/chess/TEST-SOURCE.txt",
+      "sha256": "2f644b9a1c8a6d877352bf6c9fb21f8a545ddb130405940dc0d922eab9db1ef2"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/tests/antichess.csv",
+      "sha256": "8ed0f0cd594fc01d52de2bad6dc7b6a17de597c57b7d681fad308e55a7e2a576"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/tests/atomic.csv",
+      "sha256": "4c82eb0159379604a4f29c00fdf325e015ba594ae414461d02dbc2f7337578aa"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/tests/chess.csv",
+      "sha256": "86b310d9ba2fe0de0b47df1c534633b95ed5e17f5c8f2c767f6838b3e623cc57"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/tests/suite.rs",
+      "sha256": "8d02813fcb160cdbc9475cc69714f106a03478270c2b50d7bc31819617e87426"
+    },
+    {
+      "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/external/reader-comparison/shakmaty/shakmaty-syzygy/update-test-tables.py",
+      "sha256": "81be3451786ae80c9b31947bbdb134b451c09f42c533deb97abb07329f4ee1c8"
+    }
+  ],
+  "numpy_version": "2.5.4",
+  "repeats": {
+    "all_moves": 3,
+    "dtz": 10,
+    "wdl": 20
+  },
+  "samples": 540,
+  "schedule": [
+    {
+      "block": 1,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-01.fen",
+        "sha256": "d3b24f566ef8390cfd3c6e0609d3f8f24d869ab83b700ca214d6463af51ecd90"
+      },
+      "operations": [
+        "wdl",
+        "dtz",
+        "all_moves"
+      ],
+      "variants": [
+        "pyrrhic_c",
+        "shakmaty",
+        "fathom",
+        "pyrrhic_rs",
+        "orient",
+        "stockfish"
+      ]
+    },
+    {
+      "block": 2,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-02.fen",
+        "sha256": "9c13bb93ee593253144c086c53e0a2977c3782afa3eb3817730ffb57a277d843"
+      },
+      "operations": [
+        "dtz",
+        "all_moves",
+        "wdl"
+      ],
+      "variants": [
+        "pyrrhic_rs",
+        "stockfish",
+        "shakmaty",
+        "orient",
+        "pyrrhic_c",
+        "fathom"
+      ]
+    },
+    {
+      "block": 3,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-03.fen",
+        "sha256": "d6c859d028cced424b9305ee8218cb1446614940b437c704dcd671abb41d7a66"
+      },
+      "operations": [
+        "all_moves",
+        "wdl",
+        "dtz"
+      ],
+      "variants": [
+        "orient",
+        "fathom",
+        "stockfish",
+        "pyrrhic_c",
+        "pyrrhic_rs",
+        "shakmaty"
+      ]
+    },
+    {
+      "block": 4,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-04.fen",
+        "sha256": "0a8a3fd74e1fbd02d15b217de641973795a80625e4f75a4f83dc1c3624100774"
+      },
+      "operations": [
+        "wdl",
+        "dtz",
+        "all_moves"
+      ],
+      "variants": [
+        "fathom",
+        "pyrrhic_c",
+        "orient",
+        "shakmaty",
+        "stockfish",
+        "pyrrhic_rs"
+      ]
+    },
+    {
+      "block": 5,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-05.fen",
+        "sha256": "1de0157c65ecb09e5fb5dae9597857de78cd3c67de6041b04c1782acc6c80d3e"
+      },
+      "operations": [
+        "dtz",
+        "all_moves",
+        "wdl"
+      ],
+      "variants": [
+        "shakmaty",
+        "pyrrhic_rs",
+        "pyrrhic_c",
+        "stockfish",
+        "fathom",
+        "orient"
+      ]
+    },
+    {
+      "block": 6,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-06.fen",
+        "sha256": "6d39c3536a62aded2c2da7c3f8f9554438f709446e74c29317d7874914f4cf49"
+      },
+      "operations": [
+        "all_moves",
+        "wdl",
+        "dtz"
+      ],
+      "variants": [
+        "stockfish",
+        "orient",
+        "pyrrhic_rs",
+        "fathom",
+        "shakmaty",
+        "pyrrhic_c"
+      ]
+    },
+    {
+      "block": 7,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-07.fen",
+        "sha256": "1375a19de314106c078821b2466bc9dd496d33bb13a568202b28091023ccb37a"
+      },
+      "operations": [
+        "wdl",
+        "dtz",
+        "all_moves"
+      ],
+      "variants": [
+        "orient",
+        "fathom",
+        "stockfish",
+        "pyrrhic_c",
+        "pyrrhic_rs",
+        "shakmaty"
+      ]
+    },
+    {
+      "block": 8,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-08.fen",
+        "sha256": "780185bb8636e69b22ab6dd76105a860c7c830c92a954924f9b8abdebfcba4be"
+      },
+      "operations": [
+        "dtz",
+        "all_moves",
+        "wdl"
+      ],
+      "variants": [
+        "pyrrhic_c",
+        "shakmaty",
+        "fathom",
+        "pyrrhic_rs",
+        "orient",
+        "stockfish"
+      ]
+    },
+    {
+      "block": 9,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-09.fen",
+        "sha256": "da4a08c24396e3632924d0f7cdfa73cf23402c954f1c4f6588c1738bc16f590b"
+      },
+      "operations": [
+        "all_moves",
+        "wdl",
+        "dtz"
+      ],
+      "variants": [
+        "shakmaty",
+        "pyrrhic_rs",
+        "pyrrhic_c",
+        "stockfish",
+        "fathom",
+        "orient"
+      ]
+    },
+    {
+      "block": 10,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-10.fen",
+        "sha256": "021eccbb95cb26dac75d8cf6cf75fddb8920b69fe58f2418a2feb1b9a034ad90"
+      },
+      "operations": [
+        "wdl",
+        "dtz",
+        "all_moves"
+      ],
+      "variants": [
+        "pyrrhic_rs",
+        "stockfish",
+        "shakmaty",
+        "orient",
+        "pyrrhic_c",
+        "fathom"
+      ]
+    },
+    {
+      "block": 11,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-11.fen",
+        "sha256": "b91ec228e11b0ce86480a4522a075587f7c468faedfc5d661f4ae6a156b49280"
+      },
+      "operations": [
+        "dtz",
+        "all_moves",
+        "wdl"
+      ],
+      "variants": [
+        "stockfish",
+        "orient",
+        "pyrrhic_rs",
+        "fathom",
+        "shakmaty",
+        "pyrrhic_c"
+      ]
+    },
+    {
+      "block": 12,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-12.fen",
+        "sha256": "ac320899921929105d65f7f0fac7efa8c870986f58d0b5a499813f7a16b662ff"
+      },
+      "operations": [
+        "all_moves",
+        "wdl",
+        "dtz"
+      ],
+      "variants": [
+        "fathom",
+        "pyrrhic_c",
+        "orient",
+        "shakmaty",
+        "stockfish",
+        "pyrrhic_rs"
+      ]
+    },
+    {
+      "block": 13,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-13.fen",
+        "sha256": "b4a3190844627fccbc76fd528a4e41beefd192b3cc2853f40dec331ad95400d0"
+      },
+      "operations": [
+        "wdl",
+        "dtz",
+        "all_moves"
+      ],
+      "variants": [
+        "pyrrhic_c",
+        "shakmaty",
+        "fathom",
+        "pyrrhic_rs",
+        "orient",
+        "stockfish"
+      ]
+    },
+    {
+      "block": 14,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-14.fen",
+        "sha256": "b7d685b4aab2122416ccaffbf32077213a7a16ea58eac6ab76bd5dc5266af139"
+      },
+      "operations": [
+        "dtz",
+        "all_moves",
+        "wdl"
+      ],
+      "variants": [
+        "orient",
+        "fathom",
+        "stockfish",
+        "pyrrhic_c",
+        "pyrrhic_rs",
+        "shakmaty"
+      ]
+    },
+    {
+      "block": 15,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-15.fen",
+        "sha256": "33f993e747de11f9127d82aae351ae8c062e2296d5ac2cb0f4577d9d0452a65f"
+      },
+      "operations": [
+        "all_moves",
+        "wdl",
+        "dtz"
+      ],
+      "variants": [
+        "fathom",
+        "pyrrhic_c",
+        "orient",
+        "shakmaty",
+        "stockfish",
+        "pyrrhic_rs"
+      ]
+    },
+    {
+      "block": 16,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-16.fen",
+        "sha256": "a673536ee1f51dd4bbc169e6f885338026198eb76a85f15feaea83d69b1abc66"
+      },
+      "operations": [
+        "wdl",
+        "dtz",
+        "all_moves"
+      ],
+      "variants": [
+        "pyrrhic_rs",
+        "stockfish",
+        "shakmaty",
+        "orient",
+        "pyrrhic_c",
+        "fathom"
+      ]
+    },
+    {
+      "block": 17,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-17.fen",
+        "sha256": "e3a8060baa2d2c962c6e3a09eb2eb79165ba96f29b37f317093d1a4896b9f2d6"
+      },
+      "operations": [
+        "dtz",
+        "all_moves",
+        "wdl"
+      ],
+      "variants": [
+        "stockfish",
+        "orient",
+        "pyrrhic_rs",
+        "fathom",
+        "shakmaty",
+        "pyrrhic_c"
+      ]
+    },
+    {
+      "block": 18,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-18.fen",
+        "sha256": "7e56084a8971603b36bc399b9d7e8150d46a4cd7206b51bec9b98a4b3372163c"
+      },
+      "operations": [
+        "all_moves",
+        "wdl",
+        "dtz"
+      ],
+      "variants": [
+        "shakmaty",
+        "pyrrhic_rs",
+        "pyrrhic_c",
+        "stockfish",
+        "fathom",
+        "orient"
+      ]
+    },
+    {
+      "block": 19,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-19.fen",
+        "sha256": "7f8066d3f6bc006b6cbeace0294ce985209f386ce9f6d9f1367dba15942a3016"
+      },
+      "operations": [
+        "wdl",
+        "dtz",
+        "all_moves"
+      ],
+      "variants": [
+        "shakmaty",
+        "pyrrhic_rs",
+        "pyrrhic_c",
+        "stockfish",
+        "fathom",
+        "orient"
+      ]
+    },
+    {
+      "block": 20,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-20.fen",
+        "sha256": "73f2db3ff0b58b2ffbe4118bb4f1299478d7d03b294d70172a06d4510cbdea18"
+      },
+      "operations": [
+        "dtz",
+        "all_moves",
+        "wdl"
+      ],
+      "variants": [
+        "stockfish",
+        "orient",
+        "pyrrhic_rs",
+        "fathom",
+        "shakmaty",
+        "pyrrhic_c"
+      ]
+    },
+    {
+      "block": 21,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-21.fen",
+        "sha256": "c0b58e42f18e3ec77c8c2f6ec1336c5a46eea5f4988289f3a42208f50214a0a3"
+      },
+      "operations": [
+        "all_moves",
+        "wdl",
+        "dtz"
+      ],
+      "variants": [
+        "pyrrhic_c",
+        "shakmaty",
+        "fathom",
+        "pyrrhic_rs",
+        "orient",
+        "stockfish"
+      ]
+    },
+    {
+      "block": 22,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-22.fen",
+        "sha256": "ccafe0b61eb9526c59173d4fde6338d66d5b1e9b37b29e0b3fc9e2e8b67a64e6"
+      },
+      "operations": [
+        "wdl",
+        "dtz",
+        "all_moves"
+      ],
+      "variants": [
+        "orient",
+        "fathom",
+        "stockfish",
+        "pyrrhic_c",
+        "pyrrhic_rs",
+        "shakmaty"
+      ]
+    },
+    {
+      "block": 23,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-23.fen",
+        "sha256": "9ccf7444a7d270718d8af72bba4d37b305e84f495b40de8bae0d009818b56bc6"
+      },
+      "operations": [
+        "dtz",
+        "all_moves",
+        "wdl"
+      ],
+      "variants": [
+        "pyrrhic_rs",
+        "stockfish",
+        "shakmaty",
+        "orient",
+        "pyrrhic_c",
+        "fathom"
+      ]
+    },
+    {
+      "block": 24,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-24.fen",
+        "sha256": "a7971ea9517ac0682392fef2ce1e16de10d936b34a0fb690f5ad42693c4bcc45"
+      },
+      "operations": [
+        "all_moves",
+        "wdl",
+        "dtz"
+      ],
+      "variants": [
+        "fathom",
+        "pyrrhic_c",
+        "orient",
+        "shakmaty",
+        "stockfish",
+        "pyrrhic_rs"
+      ]
+    },
+    {
+      "block": 25,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-25.fen",
+        "sha256": "2132994126944a6ccf2c74a1b6a61bdd1ab840f2df5381879fe406e846e16b1d"
+      },
+      "operations": [
+        "wdl",
+        "dtz",
+        "all_moves"
+      ],
+      "variants": [
+        "pyrrhic_rs",
+        "stockfish",
+        "shakmaty",
+        "orient",
+        "pyrrhic_c",
+        "fathom"
+      ]
+    },
+    {
+      "block": 26,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-26.fen",
+        "sha256": "f01001b0d5d8c72df0d17081979003fd716c1be718fad948acd401fb97875ea8"
+      },
+      "operations": [
+        "dtz",
+        "all_moves",
+        "wdl"
+      ],
+      "variants": [
+        "fathom",
+        "pyrrhic_c",
+        "orient",
+        "shakmaty",
+        "stockfish",
+        "pyrrhic_rs"
+      ]
+    },
+    {
+      "block": 27,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-27.fen",
+        "sha256": "0a2baba09229861e1a33a3f797e7be69a8b2023391dfcd465bb3f385ce8efd47"
+      },
+      "operations": [
+        "all_moves",
+        "wdl",
+        "dtz"
+      ],
+      "variants": [
+        "shakmaty",
+        "pyrrhic_rs",
+        "pyrrhic_c",
+        "stockfish",
+        "fathom",
+        "orient"
+      ]
+    },
+    {
+      "block": 28,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-28.fen",
+        "sha256": "e9bdc9fee0eb76aeb18a5571a6667c8623e35430ea5bac72198665e528d1b2dd"
+      },
+      "operations": [
+        "wdl",
+        "dtz",
+        "all_moves"
+      ],
+      "variants": [
+        "pyrrhic_c",
+        "shakmaty",
+        "fathom",
+        "pyrrhic_rs",
+        "orient",
+        "stockfish"
+      ]
+    },
+    {
+      "block": 29,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-29.fen",
+        "sha256": "e89fd3a0a2eee3c7316e10d8650d5a6d7ca783c7754f3e6c0ad99beafd7a55b3"
+      },
+      "operations": [
+        "dtz",
+        "all_moves",
+        "wdl"
+      ],
+      "variants": [
+        "stockfish",
+        "orient",
+        "pyrrhic_rs",
+        "fathom",
+        "shakmaty",
+        "pyrrhic_c"
+      ]
+    },
+    {
+      "block": 30,
+      "corpus": {
+        "path": "/home/aurentium/Documents/ChatGPT/Chess Engine Endgame system 5 pieces optimization/orient-endgame-component/artifacts/investigations/tablebases-006/protocol/block-30.fen",
+        "sha256": "47362487579335b1b5036e45d8c89d0733070bed7b1a37ac3891839b5b62e865"
+      },
+      "operations": [
+        "all_moves",
+        "wdl",
+        "dtz"
+      ],
+      "variants": [
+        "orient",
+        "fathom",
+        "stockfish",
+        "pyrrhic_c",
+        "pyrrhic_rs",
+        "shakmaty"
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "seed": 2026102906,
+  "thresholds": {
+    "alpha": 0.05,
+    "bootstrap_resamples": 100000,
+    "family": 30,
+    "p95_upper": 1.05,
+    "wall_upper": 0.95
+  }
+}

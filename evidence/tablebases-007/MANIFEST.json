@@ -1,0 +1,75 @@
+{
+  "campaign": "007",
+  "files": [
+    {
+      "original_path": "artifacts/investigations/tablebases-007/protocol/PROTOCOL.md",
+      "path": "protocol/PROTOCOL.md",
+      "sha256": "c203422bf1c679a8b5ea1940043682cca5f12da48fad680103cb834f5f3650e0",
+      "size": 5376
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-007/protocol/freeze.json",
+      "path": "protocol/freeze.json",
+      "sha256": "73aa144cc11107b7bcfc43b37df6556184f4c75c86851fc9fb8260daf28035a4",
+      "size": 33738
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-007/protocol/REPAIR-002.md",
+      "path": "protocol/REPAIR-002.md",
+      "sha256": "15922e957fa4d62979695a1bddf5b8c064ae701028ac452cc4bfdea7e340bc2f",
+      "size": 586
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-007/performance/acceptance-002/result.json",
+      "path": "performance/acceptance-002/result.json",
+      "sha256": "8700ded599084e8c4d10647b579a1f1bfdbef30c326991a6b6db477d70d3fa5f",
+      "size": 211773
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-007/verification/correctness-001/result.json",
+      "path": "verification/correctness-001/result.json",
+      "sha256": "92659518a33c046fb76509ddd2680549268d4ad9777f03f7ecbe3c9544a7d520",
+      "size": 72821
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-007/independent-recomputation.json",
+      "path": "independent-recomputation.json",
+      "sha256": "a7a62a4f54860030e9b42fe2299ac6290d66a6c9402982a73a68ea7a7edc1b97",
+      "size": 3078
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-007/retained-source.json",
+      "path": "retained-source.json",
+      "sha256": "ac5cd60aad7b350afc047dca75134441f2c9f27f514a17404861e997dbbb7a20",
+      "size": 15232
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-007/baseline-source.json",
+      "path": "baseline-source.json",
+      "sha256": "9c398571a658d18bf30e2013ad05dec68a5884199c16520eaaa192c126ea96c6",
+      "size": 9034
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-007/history-guidance-proof.md",
+      "path": "history-guidance-proof.md",
+      "sha256": "bc543670ab06256ed6a688e4af690a0df451cdb9228233de75d04fa0a0d3b83d",
+      "size": 4079
+    },
+    {
+      "original_path": "artifacts/investigations/tablebases-007/code-review.md",
+      "path": "code-review.md",
+      "sha256": "4e19c21a1470b1047c9c79ee2677231bf79efe6790e9a1d43ae20c23ea4c4ebe",
+      "size": 2134
+    }
+  ],
+  "kind": "skylance-public-evidence",
+  "release": {
+    "bytes": 25357925,
+    "checksum_url": "https://github.com/Aurentium-Technologies/SkyLance_Endgame/releases/download/v0.1.0/skylance-evidence-007.tar.gz.sha256",
+    "filename": "skylance-evidence-007.tar.gz",
+    "sha256": "2b7b6e954674712f2961cc741f4778c453cca54557bff3dc1ae820a40f0438eb",
+    "url": "https://github.com/Aurentium-Technologies/SkyLance_Endgame/releases/download/v0.1.0/skylance-evidence-007.tar.gz"
+  },
+  "schema_version": 1,
+  "scope": "immutable selected historical records; raw 007 audit in release archive"
+}

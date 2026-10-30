@@ -1,5 +1,8 @@
 # Five-piece probe/cache experiment 002
 
+This historical report names supporting files from the wider local research archive. Available public records and separate downloads are listed in the [evidence index](../../evidence/README.md); local-only paths below are not GitHub download links.
+
+
 Date: 27 October 2026, New Zealand local date.
 
 **Decision: retain frozen candidate 015 and the zero-cache default.** Both
@@ -48,7 +51,7 @@ Separate binaries isolate root-only, compact-only and combined changes. An
 instrumented current-source legacy configuration supplies diagnostic phase
 measurements; it is explicitly not the frozen acceptance baseline. Build
 commands, flags and executable hashes are preserved in
-[variant-builds.json](../artifacts/investigations/tablebases-002/variant-builds.json).
+variant-builds.json (local archive: `../artifacts/investigations/tablebases-002/variant-builds.json`).
 
 The acceptance run uses five paired trials with rotated order across 13 cases:
 baseline caches 0/1/4/16 MiB, root-only 0, compact-only 0/1/4/16, and combined
@@ -96,7 +99,7 @@ selecting a favorable rerun or changing thresholds after seeing the outcomes.
 The unrelated descendant-search gain in the root-only binary does not satisfy
 the root-throughput criterion.
 
-[Protocol, all 65 trials, profiles and calculated decision](../artifacts/investigations/tablebases-002/measurements/result.json).
+Protocol, all 65 trials, profiles and calculated decision (local archive: `../artifacts/investigations/tablebases-002/measurements/result.json`).
 
 ## Correctness, defaults and delivery
 
@@ -123,12 +126,12 @@ no new candidate/profile is promoted because no optimization passed adoption.
 
 Evidence:
 
-- [Prototype verification](../artifacts/investigations/tablebases-002/prototype-verification.json) and per-preset build/test logs.
-- [12,010-case upstream comparison](../artifacts/investigations/tablebases-002/comparison/result.json).
-- [Restored-default checks](../artifacts/investigations/tablebases-002/default-verification.json).
-- [Disabled-search equality](../artifacts/investigations/tablebases-002/disabled-search-equality.json).
-- [Existing 015 offline preflight](../artifacts/investigations/tablebases-002/offline-preflight-015.json).
-- [Source/provenance delivery audit](../artifacts/investigations/tablebases-002/delivery-audit.json).
+- Prototype verification (local archive: `../artifacts/investigations/tablebases-002/prototype-verification.json`) and per-preset build/test logs.
+- 12,010-case upstream comparison (local archive: `../artifacts/investigations/tablebases-002/comparison/result.json`).
+- Restored-default checks (local archive: `../artifacts/investigations/tablebases-002/default-verification.json`).
+- Disabled-search equality (local archive: `../artifacts/investigations/tablebases-002/disabled-search-equality.json`).
+- Existing 015 offline preflight (local archive: `../artifacts/investigations/tablebases-002/offline-preflight-015.json`).
+- Source/provenance delivery audit (local archive: `../artifacts/investigations/tablebases-002/delivery-audit.json`).
 
 The first experiment, frozen 015 binary/source and table data are preserved.
 No live game, rating campaign, training-data/weight change or file-compression
