@@ -9,7 +9,6 @@ the data URLs, sizes and SHA-256 values needed for a separate download.
 | --- | --- | --- |
 | [006 comparison](tablebases-006/README.md) | Protocol/freeze, all 540 recorded primary measurements, statistics, per-material CSV and original audit summary. | Historical pre-007 six-reader comparison: thirteen of fifteen declared wins; no roster-wide superiority. A separate 176 MB raw archive recomputes correctness, latency percentiles and the 100,000-draw bootstrap; external-reader rebuild payloads remain excluded. |
 | [007 improvements](tablebases-007/README.md) | Protocol/freeze, results, correctness and source/proof records in Git; separately downloadable raw evidence and portable offline verifier. | Frozen historical candidate: exact tested answers, smaller reader metadata and local startup/query measurements within the declared gate. This is not a measurement of later HEAD or an Elo claim. |
-
 | [008 current-source confirmation](tablebases-008/README.md) | New frozen-source records, full results, derived statistics and final-runtime binary equivalence; separate raw archive. | Exact answers match, but configured readiness and regression gates fail (`adopt: false`). Historical 007 speed claims are not certified for current source. |
 
 The 008 controller completed the fixed campaign once. Its unfavourable result is

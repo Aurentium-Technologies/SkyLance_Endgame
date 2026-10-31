@@ -52,13 +52,6 @@
     }
   ],
   "kind": "skylance-public-evidence",
-  "release": {
-    "bytes": 25357511,
-    "checksum_url": "https://github.com/Aurentium-Technologies/SkyLance_Endgame/releases/download/v0.1.0/skylance-evidence-007.tar.gz.sha256",
-    "filename": "skylance-evidence-007.tar.gz",
-    "sha256": "cadfb4e863604626a2ecfc9492b342b144a8662029f6bead4eb25e293e2e53d0",
-    "url": "https://github.com/Aurentium-Technologies/SkyLance_Endgame/releases/download/v0.1.0/skylance-evidence-007.tar.gz"
-  },
   "schema_version": 1,
   "scope": "Immutable historical 006 index plus separately checksummed raw numeric/correctness audit archive; external binary/source payloads excluded"
 }

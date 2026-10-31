@@ -141,6 +141,7 @@ Supplementary descriptive task data is retained but is outside primary verdicts.
                   "url": RELEASE + ASSET, "checksum_url": RELEASE + ASSET + ".sha256"}
     public = Path(public)
     index = read_json(public / "MANIFEST.json")
+    index.pop("release", None)  # Remove legacy metadata for the unrelated 007 archive.
     index["comparison_release"] = descriptor
     index["scope"] = "Immutable historical 006 index plus separately checksummed raw numeric/correctness audit archive; external binary/source payloads excluded"
     (public / "MANIFEST.json").write_text(json.dumps(index, indent=2, sort_keys=True) + "\n", encoding="utf-8")
