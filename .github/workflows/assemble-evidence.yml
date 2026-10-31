@@ -1,0 +1,40 @@
+name: Assemble original 006 evidence asset
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_id:
+        description: Existing v0.1.0 draft release numeric ID
+        required: true
+        default: '429614337'
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: skylance-evidence-006-assembly
+  cancel-in-progress: false
+
+jobs:
+  assemble:
+    if: github.repository == 'Aurentium-Technologies/SkyLance_Endgame' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      RELEASE_ID: ${{ inputs.release_id }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - name: Test archive assembly guards
+        run: python3 orient-endgame-component/tests/test_assemble_evidence.py
+      - name: Verify parts and upload the unchanged original archive
+        run: |
+          python3 orient-endgame-component/tools/assemble_evidence.py \
+            --release-id "$RELEASE_ID" \
+            --manifest evidence/tablebases-006/MANIFEST.json \
+            --work-dir "$RUNNER_TEMP/skylance-evidence-006-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"

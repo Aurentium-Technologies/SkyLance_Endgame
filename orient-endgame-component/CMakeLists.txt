@@ -214,6 +214,7 @@ if(ORIENT_TESTS)
       "acceptance_reproduction|test_reproduce_acceptance.py"
       "public_evidence_integrity|test_public_evidence.py"
       "comparison_evidence_integrity|test_comparison_evidence.py"
+      "evidence_assembly|test_assemble_evidence.py"
       "reader_memory_gates|test_reader_memory.py"
       "reader_memory_verification|test_reader_memory_verification.py"
       "reader_comparison_gates|test_reader_comparison.py"

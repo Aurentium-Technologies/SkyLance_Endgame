@@ -100,8 +100,8 @@ ORIENT_SYZYGY_PATH="$PWD/orient-endgame-component/external/tablebases/syzygy/3-4
   python3 -m unittest discover -s orient-endgame-component/tests -p 'test_*.py'
 ```
 
-Current local verification after the evidence/CI update: **28/28 CTest groups**
-and **152 Python tests** pass with the full local collection. All 28 groups also
+Current local verification after the evidence/CI update: **29/29 CTest groups**
+and **161 Python tests** pass with the full local collection. All 29 groups also
 pass under ASan/UBSan with leak detection disabled for the local ptrace wrapper;
 this is not a local LeakSanitizer pass. The actual hosted results are checked
 separately. The historical [30 October pre-upload review](orient-endgame-component/docs/preupload-review-2026-10-30.md)
